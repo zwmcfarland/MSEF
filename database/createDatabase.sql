@@ -1,0 +1,164 @@
+CREATE DATABASE MSEF;
+USE MSEF;
+
+CREATE USER msef_app_id IDENTIFIED BY 'OmahaMetroScienceFair';
+GRANT SELECT,UPDATE,DELETE,EXECUTE ON MSEF.* TO 'msef_app_id';
+
+CREATE TABLE users (
+	Id INT NOT NULL AUTO_INCREMENT,
+	FirstName VARCHAR(255) NOT NULL,
+	LastName VARCHAR(255) NOT NULL,
+	PhoneNumber VARCHAR(11) NOT NULL,
+	SchoolId INT NOT NULL,
+	Grade VARCHAR(200) NULL,
+	ParentFirstName VARCHAR(255) NULL,
+	ParentLastName VARCHAR(255) NULL,
+	ParentPhoneNumber VARCHAR(255) NULL,
+	ParentEmail VARCHAR(500) NULL,
+	SecurityTypeId INT NOT NULL,
+	Email VARCHAR(500) NOT NULL,
+	Password VARCHAR(100) NOT NULL,
+	AltPhoneNumber VARCHAR(11) NULL,
+	Position VARCHAR(255) NULL,
+	City VARCHAR(255) NULL,
+	State VARCHAR(255) NULL,
+	Address1 VARCHAR(255) NULL,
+	Address2 VARCHAR(255) NULL,
+	Zip VARCHAR(11) NULL,
+	PRIMARY KEY(Id),
+	FOREIGN KEY (SchoolId) REFERENCES Schools(Id),
+	FOREIGN KEY (SecurityTypeId) REFERENCES SecurityTypes(Id)
+);
+
+CREATE TABLE projects (
+  Id INT NOT NULL AUTO_INCREMENT, 
+  StatusId INT NOT NULL, 
+  Name VARCHAR(250) NOT NULL, 
+  Electrical BOOL NOT NULL DEFAULT FALSE,
+  Description VARCHAR(1000) NOT NULL, 
+  Abstract VARCHAR(1000) NOT NULL, 
+  PRIMARY KEY(Id), 
+  FOREIGN KEY (StatusId) REFERENCES Status(Id)
+);
+
+
+CREATE TABLE forms ( 
+  Id INT NOT NULL AUTO_INCREMENT, 
+  Name VARCHAR(250) NOT NULL, 
+  FormPath VARCHAR(1000) NOT NULL, 
+  PRIMARY KEY(Id)
+);
+
+CREATE TABLE status ( 
+  Id INT NOT NULL AUTO_INCREMENT, 
+  Name VARCHAR(100) NOT NULL, 
+  Description VARCHAR(250), 
+  PRIMARY KEY(Id)
+);
+
+CREATE TABLE categories (
+  Id INT NOT NULL AUTO_INCREMENT, 
+  Name VARCHAR(250) NOT NULL, 
+  Description VARCHAR(250) NOT NULL, 
+  MaxCapacity INT NULL, PRIMARY KEY (Id)
+);
+
+
+CREATE TABLE projectCatagories (
+	ProjectId INT NOT NULL,
+	CategoryId INT NOT NULL,
+	FOREIGN KEY (ProjectId) REFERENCES Projects(Id),
+  FOREIGN KEY (CategoryId ) REFERENCES Categories(Id)
+);
+
+CREATE TABLE awards (
+  Id INT NOT NULL AUTO_INCREMENT, 
+  Name VARCHAR(250) NOT NULL, 
+  Description VARCHAR(1000) NOT NULL, 
+  Reward VARCHAR(1000) NULL, 
+  PRIMARY KEY(Id)
+);
+
+CREATE TABLE keywords ( 
+  Id INT NOT NULL AUTO_INCREMENT,
+  Keyword VARCHAR(250) NOT NULL,
+  PRIMARY KEY(Id)
+);
+
+CREATE TABLE studentForms (
+	StudentId INT NOT NULL,
+	FormId INT NOT NULL,
+	StatusId INT NOT NULL,
+	FOREIGN KEY (StudentId) REFERENCES Users(Id),
+	FOREIGN KEY (FormId) REFERENCES Form(Id),
+	FOREIGN KEY (StatusId) REFERENCES Status(Id)
+);
+
+CREATE TABLE studentProjects (
+	StudentId INT NOT NULL,
+	ProjectId INT NOT NULL,
+	FORIEGN KEY (StudentId) REFERENCES Users(Id),
+	FORIEGN KEY (ProjectId) REFERENCES Projects(Id)
+);
+
+CREATE TABLE sponsorProjects (
+  TeacherId INT NOT NULL,
+  ProjectId INT NOT NULL,
+  FOREIGN KEY (TeacherId) REFERENCES Users(Id),
+  FOREIGN KEY (ProjectId) REFERENCES Projects(Id)
+);
+
+CREATE TABLE sponsorStudents (
+	StudentId INT NOT NULL,
+	TeacherId INT NOT NULL,
+	FOREIGN KEY (StudentId) REFERENCES Users(Id),
+  FOREIGN KEY (TeacherId) REFERENCES Users(Id) 
+);
+
+CREATE TABLE formKeywords (
+	FormId INT NOT NULL,
+	KeywordId INT NOT NULL,
+	FOREIGN KEY (FormId) REFERENCES Forms(Id),
+FOREIGN KEY (KeywordId) REFERENCES Keywords(Id)
+); 
+
+CREATE TABLE awardKeywords (
+	AwardId INT NOT NULL,
+	KeywordId INT NOT NULL,
+  FOREIGN KEY (AwardId) REFERENCES Awards(Id),
+  FOREIGN KEY (KeywordId) REFERENCES Keywords(Id)
+); 	
+
+CREATE TABLE categoryKeywords (
+	CategoryId INT NOT NULL,
+	KeywordId INT NOT NULL,
+  FOREIGN KEY (CategoryId) REFERENCES Categories(Id),
+  FOREIGN KEY (KeywordId) REFERENCES Keywords(Id)
+);
+
+CREATE TABLE schools (
+  Id INT NOT NULL AUTO_INCREMENT, 
+  Name VARCHAR(255) NOT NULL, 
+  City VARCHAR(255) NOT NULL, 
+  State VARCHAR(255) NOT NULL, 
+  Address1 VARCHAR(255) NOT NULL, 
+  Address2 VARCHAR(255) NOT NULL, 
+  Zip VARCHAR(10) NOT NULL, 
+  PRIMARY KEY(Id)
+);
+
+CREATE TABLE events(
+  Id INT NOT NULL AUTO_INCREMENT, 
+  StartDate DATETIME NOT NULL, 
+  EndDate DATETIME NOT NULL, 
+  Description VARCHAR(1000) NOT NULL, 
+  Location VARCHAR(1000) NULL, 
+  PRIMARY KEY(Id)
+);
+
+CREATE TABLE securityTypes  (
+	Id INT NOT NULL AUTO_INCREMENT,
+	Name VARCHAR(255) NOT NULL,
+	Description VARCHAR(1000) NULL,
+	PRIMARY KEY(Id)
+);
