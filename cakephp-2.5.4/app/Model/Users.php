@@ -1,25 +1,17 @@
 <?php
-
-App::uses('AppModel', 'Model');
-App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
-
+	App::uses('AppModel', 'Model');
+	App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
+	
 	class Users extends AppModel {
-		public $validate = array(
-	        'FirstName' => array(
-	            'rule' => 'notEmpty'
-	        ),
-	        'LastName' => array(
-	            'rule' => 'notEmpty'
-	        )
-	    );
+
 		public function beforeSave($options = array()) {
-		    if (isset($this->data[$this->alias]['Password'])) {
+		    if (isset($this->data[$this->alias]['password'])) {
 		        $passwordHasher = new BlowfishPasswordHasher();
-		        $this->data[$this->alias]['Password'] = $passwordHasher->hash(
-		            $this->data[$this->alias]['Password']
+		        $this->data[$this->alias]['password'] = $passwordHasher->hash(
+		            $this->data[$this->alias]['password']
 		        );
-			 }
-			return true;
-		}			
+		    }
+		    return true;
+		}
 	}
 ?>
