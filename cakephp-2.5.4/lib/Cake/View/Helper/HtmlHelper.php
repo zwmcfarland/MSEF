@@ -12,7 +12,7 @@
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @link          http://cakephp.org CakePHP(tm) Pr oject
  * @package       Cake.View.Helper
  * @since         CakePHP(tm) v 0.9.1
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License

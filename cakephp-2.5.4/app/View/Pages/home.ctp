@@ -21,8 +21,7 @@
 	}
 </style>
 <div>
-	<h1>Welcome To Omaha Metro Area Science Fair Website!</h1>
-	<div class="left_pane info_pane">
+	<div class="col-md-5">
 		<h3>About</h3>
 		<p>
 			The annual Metropolitan Science and Engineering Fair (MSEF)/Nebraska Junior Academy of Sciences(NJAS) is open to all 
@@ -34,20 +33,20 @@
 			MSEF is affiliated with the Nebraska Junior Academy of Sciences (NJAS). Further information about this year's Fair is found in this year's Booklet
 		</p>
 	</div>
-	<div class="right_pane info_pane">
+	<div class="col-md-4 col-md-offset-1">
 		<h3>Sign In</h3>
 		<form>
-			<fieldset>
-				<input type="text"     placeholder="Email">  
-				<input type="password" placeholder="Password">
-			</fieldset>
-			<div>
-				<div style="display:inline-block;vertical-align:top;float:left;">
-					<a style="font-weight:normal;" href="./users/add">Sign Up</a>
-				</div>
-				<div align="right" style="display:inline-block;float:right;">
-					<input type="button"   value="Sign In"/>
-				</div>
+			<div class="form-group">
+				<label for="txtEmail">Email Address</label>
+				<input type="text" class="form-control" placeholder="Email" id="txtEmail">
+			</div>
+			<div class="form-group">  
+				<label for="txtEmail">Password</label>
+				<input type="password" class="form-control" placeholder="Password">
+			</div>
+			<div class="form-group" align="left">
+				<button type="button" class="btn btn-info">Sign Up</button>
+				<button type="button" class="btn btn-primary">Sign In</button>
 			</div>
 		</form>
 	</div>
