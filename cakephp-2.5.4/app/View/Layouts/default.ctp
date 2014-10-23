@@ -20,6 +20,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <!DOCTYPE html>
 <html>
     <head>
+    	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <?php echo $this->Html->charset(); ?>
         <title>
             <?php echo $cakeDescription ?>:
@@ -32,6 +33,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             echo $this->fetch('css');
             echo $this->fetch('script');
         ?>
+        <style> 
+        	.icon-spread{padding-left:10px; padding-right:10px}
+        	.icon-spread:hover{color:lightblue
+        	}
+        </style>
     </head>
     <body>
         <div id="container">
@@ -44,17 +50,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             </div>
             <div id="footer">
                 <div align="center">
+                	<a href="https://www.facebook.com/msefomaha"><i class="icon-spread fa fa-facebook fa-2x on fa-square-o"></i></a>
+                	<a href="https://twitter.com/MSEFOmaha"><i class="icon-spread fa fa-twitter fa-2x on fa-square-o"></i></a>
                     <p>
                         Created as a University of Nebraska Capstone Project
-                    </p>
-                    <p>
-                        <a style="font-weight:normal !important;" href="https://github.com/FinaL111291" target="_blank">Nicholas Goetzinger</a> |
-                        <a style="font-weight:normal !important;" href="https://github.com/JMey94" target="_blank">Joe Meyer</a> |
-                        <a style="font-weight:normal !important;" href="https://github.com/nminchow" target="_blank">Noel Minchow</a> |
-                        <a style="font-weight:normal !important;" href="https://github.com/zwmcfarland" target="_blank">Zachary McFarland</a>
-                    </p>
-                    <p>
-                        Powered by <?php echo $cakeVersion; ?>
                     </p>
                 </div>
             </div>
