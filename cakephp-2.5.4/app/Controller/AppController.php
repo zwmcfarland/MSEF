@@ -43,11 +43,10 @@ class AppController extends Controller {
                 'home'
             ),
             'authenticate' => array(
-                'Form' => array(
-                	'fields' => array('username' => 'Email','password' => 'Password'),
-                    'passwordHasher' => 'Blowfish'
-                )
-            )
+        		'Form' => array(
+        			'passwordHasher' => 'Blowfish'
+        		)
+        	)
         )
     );
 
