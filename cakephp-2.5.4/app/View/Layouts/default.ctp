@@ -36,7 +36,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <body>
         <div class="container">
             <div class="row">
-                <h1>Omaha Metro Area Science Fair</h1>
+                <div class="col-md-6">
+                    <h1>Omaha Metro Area Science Fair</h1>
+                </div>
+                <div class="col-md-3 col-md-offset-3">
+                    <button class="btn btn-success" type="button">Create Project</button>
+                    <button class="btn btn-info" type="button">View My Project</button>
+                </div>
             </div>
             <div class="row">
                 <?php echo $this->Session->flash(); ?>
