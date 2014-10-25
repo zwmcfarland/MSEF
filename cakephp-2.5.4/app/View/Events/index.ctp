@@ -1,52 +1,52 @@
+<?php
+	echo $this->Html->script('moment.min');
+	echo $this->Html->script('fullcalendar');
+	echo $this->HTML->css('fullcalendar');
+	echo $this->HTML->css('fullcalendar.print');
+	echo $this->fetch('script');
+?>
 <h1>Events</h1>
+<!-- TODO: only show this add if they are admin. -->
 <p><?php echo $this->Html->link("Add Event", array('action' => 'add')); ?></p>
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Description</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Location</th>
-    </tr>
 
-<!-- Here's where we loop through our $users array, printing out post info -->
+<script>
+$(document).ready(function() {
+	$('#calendar').fullCalendar({
+		header: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,basicWeek,basicDay'
+		},
+		defaultDate: '<?php echo date('Y-m-d')?>',
+		editable: false,
+		eventLimit: true, // allow "more" link when too many events
+		events: [
+			<?php foreach ($events as $event): ?>
+				{
+					title: '<?php echo $event['Event']['Name']; ?>',
+					start: '<?php echo $event['Event']['StartDate']; ?>',
+					end  : '<?php echo $event['Event']['EndDate']; ?>',
+					url  : '<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "/view/" . $event['Event']['Id']; ?>'
+				}
+			<?php endforeach;?>
+		]
+	});
+	
+});
+</script>
 
-<?php foreach ($events as $event): ?>
-    <tr>
-        <td><?php echo $event['Event']['Id']; ?></td>
-        <td>
-            <?php
-                echo $this->Html->link(
-                    $event['Event']['Description'],
-                    array('action' => 'view', $event['Event']['Id'])
-                );
-            ?>
-        </td>
-        <td>
-            <?php echo $event['Event']['StartDate']; ?>
-        </td>
-        <td>
-            <?php echo $event['Event']['EndDate']; ?>
-        </td>
-        <td>
-            <?php echo $event['Event']['Location']; ?>
-        </td>
-        <td>
-             <?php
-                echo $this->Form->postLink(
-                    'Delete',
-                    array('action' => 'delete', $event['Event']['Id']),
-                    array('confirm' => 'Are you sure?')
-                );
-            ?>
-            <?php
-                echo $this->Html->link(
-                    'Edit',
-                    array('action' => 'edit', $event['Event']['Id'])
-                );
-            ?>
-        </td>
-    </tr>
-<?php endforeach; ?>
-
-</table>
+<style>
+	body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+	#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+</style>
+<div class="row">
+	<div id="calendar"></div>
+</div>

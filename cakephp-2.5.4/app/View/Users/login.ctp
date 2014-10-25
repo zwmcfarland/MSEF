@@ -1,14 +1,15 @@
-
 <div class="users form">
-<?php echo $this->Session->flash('auth'); ?>
-<?php echo $this->Form->create('User'); ?>
-    <fieldset>
-        <legend>
-            <?php echo __('Please enter your username and password'); ?>
-        </legend>
-        <?php echo $this->Form->input('Email');
-        echo $this->Form->input('Password');
-    ?>
-    </fieldset>
-<?php echo $this->Form->end(__('Login')); ?>
+	<h3>Sign In</h3>
+	<?php echo $this->Form->create('User'); ?>
+		<div class="form-group">
+			<label for="txtEmail">Email Address</label>
+			<?php echo $this->Form->input('Email', array('type' => 'text', 'class' => 'form-control', 'label' => ''));?>
+		</div>
+		<div class="form-group">  
+			<label for="txtEmail">Password</label>
+			<?php echo $this->Form->input('Password', array('type' => 'password', 'class' => 'form-control', 'label' => '')); ?>
+		</div>
+		<div class="form-group" align="left">
+			<?php echo $this->Form->end(__('Login', array('label' => 'Sign in', 'class' => 'btn btn-primary'))); ?>
+		</div>
 </div>

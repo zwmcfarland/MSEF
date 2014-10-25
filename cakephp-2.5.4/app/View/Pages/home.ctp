@@ -34,20 +34,6 @@
 		</p>
 	</div>
 	<div class="col-md-4 col-md-offset-1">
-		<h3>Sign In</h3>
-		<form>
-			<div class="form-group">
-				<label for="txtEmail">Email Address</label>
-				<input type="text" class="form-control" placeholder="Email" id="txtEmail">
-			</div>
-			<div class="form-group">  
-				<label for="txtEmail">Password</label>
-				<input type="password" class="form-control" placeholder="Password">
-			</div>
-			<div class="form-group" align="left">
-				<button type="button" class="btn btn-info">Sign Up</button>
-				<button type="button" class="btn btn-primary">Sign In</button>
-			</div>
-		</form>
+		
 	</div>
 </div>
