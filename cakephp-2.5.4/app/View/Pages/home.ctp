@@ -1,25 +1,3 @@
-<style>
-	div.left_pane {
-		width: 35%;
-		display: inline-block;
-		float: left;
-	}
-	div.right_pane {
-		width: 35%;
-		display: inline-block;
-		float: right;
-	}
-	div.info_pane {
-		margin-top: 50px;
-	}
-	fieldset {
-		margin-bottom: 0;
-	}
-	fieldset input {
-		align: left;
-		margin : 5px;
-	}
-</style>
 <div>
 	<div class="col-md-5">
 		<h3>About</h3>
@@ -33,7 +11,9 @@
 			MSEF is affiliated with the Nebraska Junior Academy of Sciences (NJAS). Further information about this year's Fair is found in this year's Booklet
 		</p>
 	</div>
-	<div class="col-md-4 col-md-offset-1">
-		
+	<div class="col-md-4 col-md-offset-1" style="margin-top: 50px;">
+		<button class="btn btn-warning" onclick="window.location='<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "events"; ?>'">Events</button>
+		<hr>
+		<button class="btn btn-success" onclick="window.location='<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "projects"; ?>'">Projects</button>
 	</div>
 </div>

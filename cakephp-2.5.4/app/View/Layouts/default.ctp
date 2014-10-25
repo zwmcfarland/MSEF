@@ -23,8 +23,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <?php echo $this->Html->charset(); ?>
         <title>
-            <?php echo $cakeDescription ?>:
-            <?php echo $title_for_layout; ?>
+            <?php echo "Omaha Science Fair"; ?>
         </title>
         <?php
             echo $this->Html->meta('icon');
@@ -43,25 +42,24 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h1>Omaha Metro Area Science Fair</h1>
-                </div>
-                <div class="col-md-3 col-md-offset-3">
-                    <button class="btn btn-success" type="button">Create Project</button>
-                    <button class="btn btn-info" type="button">View My Project</button>
+                <div class="col-md-12">
+                    <h1 style="font-weight:bold;color:#38AA99;"><img src="<?php echo $this->webroot; ?>img/science.jpg" height="80px;" width="80px;"/ > Omaha Metro Area Science and Engineering Fair</h1>
                 </div>
             </div>
             <div class="row">
-                <?php echo $this->Session->flash(); ?>
-                <?php echo $this->fetch('content'); ?>
+                <div>
+                    <?php echo $this->Session->flash(); ?>
+                    <?php echo $this->fetch('content'); ?>
+                </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top:20px;">
                 <div class="col-md-5 col-md-offset-3" style="text-align:center;">
                 	<a href="https://www.facebook.com/msefomaha"><i class="icon-spread fa fa-facebook fa-2x on fa-square-o"></i></a>
                 	<a href="https://twitter.com/MSEFOmaha"><i class="icon-spread fa fa-twitter fa-2x on fa-square-o"></i></a>
                     <p>
                         Created as a University of Nebraska Capstone Project
                     </p>
+                    
                 </div>
             </div>
         </div>
