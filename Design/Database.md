@@ -56,6 +56,7 @@
 | Field       | Type          | Null | Key | Default | Extra          |
 |-------------|---------------|------|-----|---------|----------------|
 | Id          | int(11)       | NO   | PRI | NULL    | auto_increment |
+| Name        | varchar(255)  | NO   |     | NULL    |                |
 | StartDate   | datetime      | NO   |     | NULL    |                |
 | EndDate     | datetime      | NO   |     | NULL    |                |
 | Description | varchar(1000) | NO   |     | NULL    |                |
