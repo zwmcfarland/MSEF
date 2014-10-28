@@ -4,7 +4,7 @@
 		public $components = array('Session');
 	
 	    public function index() {
-	        $this->set('events', $this->Award->find('all'));
+	        $this->set('awards', $this->Award->find('all'));
 	    }
 	
 	    public function view($Id = null) {
