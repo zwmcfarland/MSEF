@@ -1,31 +1,34 @@
-<!-- File: /app/View/Posts/view.ctp -->
-
+<style>
+	td.data {
+		text-align: right;
+	}
+</style>
 <h1>View School</h1>
-<table>
+<table class="table-striped" width="100%">
     <tbody>
         <tr>
-            <td>Name:</td>
-            <td><?php echo $school['School']['Name']; ?></td>
+            <td><label>Name:</label></td>
+            <td class="data"><?php echo $school['School']['Name']; ?></td>
         </tr>
         <tr>
-            <td>City:</td>
-            <td><?php echo $school['School']['City']; ?></td>
+            <td><label>City:</label></td>
+            <td class="data"><?php echo $school['School']['City']; ?></td>
         </tr>
         <tr>
-            <td>State:</td>
-            <td><?php echo $school['School']['State']; ?></td>
+            <td><label>State:</label></td>
+            <td class="data"><?php echo $school['School']['State']; ?></td>
         </tr>
         <tr>
-            <td>Address 1:</td>
-            <td><?php echo $school['School']['Address1']; ?></td>
+            <td><label>Address 1:</label></td>
+            <td class="data"><?php echo $school['School']['Address1']; ?></td>
         </tr>
         <tr>
-            <td>Address 2:</td>
-            <td><?php echo $school['School']['Address2']; ?></td>
+            <td><label>Address 2:</label></td>
+            <td class="data"><?php echo $school['School']['Address2']; ?></td>
         </tr>
         <tr>
-            <td>Zip:</td>
-            <td><?php echo $school['School']['Zip']; ?></td>
+            <td><label>Zip:</label></td>
+            <td class="data"><?php echo $school['School']['Zip']; ?></td>
         </tr>
     </tbody>
 </table>
