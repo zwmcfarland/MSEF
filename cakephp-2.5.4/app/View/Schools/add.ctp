@@ -1,13 +1,13 @@
 <h1>Add School</h1>
 <?php
-    echo $this->Form->create('School');
-    echo $this->Form->input('Name');
-    echo $this->Form->input('City');
-    echo $this->Form->input('State');
-    echo $this->Form->input('Address1');
-    echo $this->Form->input('Address2');
-    echo $this->Form->input('Zip');
-    echo $this->Form->end('Save School');
+    $this->Form->create('School');
+    $this->Form->input('Name',array('class' => 'form-control','id' => 'Name',));
+    $this->Form->input('City',array('class' => 'form-control','id' => 'City',));
+    $this->Form->input('State',array('class' => 'form-control','id' => 'State',));
+    $this->Form->input('Address1',array('class' => 'form-control','id' => 'Address1',));
+    $this->Form->input('Address2',array('class' => 'form-control','id' => 'Address2',));
+    $this->Form->input('Zip',array('class' => 'form-control','id' => 'Zip',));
+    $this->Form->end('Save School',array('class' => 'btn btn-default'));
 ?>
 <form class="form-horizontal" role="form">
   <div class="form-group">

@@ -1,5 +1,5 @@
-<h1>Users</h1>
-<p><?php echo $this->Html->link("Add User", array('action' => 'add')); ?></p>
+<h1>Schools</h1>
+<p><?php echo $this->Html->link("Add School", array('action' => 'add')); ?></p>
 <table>
     <tr>
         <th>Id</th>
