@@ -32,13 +32,13 @@ CREATE TABLE users (
 
 CREATE TABLE projects (
   Id INT NOT NULL AUTO_INCREMENT, 
-  StatusId INT NOT NULL, 
+  status_id INT NOT NULL, 
   Name VARCHAR(250) NOT NULL, 
   Electrical BOOL NOT NULL DEFAULT FALSE,
   Description VARCHAR(1000) NOT NULL, 
   Abstract VARCHAR(1000) NOT NULL, 
   PRIMARY KEY(Id), 
-  FOREIGN KEY (StatusId) REFERENCES Status(Id)
+  FOREIGN KEY (status_id) REFERENCES Status(Id)
 );
 
 
