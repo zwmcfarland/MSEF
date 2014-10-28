@@ -23,8 +23,8 @@ CREATE TABLE users (
 	Address2 VARCHAR(255) NULL,
 	Zip VARCHAR(11) NULL,
 	PRIMARY KEY(Id),
-	FOREIGN KEY (school_id) REFERENCES Schools(Id),
-	FOREIGN KEY (securityType_id) REFERENCES SecurityTypes(Id)
+	FOREIGN KEY (school_id) REFERENCES schools(Id),
+	FOREIGN KEY (securityType_id) REFERENCES securityTypes(Id)
 );
 
 CREATE TABLE projects (
@@ -35,7 +35,7 @@ CREATE TABLE projects (
   Description VARCHAR(1000) NOT NULL, 
   Abstract VARCHAR(1000) NOT NULL, 
   PRIMARY KEY(Id), 
-  FOREIGN KEY (status_id) REFERENCES Status(Id)
+  FOREIGN KEY (status_id) REFERENCES status(Id)
 );
 
 
@@ -57,15 +57,16 @@ CREATE TABLE categories (
   Id INT NOT NULL AUTO_INCREMENT, 
   Name VARCHAR(250) NOT NULL, 
   Description VARCHAR(250) NOT NULL, 
-  MaxCapacity INT NULL, PRIMARY KEY (Id)
+  MaxCapacity INT NULL, 
+  PRIMARY KEY (Id)
 );
 
 
 CREATE TABLE projectCatagories (
    project_id INT NOT NULL,
    category_id INT NOT NULL,
-   FOREIGN KEY (project_id) REFERENCES Projects(Id),
-   FOREIGN KEY (project_id) REFERENCES Categories(Id)
+   FOREIGN KEY (project_id) REFERENCES projects(Id),
+   FOREIGN KEY (project_id) REFERENCES categories(Id)
 );
 
 CREATE TABLE awards (
@@ -86,51 +87,51 @@ CREATE TABLE studentForms (
 	student_id INT NOT NULL,
 	form_id INT NOT NULL,
 	status_id INT NOT NULL,
-	FOREIGN KEY (student_id) REFERENCES Users(Id),
-	FOREIGN KEY (form_id) REFERENCES Form(Id),
-	FOREIGN KEY (status_id) REFERENCES Status(Id)
+	FOREIGN KEY (student_id) REFERENCES users(Id),
+	FOREIGN KEY (form_id) REFERENCES form(Id),
+	FOREIGN KEY (status_id) REFERENCES status(Id)
 );
 
 CREATE TABLE studentProjects (
 	student_id INT NOT NULL,
 	project_id INT NOT NULL,
-	FORIEGN KEY (student_id) REFERENCES Users(Id),
-	FORIEGN KEY (project_id) REFERENCES Projects(Id)
+	FORIEGN KEY (student_id) REFERENCES users(Id),
+	FORIEGN KEY (project_id) REFERENCES projects(Id)
 );
 
 CREATE TABLE sponsorProjects (
   	teacher_id INT NOT NULL,
   	project_id INT NOT NULL,
-  	FOREIGN KEY (teacher_id) REFERENCES Users(Id),
-  	FOREIGN KEY (project_id) REFERENCES Projects(Id)
+  	FOREIGN KEY (teacher_id) REFERENCES users(Id),
+  	FOREIGN KEY (project_id) REFERENCES projects(Id)
 );
 
 CREATE TABLE sponsorStudents (
 	student_id INT NOT NULL,
 	teacher_id INT NOT NULL,
-	FOREIGN KEY (student_id) REFERENCES Users(Id),
-  	FOREIGN KEY (teacher_id) REFERENCES Users(Id) 
+	FOREIGN KEY (student_id) REFERENCES users(Id),
+  	FOREIGN KEY (teacher_id) REFERENCES users(Id) 
 );
 
 CREATE TABLE formKeywords (
 	form_id INT NOT NULL,
 	keyword_id INT NOT NULL,
-	FOREIGN KEY (form_id) REFERENCES Forms(Id),
-	FOREIGN KEY (keyword_id) REFERENCES Keywords(Id)
+	FOREIGN KEY (form_id) REFERENCES forms(Id),
+	FOREIGN KEY (keyword_id) REFERENCES keywords(Id)
 ); 
 
 CREATE TABLE awardKeywords (
 	award_id INT NOT NULL,
 	keyword_id INT NOT NULL,
-  	FOREIGN KEY (award_id) REFERENCES Awards(Id),
-  	FOREIGN KEY (keyword_id) REFERENCES Keywords(Id)
+  	FOREIGN KEY (award_id) REFERENCES awards(Id),
+  	FOREIGN KEY (keyword_id) REFERENCES keywords(Id)
 ); 	
 
 CREATE TABLE categoryKeywords (
 	category_id INT NOT NULL,
 	keyword_id INT NOT NULL,
-  	FOREIGN KEY (category_id) REFERENCES Categories(Id),
-  	FOREIGN KEY (keyword_id) REFERENCES Keywords(Id)
+  	FOREIGN KEY (category_id) REFERENCES categories(Id),
+  	FOREIGN KEY (keyword_id) REFERENCES keywords(Id)
 );
 
 CREATE TABLE schools (
