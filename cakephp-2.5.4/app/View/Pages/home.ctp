@@ -15,5 +15,7 @@
 		<button class="btn btn-warning" onclick="window.location='<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "events"; ?>'">Events</button>
 		<hr>
 		<button class="btn btn-success" onclick="window.location='<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "projects"; ?>'">Projects</button>
+		<hr>
+		<button class="btn btn-warning" onclick="window.location='<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "schools"; ?>'">Schools</button>
 	</div>
 </div>
