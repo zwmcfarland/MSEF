@@ -13,8 +13,8 @@
 ))); ?>
 
         <fieldset>
-                <div class="form-group">
-                        <label>Name</label>
+           <div class="form-group">
+                 <label>Name</label>
                 <?php echo $this->Form->input('Name', array('label' => '')); ?>
             </div>
             <div class="form-group">
