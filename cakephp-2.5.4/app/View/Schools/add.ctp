@@ -20,8 +20,7 @@
     <?php echo $this->Form->input('Address1'); ?>
     <?php echo $this->Form->input('Address2'); ?>
     <?php echo $this->Form->input('Zip'); ?>
+    <div class="col-sm-offset-2 col-sm-10">
+	<?php echo $this->Form->submit('Save School', array('class' => 'btn btn-default')); ?>
+    </div>
 </fieldset>    
-<?php echo $this->Form->end('Save School',array('class' => 'btn btn-default')); ?>
-
-
-
