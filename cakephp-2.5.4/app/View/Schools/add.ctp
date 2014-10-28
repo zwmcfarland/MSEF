@@ -12,7 +12,6 @@
 	    'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline')),
 ))); ?>
 
-<<<<<<< HEAD
 	<fieldset>
 		<div class="form-group">
 			<label>Name</label>
@@ -42,19 +41,3 @@
 	<button type="button" class="btn btn-warning" onclick="window.location='./';">Cancel</button>
 	<button type="submit" class="btn btn-primary">Save School</button>
 <?php echo $this->Form->end(); ?>
-
-
-
-=======
-<fieldset>
-    <?php echo $this->Form->input('Name'); ?>
-    <?php echo $this->Form->input('City'); ?>
-    <?php echo $this->Form->input('State'); ?>
-    <?php echo $this->Form->input('Address1'); ?>
-    <?php echo $this->Form->input('Address2'); ?>
-    <?php echo $this->Form->input('Zip'); ?>
-    <div class="col-sm-offset-2 col-sm-10">
-	<?php echo $this->Form->submit('Save School', array('class' => 'btn btn-default')); ?>
-    </div>
-</fieldset>    
->>>>>>> 55804c13c9673455f724790bcf932889e21646ff
