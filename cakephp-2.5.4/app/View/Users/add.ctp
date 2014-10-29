@@ -39,7 +39,7 @@
             </div>
 	    <div class="form-group">
                 <label>School ID</label>
-                <?php echo $this->Form->input('School ID', array('label' => '')); ?>
+                <?php echo $this->Form->input('school_id', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
                 <label>Grade</label>
@@ -63,7 +63,7 @@
             </div>
 	    <div class="form-group">
                 <label>Security Type ID</label>
-                <?php echo $this->Form->input('SecurityTypeId', array('label' => '')); ?>
+                <?php echo $this->Form->input('securityType_id', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
                 <label>Position</label>
