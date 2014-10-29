@@ -14,23 +14,23 @@
 
 	<fieldset>
 	    <div class="form-group">
-		<label><b>First Name</b></label>
+		<label>First Name</label>
 	    	<?php echo $this->Form->input('FirstName', array('label' => '')); ?>
 	    </div>
 	    <div class="form-group">
-                <label><b>Last Name</b></label>
+                <label>Last Name</label>
                 <?php echo $this->Form->input('LastName', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
-                <label><b>Email</b></label>
+                <label>Email</label>
                 <?php echo $this->Form->input('Email', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
-                <label><b>Password</b></label>
+                <label>Password</label>
                 <?php echo $this->Form->input('Password', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
-                <label><b>Phone Number</b></label>
+                <label>Phone Number</label>
                 <?php echo $this->Form->input('PhoneNumber', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
@@ -38,7 +38,7 @@
                 <?php echo $this->Form->input('AltPhoneNumber', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
-                <label><b>School ID</b></label>
+                <label>School ID</label>
                 <?php echo $this->Form->input('School ID', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
@@ -62,7 +62,7 @@
                 <?php echo $this->Form->input('ParentEmail', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
-                <label><b>Security Type ID</b></label>
+                <label>Security Type ID</label>
                 <?php echo $this->Form->input('SecurityTypeId', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
