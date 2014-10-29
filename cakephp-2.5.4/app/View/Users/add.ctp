@@ -27,7 +27,7 @@
             </div>
 	    <div class="form-group">
                 <label>Password</label>
-                <?php echo $this->Form->input('Password', array('label' => '')); ?>
+                <?php echo $this->Form->input('Password', array('label' => '', 'type' => "PASSWORD")); ?>
             </div>
 	    <div class="form-group">
                 <label>Phone Number</label>
