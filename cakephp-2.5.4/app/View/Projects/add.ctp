@@ -23,7 +23,11 @@
 			<?php echo $this->Form->input('Electrical', array('label' => 'This project will require an electrical connection.')); ?>
 		</div>
 	</div>
+<<<<<<< HEAD
 	<button type="button" class="btn btn-warning" onclick="window.location='./';">Cancel</button>
+=======
+	<button type="button" class="btn btn-warning">Cancel</button>
+>>>>>>> 5a8ddd75a5480daf411e4df6aaf4748c8ad1622c
 	<button type="submit" class="btn btn-primary">Save Project</button>
 </fieldset>
 <?php echo $this->Form->end(); ?>
