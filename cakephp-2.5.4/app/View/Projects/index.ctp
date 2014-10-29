@@ -4,6 +4,7 @@
     <tr>
         <th>Id</th>
         <th>Name</th>
+        <th>Status</th>
         <th>Action</th>
     </tr>
 
@@ -20,6 +21,7 @@
                 );
             ?>
         </td>
+        <td><?php echo $project['Project']['Status']; ?></td>
         <td>
              <?php
                 echo $this->Form->postLink(

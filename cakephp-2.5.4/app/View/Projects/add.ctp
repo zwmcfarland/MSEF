@@ -15,11 +15,15 @@
 		<?php echo $this->Form->textarea('Abstract', array('class' => 'form-control')); ?>
 	</div>
 	<div class="form-group">
+		<label>Status</label>
+		<?php echo $this->Form->select('Status'); ?>
+	</div>
+	<div class="form-group">
 		<div style="margin-left:20px;">
 			<?php echo $this->Form->input('Electrical', array('label' => 'This project will require an electrical connection.')); ?>
 		</div>
 	</div>
-	<button type="button" class="btn btn-warning">Cancel</button>
-	<button type="button" class="btn btn-primary">Save Project</button>
+	<button type="button" class="btn btn-warning" onclick="window.location='./';">Cancel</button>
+	<button type="submit" class="btn btn-primary">Save Project</button>
 </fieldset>
 <?php echo $this->Form->end(); ?>
