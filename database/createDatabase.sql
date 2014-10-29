@@ -1,30 +1,19 @@
 CREATE DATABASE MSEF;
 USE MSEF;
 
-CREATE TABLE users (
-	Id INT NOT NULL AUTO_INCREMENT,
-	FirstName VARCHAR(255) NOT NULL,
-	LastName VARCHAR(255) NOT NULL,
-	PhoneNumber VARCHAR(11) NOT NULL,
-	school_id INT NOT NULL,
-	Grade VARCHAR(200) NULL,
-	ParentFirstName VARCHAR(255) NULL,
-	ParentLastName VARCHAR(255) NULL,
-	ParentPhoneNumber VARCHAR(255) NULL,
-	ParentEmail VARCHAR(500) NULL,
-	securityType_id INT NOT NULL,
-	Email VARCHAR(500) NOT NULL,
-	Password VARCHAR(100) NOT NULL,
-	AltPhoneNumber VARCHAR(11) NULL,
-	Position VARCHAR(255) NULL,
-	City VARCHAR(255) NULL,
-	State VARCHAR(255) NULL,
-	Address1 VARCHAR(255) NULL,
-	Address2 VARCHAR(255) NULL,
-	Zip VARCHAR(11) NULL,
-	PRIMARY KEY(Id),
-	FOREIGN KEY (school_id) REFERENCES schools(Id),
-	FOREIGN KEY (securityType_id) REFERENCES securityTypes(Id)
+
+CREATE TABLE forms ( 
+  Id INT NOT NULL AUTO_INCREMENT, 
+  Name VARCHAR(250) NOT NULL, 
+  FormPath VARCHAR(1000) NOT NULL, 
+  PRIMARY KEY(Id)
+);
+
+CREATE TABLE statuses ( 
+  Id INT NOT NULL AUTO_INCREMENT, 
+  Name VARCHAR(100) NOT NULL, 
+  Description VARCHAR(250), 
+  PRIMARY KEY(Id)
 );
 
 CREATE TABLE projects (
@@ -35,22 +24,7 @@ CREATE TABLE projects (
   Description VARCHAR(1000) NOT NULL, 
   Abstract VARCHAR(1000) NOT NULL, 
   PRIMARY KEY(Id), 
-  FOREIGN KEY (status_id) REFERENCES status(Id)
-);
-
-
-CREATE TABLE forms ( 
-  Id INT NOT NULL AUTO_INCREMENT, 
-  Name VARCHAR(250) NOT NULL, 
-  FormPath VARCHAR(1000) NOT NULL, 
-  PRIMARY KEY(Id)
-);
-
-CREATE TABLE status ( 
-  Id INT NOT NULL AUTO_INCREMENT, 
-  Name VARCHAR(100) NOT NULL, 
-  Description VARCHAR(250), 
-  PRIMARY KEY(Id)
+  FOREIGN KEY (status_id) REFERENCES statuses(Id)
 );
 
 CREATE TABLE categories (
@@ -81,36 +55,6 @@ CREATE TABLE keywords (
   Id INT NOT NULL AUTO_INCREMENT,
   Keyword VARCHAR(250) NOT NULL,
   PRIMARY KEY(Id)
-);
-
-CREATE TABLE studentForms (
-	student_id INT NOT NULL,
-	form_id INT NOT NULL,
-	status_id INT NOT NULL,
-	FOREIGN KEY (student_id) REFERENCES users(Id),
-	FOREIGN KEY (form_id) REFERENCES form(Id),
-	FOREIGN KEY (status_id) REFERENCES status(Id)
-);
-
-CREATE TABLE studentProjects (
-	student_id INT NOT NULL,
-	project_id INT NOT NULL,
-	FORIEGN KEY (student_id) REFERENCES users(Id),
-	FORIEGN KEY (project_id) REFERENCES projects(Id)
-);
-
-CREATE TABLE sponsorProjects (
-  	teacher_id INT NOT NULL,
-  	project_id INT NOT NULL,
-  	FOREIGN KEY (teacher_id) REFERENCES users(Id),
-  	FOREIGN KEY (project_id) REFERENCES projects(Id)
-);
-
-CREATE TABLE sponsorStudents (
-	student_id INT NOT NULL,
-	teacher_id INT NOT NULL,
-	FOREIGN KEY (student_id) REFERENCES users(Id),
-  	FOREIGN KEY (teacher_id) REFERENCES users(Id) 
 );
 
 CREATE TABLE formKeywords (
@@ -162,5 +106,61 @@ CREATE TABLE securityTypes  (
 	PRIMARY KEY(Id)
 );
 
-CREATE USER msef_app_id IDENTIFIED BY 'OmahaMetroScienceFair';
+CREATE TABLE users (
+	Id INT NOT NULL AUTO_INCREMENT,
+	FirstName VARCHAR(255) NOT NULL,
+	LastName VARCHAR(255) NOT NULL,
+	PhoneNumber VARCHAR(11) NOT NULL,
+	school_id INT NOT NULL,
+	Grade VARCHAR(200) NULL,
+	ParentFirstName VARCHAR(255) NULL,
+	ParentLastName VARCHAR(255) NULL,
+	ParentPhoneNumber VARCHAR(255) NULL,
+	ParentEmail VARCHAR(500) NULL,
+	securityType_id INT NOT NULL,
+	Email VARCHAR(500) NOT NULL,
+	Password VARCHAR(100) NOT NULL,
+	AltPhoneNumber VARCHAR(11) NULL,
+	Position VARCHAR(255) NULL,
+	City VARCHAR(255) NULL,
+	State VARCHAR(255) NULL,
+	Address1 VARCHAR(255) NULL,
+	Address2 VARCHAR(255) NULL,
+	Zip VARCHAR(11) NULL,
+	PRIMARY KEY(Id),
+	FOREIGN KEY (school_id) REFERENCES schools(Id),
+	FOREIGN KEY (securityType_id) REFERENCES securityTypes(Id)
+);
+
+CREATE TABLE studentForms (
+	student_id INT NOT NULL,
+	form_id INT NOT NULL,
+	status_id INT NOT NULL,
+	FOREIGN KEY (student_id) REFERENCES users(Id),
+	FOREIGN KEY (form_id) REFERENCES forms(Id),
+	FOREIGN KEY (status_id) REFERENCES status(Id)
+);
+
+CREATE TABLE sponsorProjects (
+  	teacher_id INT NOT NULL,
+  	project_id INT NOT NULL,
+  	FOREIGN KEY (teacher_id) REFERENCES users(Id),
+  	FOREIGN KEY (project_id) REFERENCES projects(Id)
+);
+
+CREATE TABLE studentProjects (
+	student_id INT NOT NULL,
+	project_id INT NOT NULL,
+	FOREIGN KEY (student_id) REFERENCES users(Id),
+	FOREIGN KEY (project_id) REFERENCES projects(Id)
+);
+
+CREATE TABLE sponsorStudents (
+	student_id INT NOT NULL,
+	teacher_id INT NOT NULL,
+	FOREIGN KEY (student_id) REFERENCES users(Id),
+  	FOREIGN KEY (teacher_id) REFERENCES users(Id) 
+);
+
+CREATE USER msef_app_id@localhost IDENTIFIED BY 'MetroOmahaScienceFair';
 GRANT SELECT,UPDATE,DELETE,EXECUTE ON MSEF.* TO 'msef_app_id';
