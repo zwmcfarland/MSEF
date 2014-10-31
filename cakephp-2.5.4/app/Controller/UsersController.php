@@ -29,10 +29,10 @@
                 }
                 $this->Session->setFlash(__('Unable to add your School.'));
             }
-            $schools = $this->User->School->find('all', array('fields' => array('School.Name')));
+            $schools = $this->User->School->find('list', array('fields' => array('School.Name')));
             $this->set('schools', $schools);
-            $securityTypes = $this->User->SecurityType->find('all', array('fields' => array('SecurityType.Name')));
-            $this->set('SecurityType', $securityTypes);
+            $securityTypes = $this->User->SecurityType->find('list', array('fields' => array('SecurityType.Name')));
+            $this->set('securityTypes', $securityTypes);
         }
 
         public function edit($Id = null) {
