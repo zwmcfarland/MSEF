@@ -1,5 +1,6 @@
 <?php 
 	class SchoolsController extends AppController {
+		var $name = 'Schools';
 	    public $helpers = array('Html', 'Form');
 		public $components = array('Session');
 	
