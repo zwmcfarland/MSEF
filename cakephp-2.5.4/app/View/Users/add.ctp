@@ -62,8 +62,8 @@
                 <?php echo $this->Form->input('ParentEmail', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
-                <label>Security Type ID</label>
-                <?php echo $this->Form->input('securityType_id', array('label' => '')); ?>
+                <label>Security Type</label>
+                <?php echo $this->Form->input('security_type_id', array('label' => '')); ?>
             </div>
 	    <div class="form-group">
                 <label>Position</label>

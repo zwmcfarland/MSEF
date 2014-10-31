@@ -5,7 +5,7 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 	class User extends AppModel {
 		var $name = 'User';
-		var $belongsTo = 'School';
+		var $belongsTo = array('School', 'SecurityType');
 		
 		public $validate = array(
 	        'FirstName' => array(
@@ -24,7 +24,5 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 		    }
 		    return true;
 		}
-		
-			
 	}
 ?>

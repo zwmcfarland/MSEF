@@ -31,6 +31,8 @@
             }
             $schools = $this->User->School->find('all', array('fields' => array('School.Name')));
             $this->set('schools', $schools);
+            $securityTypes = $this->User->SecurityType->find('all', array('fields' => array('SecurityType.Name')));
+            $this->set('SecurityType', $securityTypes);
         }
 
         public function edit($Id = null) {
