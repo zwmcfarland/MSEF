@@ -22,9 +22,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <head>
     	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <?php echo $this->Html->charset(); ?>
-        <title>
-            <?php echo "Omaha Science Fair"; ?>
-        </title>
+        <title>Omaha Science Fair</title>
         <?php
             echo $this->Html->meta('icon');
             echo $this->Html->css('bootstrap');
@@ -34,18 +32,77 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             echo $this->fetch('script');
         ?>
         <style> 
-        	.icon-spread{padding-left:10px; padding-right:10px}
-        	.icon-spread:hover{color:lightblue
+        	.icon-spread{
+        	   padding-left:10px; padding-right:10px
         	}
+        	.icon-spread:hover {
+        	   color:lightblue
+        	}
+        	div.menu h3 {
+        	   display: inline-block;
+        	}
+        	div.menu a {
+        	   display: inline-block;
+        	   float: right;
+        	   vertical-align: bottom;
+        	   color: #FFFFFF;
+        	}
+        	div.menu {
+        	   height: 60px;
+        	}
+        	div.menu img {
+        	   vertical-align: top;
+        	}
+        	ul.menuItems {
+        	    list-style-type: none !important;
+        	    margin: 0;
+                padding: 0;
+                display: inline-block;
+                float: right;
+                width: 40%;
+                height: 100%;
+                margin-right: 14px;
+        	}
+        	ul.menuItems li {
+                display: inline;
+                width: 30px;
+                height: 100%;
+            }
+            .header a:hover {
+                text-decoration: none;
+            }
+            ul.menuItems li a {
+                float: right;
+                width: 6em;
+                color: white;
+                padding: 0.2em 0.6em;
+                border-right: 1px solid white;
+                text-align: center;
+                height: 100%;
+                font-weight: bold;
+                padding-top: 20px;
+            }
         </style>
     </head>
     <body>
+        <div class="row menu" style="background-color:#38AA99;">
+            <img src="<?php echo $this->webroot; ?>img/science.png" height="60px;" width="60px;"/ >
+            <h3 class="header" style="color:#FFFFFF;">
+                <?php echo $this->Html->link('Omaha Metro Area Science and Engineering Fair','/'); ?>
+            </h3>
+            <ul class="menuItems">
+                <li><?php echo $this->Html->link('Logout','/users/logout'); ?></li>
+                <li><?php echo $this->Html->link('Events','/events/'); ?></li>
+                <li><?php echo $this->Html->link('Schools','/schools/'); ?></li>
+                <li><?php echo $this->Html->link('Awards','/awards/'); ?></li>
+                <li><?php echo $this->Html->link('Projects','/projects/'); ?></li>
+                <li><?php echo $this->Html->link('Statuses','/statuses/'); ?></li>
+                <li><?php echo $this->Html->link('Users','/users/'); ?></li>
+                <li><?php echo $this->Html->link('Schools','/schools/'); ?></li>
+                <li><?php echo $this->Html->link('Forms','/forms/'); ?></li>
+            </ul>
+        </div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 style="font-weight:bold;color:#38AA99;"><img src="<?php echo $this->webroot; ?>img/science.jpg" height="80px;" width="80px;"/ > Omaha Metro Area Science and Engineering Fair</h1>
-                </div>
-            </div>
             <div class="row">
                 <div>
                     <?php echo $this->Session->flash(); ?>
