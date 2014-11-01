@@ -57,6 +57,10 @@
             if (!$this->request->data) {
                 $this->request->data = $user;
             }
+            $schools = $this->User->School->find('list', array('fields' => array('School.Name')));
+            $this->set('schools', $schools);
+            $securityTypes = $this->User->SecurityType->find('list', array('fields' => array('SecurityType.Name')));
+            $this->set('securityTypes', $securityTypes);
         }
 
         public function delete($Id) {

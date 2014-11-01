@@ -20,7 +20,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <!DOCTYPE html>
 <html>
     <head>
-    	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <?php echo $this->Html->charset(); ?>
         <title>Omaha Science Fair</title>
         <?php
@@ -32,38 +32,38 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             echo $this->fetch('script');
         ?>
         <style> 
-        	.icon-spread{
-        	   padding-left:10px; padding-right:10px
-        	}
-        	.icon-spread:hover {
-        	   color:lightblue
-        	}
-        	div.menu h3 {
-        	   display: inline-block;
-        	}
-        	div.menu a {
-        	   display: inline-block;
-        	   float: right;
-        	   vertical-align: bottom;
-        	   color: #FFFFFF;
-        	}
-        	div.menu {
-        	   height: 60px;
-        	}
-        	div.menu img {
-        	   vertical-align: top;
-        	}
-        	ul.menuItems {
-        	    list-style-type: none !important;
-        	    margin: 0;
+            .icon-spread{
+               padding-left:10px; padding-right:10px
+            }
+            .icon-spread:hover {
+               color:lightblue
+            }
+            div.menu h3 {
+               display: inline-block;
+            }
+            div.menu a {
+               display: inline-block;
+               float: right;
+               vertical-align: bottom;
+               color: #FFFFFF;
+            }
+            div.menu {
+               height: 60px;
+            }
+            div.menu img {
+               vertical-align: top;
+            }
+            ul.menuItems {
+                list-style-type: none !important;
+                margin: 0;
                 padding: 0;
                 display: inline-block;
                 float: right;
                 width: 40%;
                 height: 100%;
                 margin-right: 14px;
-        	}
-        	ul.menuItems li {
+            }
+            ul.menuItems li {
                 display: inline;
                 width: 30px;
                 height: 100%;
@@ -81,6 +81,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 height: 100%;
                 font-weight: bold;
                 padding-top: 20px;
+            }
+            div.bg-success > div {
+                backgound-color: #dff0d8 !important;
+                -moz-border-radius: 20px;
+                border-radius: 20px;
+            }
+            div.bg-danger > div {
+                background-color: #f2dede !important;
+                -moz-border-radius: 20px;
+                border-radius: 20px;
             }
         </style>
     </head>
@@ -105,18 +115,29 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <div class="container">
             <div class="row">
                 <div>
-                    <?php echo $this->Session->flash(); ?>
+                    <div align="center" style="margin-top:20px;">
+                        <?php 
+                            $output = $this->Session->flash();
+                            if($output != '') { 
+                                if(!strpos($output, 'error') !== FALSE) {
+                                    echo '<div class="bg-success">' . $output . '</div>';
+                                }
+                                else {
+                                    echo '<div class="bg-danger">' . $output . '</div>';
+                                }
+                            } 
+                        ?>
+                    </div>
                     <?php echo $this->fetch('content'); ?>
                 </div>
             </div>
             <div class="row" style="margin-top:20px;">
                 <div class="col-md-5 col-md-offset-3" style="text-align:center;">
-                	<a href="https://www.facebook.com/msefomaha"><i class="icon-spread fa fa-facebook fa-2x on fa-square-o"></i></a>
-                	<a href="https://twitter.com/MSEFOmaha"><i class="icon-spread fa fa-twitter fa-2x on fa-square-o"></i></a>
+                    <a href="https://www.facebook.com/msefomaha"><i class="icon-spread fa fa-facebook fa-2x on fa-square-o"></i></a>
+                    <a href="https://twitter.com/MSEFOmaha"><i class="icon-spread fa fa-twitter fa-2x on fa-square-o"></i></a>
                     <p>
                         Created as a University of Nebraska Capstone Project
                     </p>
-                    
                 </div>
             </div>
         </div>
