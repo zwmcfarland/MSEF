@@ -42,7 +42,7 @@
 		    }
 		
 		    if ($this->request->is(array('post', 'put'))) {
-		        $this->Keyword->Id = $Id;
+		        $this->Keyword->id = $Id;
 		        if ($this->Keyword->save($this->request->data)) {
 		            $this->Session->setFlash(__('This keyword has been updated.'));
 		            return $this->redirect(array('action' => 'index'));

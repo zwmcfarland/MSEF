@@ -41,7 +41,7 @@
 		    }
 		
 		    if ($this->request->is(array('post', 'put'))) {
-		        $this->Award->Id = $Id;
+		        $this->Award->id = $Id;
 		        if ($this->Award->save($this->request->data)) {
 		            $this->Session->setFlash(__('This award has been updated.'));
 		            return $this->redirect(array('action' => 'index'));

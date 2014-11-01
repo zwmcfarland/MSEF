@@ -44,7 +44,7 @@
             }
 
             if ($this->request->is(array('post', 'put'))) {
-                $this->Project->Id = $Id;
+                $this->Project->id = $Id;
                 if ($this->Project->save($this->request->data)) {
                     $this->Session->setFlash(__('This project has been updated.'));
                     return $this->redirect(array('action' => 'index'));

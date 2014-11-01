@@ -42,7 +42,7 @@
 		    }
 		
 		    if ($this->request->is(array('post', 'put'))) {
-		        $this->School->Id = $Id;
+		        $this->School->id = $Id;
 		        if ($this->School->save($this->request->data)) {
 		            $this->Session->setFlash(__('This School has been updated.'));
 		            return $this->redirect(array('action' => 'index'));

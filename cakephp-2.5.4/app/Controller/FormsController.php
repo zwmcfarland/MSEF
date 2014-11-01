@@ -41,7 +41,7 @@
 		    }
 		
 		    if ($this->request->is(array('post', 'put'))) {
-		        $this->Form->Id = $Id;
+		        $this->Form->id = $Id;
 		        if ($this->Form->save($this->request->data)) {
 		            $this->Session->setFlash(__('This form has been updated.'));
 		            return $this->redirect(array('action' => 'index'));

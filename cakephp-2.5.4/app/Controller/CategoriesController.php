@@ -41,7 +41,7 @@
 		    }
 		
 		    if ($this->request->is(array('post', 'put'))) {
-		        $this->Category->Id = $Id;
+		        $this->Category->id = $Id;
 		        if ($this->Category->save($this->request->data)) {
 		            $this->Session->setFlash(__('This category has been updated.'));
 		            return $this->redirect(array('action' => 'index'));

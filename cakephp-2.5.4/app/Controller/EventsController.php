@@ -41,7 +41,7 @@
 		    }
 		
 		    if ($this->request->is(array('post', 'put'))) {
-		        $this->Event->Id = $Id;
+		        $this->Event->id = $Id;
 		        if ($this->Event->save($this->request->data)) {
 		            $this->Session->setFlash(__('This event has been updated.'));
 		            return $this->redirect(array('action' => 'index'));

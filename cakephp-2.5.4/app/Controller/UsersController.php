@@ -46,7 +46,7 @@
             }
 
             if ($this->request->is(array('post', 'put'))) {
-                $this->User->Id = $Id;
+                $this->User->id = $Id;
                 if ($this->User->save($this->request->data)) {
                     $this->Session->setFlash(__('This user has been updated.'));
                     return $this->redirect(array('action' => 'index'));
