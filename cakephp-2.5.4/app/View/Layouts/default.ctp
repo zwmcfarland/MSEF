@@ -59,13 +59,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 padding: 0;
                 display: inline-block;
                 float: right;
-                width: 40%;
+                width: 60%;
                 height: 100%;
                 margin-right: 14px;
             }
             ul.menuItems li {
                 display: inline;
-                width: 30px;
+                width: 20px;
                 height: 100%;
             }
             .header a:hover {
@@ -98,7 +98,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <div class="row menu" style="background-color:#38AA99;">
             <img src="<?php echo $this->webroot; ?>img/science.png" height="60px;" width="60px;"/ >
             <h3 class="header" style="color:#FFFFFF;">
-                <?php echo $this->Html->link('Omaha Metro Area Science and Engineering Fair','/'); ?>
+                <?php echo $this->Html->link('Metro Area Science and Engineering Fair','/'); ?>
             </h3>
             <ul class="menuItems">
                 <li><?php echo $this->Html->link('Logout','/users/logout'); ?></li>

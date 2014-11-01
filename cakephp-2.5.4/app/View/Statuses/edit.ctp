@@ -1,8 +1,21 @@
-<h1>Edit Status</h1>
-<?php
-	echo $this->Form->create('Status');
-	echo $this->Form->input('Name');
-	echo $this->Form->input('Description');
-	echo $this->Form->input('Id', array('type' => 'hidden'));
-	echo $this->Form->end('Save Status');
-?>
+<h2>Edit Status</h2>
+<div class="row">
+    <?php echo $this->Form->create('Status'); ?>
+        <fieldset>
+            <div class="form-group">
+                <label>Name:</label>
+                <?php echo $this->Form->input('Name', array('label' => '', 'class' => 'form-control')); ?>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <?php echo $this->Form->input('Description', array('label' => '', 'class' => 'form-control')); ?>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn-warning btn" onclick="window.location='../';">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </fieldset>
+    <?php echo $this->Form->end(); ?>
+</div>

@@ -1,5 +1,5 @@
 <?php
-	class Status extends AppModel{
-		  
-	}
+    class Status extends AppModel{
+        var $name = 'Status';
+    }
 ?>

@@ -5,10 +5,8 @@
 	echo $this->HTML->css('fullcalendar.print');
 	echo $this->fetch('script');
 ?>
-<h1>Events</h1>
-<!-- TODO: only show this add if they are admin. -->
+<h2>Events</h2>
 <p><?php echo $this->Html->link("Add Event", array('action' => 'add')); ?></p>
-
 <script>
 $(document).ready(function() {
 	$('#calendar').fullCalendar({
@@ -37,7 +35,7 @@ $(document).ready(function() {
 
 <style>
 	body {
-		margin: 40px 10px;
+		margin: 0px 10px;
 		padding: 0;
 		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
 		font-size: 14px;

@@ -1,8 +1,6 @@
-<!-- File: /app/View/Posts/view.ctp -->
-
+<h2>View User</h2>
 <div class="row">
-    <h1>View User</h1>
-    <table class="table table-hover">
+    <table class="table table-striped">
         <tbody>
             <tr>
                 <td>First Name:</td>
