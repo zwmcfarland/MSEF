@@ -29,7 +29,7 @@
     <div class="row">
         <div class="form-group"> 
        	<button type="button" class="btn btn-warning">Cancel</button>
-    	<button type="submit" class="btn btn-primary">Save Project</button>
+    	<button type="submit" class="btn btn-primary">Save Event</button>
     	</div>
     </div>
     </fieldset>
