@@ -1,5 +1,6 @@
 <?php 
 	class KeywordsController extends AppController {
+		var $name = 'Keywords';
 	    public $helpers = array('Html', 'Form');
 		public $components = array('Session');
 	
@@ -16,7 +17,7 @@
 	        if (!$keyword) {
 	            throw new NotFoundException(__('Invalid keyword'));
 	        }
-	        $this->set('keyword', $event);
+	        $this->set('keyword', $keyword);
 	    }
 	
 	    public function add() {
@@ -36,7 +37,7 @@
 		    }
 		
 		    $keyword = $this->Keyword->findById($Id);
-		    if (!$event) {
+		    if (!$keyword) {
 		        throw new NotFoundException(__('Invalid keyword'));
 		    }
 		

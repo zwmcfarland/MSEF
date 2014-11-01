@@ -59,7 +59,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 padding: 0;
                 display: inline-block;
                 float: right;
-                width: 60%;
+                width: 69%;
                 height: 100%;
                 margin-right: 14px;
             }
@@ -73,7 +73,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             }
             ul.menuItems li a {
                 float: right;
-                width: 6em;
+                width: 6.1em;
                 color: white;
                 padding: 0.2em 0.6em;
                 border-right: 1px solid white;
@@ -98,7 +98,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <div class="row menu" style="background-color:#38AA99;">
             <img src="<?php echo $this->webroot; ?>img/science.png" height="60px;" width="60px;"/ >
             <h3 class="header" style="color:#FFFFFF;">
-                <?php echo $this->Html->link('Metro Area Science and Engineering Fair','/'); ?>
+                <?php echo $this->Html->link('Science & Engineering Fair','/'); ?>
             </h3>
             <ul class="menuItems">
                 <li><?php echo $this->Html->link('Logout','/users/logout'); ?></li>
@@ -110,6 +110,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <li><?php echo $this->Html->link('Users','/users/'); ?></li>
                 <li><?php echo $this->Html->link('Schools','/schools/'); ?></li>
                 <li><?php echo $this->Html->link('Forms','/forms/'); ?></li>
+                <li><?php echo $this->Html->link('Categories','/categories/'); ?></li>
+                <li><?php echo $this->Html->link('Keywords','/keywords/'); ?></li>
             </ul>
         </div>
         <div class="container">
