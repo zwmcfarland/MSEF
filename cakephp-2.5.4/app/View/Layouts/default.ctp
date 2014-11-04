@@ -108,7 +108,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <li><?php echo $this->Html->link('Projects','/projects/'); ?></li>
                 <li><?php echo $this->Html->link('Statuses','/statuses/'); ?></li>
                 <li><?php echo $this->Html->link('Users','/users/'); ?></li>
-                <li><?php echo $this->Html->link('Schools','/schools/'); ?></li>
                 <li><?php echo $this->Html->link('Forms','/forms/'); ?></li>
                 <li><?php echo $this->Html->link('Categories','/categories/'); ?></li>
                 <li><?php echo $this->Html->link('Keywords','/keywords/'); ?></li>
