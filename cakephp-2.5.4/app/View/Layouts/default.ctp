@@ -103,7 +103,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             <ul class="menuItems">
                 <li><?php echo $this->Html->link('Logout','/users/logout'); ?></li>
                 <li><?php echo $this->Html->link('Events','/events/'); ?></li>
-                <li><?php echo $this->Html->link('Schools','/schools/'); ?></li>
                 <li><?php echo $this->Html->link('Awards','/awards/'); ?></li>
                 <li><?php echo $this->Html->link('Projects','/projects/'); ?></li>
                 <li><?php echo $this->Html->link('Statuses','/statuses/'); ?></li>
