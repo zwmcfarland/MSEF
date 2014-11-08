@@ -26,7 +26,7 @@ $(document).ready(function() {
 					title: '<?php echo $event['Event']['Name']; ?>',
 					start: '<?php echo $event['Event']['StartDate']; ?>',
 					end  : '<?php echo $event['Event']['EndDate']; ?>',
-					url  : '<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "view/" . $event['Event']['Id']; ?>'
+					url  : '<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "/view/" . $event['Event']['Id']; ?>'
 				}
 				<?php if($i != $len - 1) { echo ','; } ?>
 				<?php $i++;?>
