@@ -19,6 +19,8 @@ $(document).ready(function() {
 		editable: false,
 		eventLimit: true, // allow "more" link when too many events
 		events: [
+		 	<?php $i = 0; ?>
+		 	<?php $len = count($events); ?>
 			<?php foreach ($events as $event): ?>
 				{
 					title: '<?php echo $event['Event']['Name']; ?>',
@@ -26,6 +28,8 @@ $(document).ready(function() {
 					end  : '<?php echo $event['Event']['EndDate']; ?>',
 					url  : '<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "/view/" . $event['Event']['Id']; ?>'
 				}
+				<?php if($i != $len - 1) { echo ','; } ?>
+				<?php $i++;?>
 			<?php endforeach;?>
 		]
 	});
