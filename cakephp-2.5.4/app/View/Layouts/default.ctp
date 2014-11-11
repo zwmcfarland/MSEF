@@ -15,7 +15,7 @@
  */
 
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
+$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version());
 ?>
 <!DOCTYPE html>
 <html>
@@ -101,15 +101,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <?php echo $this->Html->link('Science & Engineering Fair','/'); ?>
             </h3>
             <ul class="menuItems">
-                <li><?php echo $this->Html->link('Logout','/users/logout'); ?></li>
-                <li><?php echo $this->Html->link('Events','/events/'); ?></li>
-                <li><?php echo $this->Html->link('Awards','/awards/'); ?></li>
-                <li><?php echo $this->Html->link('Projects','/projects/'); ?></li>
-                <li><?php echo $this->Html->link('Statuses','/statuses/'); ?></li>
-                <li><?php echo $this->Html->link('Users','/users/'); ?></li>
-                <li><?php echo $this->Html->link('Forms','/forms/'); ?></li>
-                <li><?php echo $this->Html->link('Categories','/categories/'); ?></li>
-                <li><?php echo $this->Html->link('Keywords','/keywords/'); ?></li>
+                <?php if(AuthComponent::User('Id')): ?>
+                    <li><?php echo $this->Html->link('Logout','/users/logout'); ?></li>
+                    <li><?php echo $this->Html->link('Events','/events/'); ?></li>
+                    <li><?php echo $this->Html->link('Awards','/awards/'); ?></li>
+                    <li><?php echo $this->Html->link('Projects','/projects/'); ?></li>
+                    <li><?php echo $this->Html->link('Users','/users/'); ?></li>
+                    <li><?php echo $this->Html->link('Forms','/forms/'); ?></li>
+                <?php endif; ?>
             </ul>
         </div>
         <div class="container">

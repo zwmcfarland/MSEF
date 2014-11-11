@@ -5,7 +5,6 @@
         public $components = array('Session');
     
         public function index() {
-            
             if(parent::isAuthorized(AuthComponent::User())) {
                 $this->set('users', $this->User->find('all'));
             }
@@ -45,7 +44,7 @@
             if (!$Id) {
                 throw new NotFoundException(__('Invalid User'));
             }
-        
+
             $user = $this->User->findById($Id);
             if (!$user) {
                 throw new NotFoundException(__('Invalid User'));
@@ -73,7 +72,7 @@
             if ($this->request->is('get')) {
                 throw new MethodNotAllowedException();
             }
-    
+
             if ($this->User->delete($Id)) {
                 $this->Session->setFlash(
                     __('The user with id: %s has been deleted.', h($Id))
@@ -85,7 +84,7 @@
         public function beforeFilter() {
             parent::beforeFilter();
             // Allow users to register and logout.
-            $this->Auth->allow('add', 'logout', 'index');
+            $this->Auth->allow('logout', 'index');
         }
 
         public function login() {
@@ -103,7 +102,7 @@
 
         public function isAuthorized($user) {
             // cant register while signed in unless admin
-            if ($this->action === 'add') {
+            if (in_array($this->action, array('add'))) {
                 return false;
             }
 

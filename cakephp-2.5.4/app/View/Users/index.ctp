@@ -1,4 +1,4 @@
-<h1>Users</h1>
+<h2>Users</h2>
 <div class="row">
     <p>
         <?php echo $this->Html->link("Add User", array('action' => 'add')); ?>
@@ -27,10 +27,12 @@
                     <td><?php echo $user['User']['LastName']; ?></td>
                     <td align="center">
                         <?php
-                            echo $this->Form->postLink('Delete',
-                                array('action' => 'delete', $user['User']['Id']),
-                                array('confirm' => 'Are you sure?')
-                            );
+                            if(AuthComponent::User('Id')) {
+                                echo $this->Form->postLink('Delete',
+                                    array('action' => 'delete', $user['User']['Id']),
+                                    array('confirm' => 'Are you sure?')
+                                );
+                            }
                         ?>
                         |
                         <?php
