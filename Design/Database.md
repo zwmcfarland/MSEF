@@ -115,12 +115,6 @@
 | Name        | varchar(255)  | NO   |     | NULL    |                |
 | Description | varchar(1000) | YES  |     | NULL    |                |
 
-<h4>SponsorProjects</h4>
-| Field     | Type    | Null | Key | Default | Extra |
-|-----------|---------|------|-----|---------|-------|
-| TeacherId | int(11) | NO   | MUL | NULL    |       |
-| ProjectId | int(11) | NO   | MUL | NULL    |       |
-
 <h4>SponsorStudents</h4>
 | Field     | Type    | Null | Key | Default | Extra |
 |-----------|---------|------|-----|---------|-------|
