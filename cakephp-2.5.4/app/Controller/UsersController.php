@@ -1,6 +1,6 @@
 <?php 
     class UsersController extends AppController {
-    	var $name = 'Users';
+        var $name = 'Users';
         public $helpers = array('Html', 'Form');
         public $components = array('Session');
     
@@ -75,13 +75,13 @@
                 return $this->redirect(array('action' => 'index'));
             }
         }
-        
+
         public function beforeFilter() {
             parent::beforeFilter();
             // Allow users to register and logout.
             $this->Auth->allow('add', 'logout');
         }
-        
+
         public function login() {
             if ($this->request->is('post')) {
                 if ($this->Auth->login()) {
@@ -90,9 +90,25 @@
                 $this->Session->setFlash(__('Invalid username or password, try again'));
             }
         }
-        
+
         public function logout() {
             return $this->redirect($this->Auth->logout());
+        }
+
+        public function isAuthorized($user) {
+            // cant register while signed in unless admin
+            if ($this->action === 'add') {
+                return false;
+            }
+
+            if (in_array($this->action, array('edit'))) {
+                $userId = (int) $this->request->params['pass'][0];
+                if ($this->Post->isCurrent($userId, $user['id'])) {
+                    return true;
+                }
+            }
+        
+            return parent::isAuthorized($user);
         }
     }
 ?>
