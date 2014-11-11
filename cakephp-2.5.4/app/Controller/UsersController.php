@@ -5,7 +5,13 @@
         public $components = array('Session');
     
         public function index() {
-            $this->set('users', $this->User->find('all'));
+            
+            if(parent::isAuthorized(AuthComponent::User())) {
+                $this->set('users', $this->User->find('all'));
+            }
+            else {
+                $this->set('users',array('0' => $this->User->findById(AuthComponent::User('Id'))));
+            }
         }
 
         public function view($Id = null) {
@@ -101,9 +107,9 @@
                 return false;
             }
 
-            if (in_array($this->action, array('edit'))) {
+            if (in_array($this->action, array('edit', 'view'))) {
                 $userId = (int) $this->request->params['pass'][0];
-                if ($this->Post->isCurrent($userId, $user['id'])) {
+                if ($this->User->isCurrent($userId, $user['Id'])) {
                     return true;
                 }
             }
