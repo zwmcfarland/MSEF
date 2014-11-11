@@ -79,8 +79,20 @@
         public function beforeFilter() {
             parent::beforeFilter();
             // Allow users to register and logout.
-            $this->Auth->allow('add', 'logout');
+            $this->Auth->allow('add', 'logout', 'index');
         }
+		
+		public function isAuthorized($user) {
+		
+		    if (in_array($this->action, array('edit'))) {
+		        $userId = (int) $this->request->params['pass'][0];
+		        if ($this->User->isCurrent($userId, $user['Id'])) {
+		            return true;
+		        }
+		    }
+		
+		    return parent::isAuthorized($user);
+		}
         
         public function login() {
             if ($this->request->is('post')) {
