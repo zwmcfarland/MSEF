@@ -3,7 +3,7 @@
         var $name = 'Users';
         public $helpers = array('Html', 'Form');
         public $components = array('Session');
-    
+
         public function index() {
             if(parent::isAuthorized(AuthComponent::User())) {
                 $this->set('users', $this->User->find('all'));
