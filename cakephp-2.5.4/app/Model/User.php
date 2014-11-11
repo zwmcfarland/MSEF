@@ -1,20 +1,9 @@
 <?php
-
-App::uses('AppModel', 'Model');
-App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
-
+    App::uses('AppModel', 'Model');
+    App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
     class User extends AppModel {
         var $name = 'User';
-        var $hasOne = array('School', 'SecurityType');
-        public $hasAndBelongsToMany = array(
-                'Sponsor' => array(
-                    'className' => 'Perfile',
-                    'joinTable' => 'modelo_perfiles',
-                    'foreignKey' => 'modelo_id',
-                    'associationForeignKey' => 'perfil_id',
-                    'unique' => true,
-                )
-        );
+        var $belongsTo = array('School', 'SecurityType');
         
         public $validate = array(
             'FirstName' => array(
