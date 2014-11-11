@@ -24,5 +24,9 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 		    }
 		    return true;
 		}
+		
+		public function isCurrent($post, $user) {
+		    return $post == $user;
+		}
 	}
 ?>

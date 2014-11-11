@@ -35,7 +35,7 @@ class AppController extends Controller {
         'Session',
         'Auth' => array(
             'loginRedirect' => array(
-                'controller' => 'posts',
+                'controller' => 'events',
                 'action' => 'index'
             ),
             'logoutRedirect' => array(
@@ -48,11 +48,18 @@ class AppController extends Controller {
                 	'fields' => array('username' => 'Email','password' => 'Password'),
                 	'passwordHasher' => 'Blowfish'
                 )
-            )
+            ),
+            'authorize' => array('Controller') // Added this line
         )
     );
 
-    public function beforeFilter() {
-        $this->Auth->allow('index', 'view');
+    public function isAuthorized($user) {
+    // Admin can access every action
+    if (isset($user['SecurityType']['Name']) && $user['SecurityType']['Name'] === 'Staff') {
+        return true;
     }
+
+    // Default deny
+    return false;
+}
 }
