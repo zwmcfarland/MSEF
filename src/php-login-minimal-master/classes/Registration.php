@@ -1,5 +1,5 @@
 <?php
-
+include($_SERVER['DOCUMENT_ROOT'] . str_replace(Explode('/', $_SERVER['SCRIPT_NAME'])[count(Explode('/', $_SERVER['SCRIPT_NAME'])) - 1], '', $_SERVER['SCRIPT_NAME']) . 'function/user.php');
 /**
  * Class registration
  * handles the user registration
@@ -65,7 +65,7 @@ class Registration
             && !empty($_POST['user_password_repeat'])
             && ($_POST['user_password_new'] === $_POST['user_password_repeat'])
         ) {
-        		
+                
             // create a database connection
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             
@@ -99,11 +99,13 @@ class Registration
                     $sql = "INSERT INTO users (user_name, user_password_hash, user_email)
                             VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "');";
                     $query_new_user_insert = $this->db_connection->query($sql);
-					
-					echo $this->db_connection->error;
+                    
+                    echo $this->db_connection->error;
 
                     // if user has been added successfully
                     if ($query_new_user_insert) {
+                        createUser($user_email);
+                        header( 'Location: user_login.php') ;
                         $this->messages[] = "Your account has been created successfully. You can now log in.";
                     } else {
                         $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
