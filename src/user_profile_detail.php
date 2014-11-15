@@ -4,7 +4,7 @@
     incHeader('MSEF | Home');
     
     /* --- Queries --- */
-    $userInfo = getUserInformation("student@msef.com");
+    $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -21,11 +21,11 @@
             <div class="panel-body">
                 <dl class="dl-horizontal">
                     <dt>First Name</dt>
-                    <dd>Zac</dd>
+                    <dd><?php echo $userInfo['FirstName']; ?></dd>
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>Last Name</dt>
-                    <dd>McFarland</dd>
+                    <dd><?php echo $userInfo['LastName']; ?></dd>
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>School</dt>
