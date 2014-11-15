@@ -42,6 +42,7 @@
 
         echo '<script type="text/javascript">' . $JS_String . '</script>';
         //END: JS Includes
+
         echo '<body class="'. $title .'">
                 <div class="navbar navbar-fluid-top">
                     <div class="navbar-inner">

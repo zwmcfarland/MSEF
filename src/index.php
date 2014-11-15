@@ -1,5 +1,5 @@
 <?php
-    include("function/HeaderFooter.php");
+    include("function/headerfooter.php");
     incHeader('MSEF | Home');
     
     /* --- Queries --- */
