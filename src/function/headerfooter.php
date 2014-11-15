@@ -87,8 +87,8 @@ date_default_timezone_set('UTC');
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Browse<span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <!--  Student Links -->
-                                                    <li><a href="user_profile_detail.php">My Profile</a></li><!-- TODO: Add current user id to link -->
-                                                    <li><a href="student_project_detail.php">My Project</a></li><!-- TODO: Add current user project id to link -->
+                                                    <li><a href="user_profile_detail.php">My Profile</a></li>
+                                                    <li><a href="student_project_detail.php">My Project</a></li>
                                                     <li><a href="browse_forms.php">Forms</a></li>
                                                 <!-- END: Student Links -->
 

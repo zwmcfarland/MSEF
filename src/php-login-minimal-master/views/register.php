@@ -13,7 +13,6 @@ if (isset($registration)) {
     }
 }
 ?>
-
 <!-- register form -->
 <form method="post" action="register.php" name="registerform">
 

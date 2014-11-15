@@ -25,7 +25,12 @@
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>Last Name</dt>
-                    <dd><?php echo $userInfo['LastName']; ?></dd>
+                    <dd> <?php echo $_SESSION['user_email'];?>
+                    <?php echo $userInfo['LastName']; ?></dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>Email Address</dt>
+                    <dd><?php echo $userInfo['Email']; ?></dd>
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>School</dt>
