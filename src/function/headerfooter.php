@@ -7,12 +7,10 @@
                         <meta charset="utf-8">
                         <title>'. $title .'</title>
                         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-                        <link href="css/font-awesome.min.css" rel="stylesheet">
-                        <link rel="stylesheet" type="text/css" href="css/tabcontent.css">
+                        <link href="css/font-awesome.css" rel="stylesheet">
                         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
                         <link  href="img/uno.ico" rel="shortcut icon">
                         <script src="js/jQuery.js"></script>
-                        <script src="js/tabcontent.js"></script>
                         <script src="js/bootstrap.js"></script>';
 
         //CSS Includes
