@@ -1,5 +1,12 @@
 <?php
-    date_default_timezone_set('UTC');
+	// include the configs / constants for the database connection
+include("./php-login-minimal-master/config/db.php");
+
+// load the login class
+include("./php-login-minimal-master/classes/Login.php");
+
+$login = new Login();
+date_default_timezone_set('UTC');
     function incHeader($title = "", $JS_String = "", $JS_Include = "", $CSS_Include = "", $CSS_String = "", $MenuFlag = "true") {
         ?>
             <!DOCTYPE html>
@@ -18,6 +25,26 @@
                         
                         <!-- Security -->
                         <!-- TODO: Need to add security view filters -->
+                        
+                        <?php
+                        
+                        global $login;
+                        if ($login->isUserLoggedIn() == true) {
+						    echo '
+						    <style>
+						    	.unauthinticated{
+						    		display: none !important;
+						    	}
+						    </style> ';
+						} else {
+							echo'
+						    <style>
+						    	.authinticated{
+						    		display: none !important;
+						    	}
+						    </style>';
+						}?>
+                        
                         <!-- END: Security -->
                         
                         <?php 
@@ -78,9 +105,9 @@
                                         </li>
                                     </ul>
                                     <ul class="nav navbar-nav navbar-right"><!-- TODO: Need to display based on logged in status -->
-                                        <li class="unauthinticated"><a href="user_logout.php">Register</a></li>
+                                        <li class="unauthinticated"><a href="user_register.php">Register</a></li>
                                         <li class="unauthinticated"><a href="user_login.php">Log In</a></li>
-                                        <li class="authinticated"><a href="user_logout.php">Log Out</a></li>
+                                        <li class="authinticated"><a href="index.php?logout">Log Out</a></li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
@@ -89,8 +116,7 @@
     <?php } ?>
 
     <?php function incFooter() { ?>
-                <hr>
-                <div class="footer navbar" align="center">
+                <div class="footer" align="center">
                     <p>
                         <small>Created as an University of Nebraska at Omaha Capstone Project</small>
                     </p>
