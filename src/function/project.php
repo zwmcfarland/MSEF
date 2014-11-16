@@ -6,15 +6,17 @@
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
 
-        $sql = "SELECT p.*,
+        $sql = "SELECT projects.*,
+        		statuses.name as statusName
                 FROM projects
+                INNER JOIN statuses on projects.status_id = statuses.Id
                 WHERE 1 = 1";
 
         if(!empty($projectID) && $projectID != NULL) {
-            $sql .= " AND projects.ID = '$projectID'";
+            $sql .= " AND projects.Id = '$projectID'";
         }
 
-        $qryUsers = mysql_query($sql);
+        $qryProjects = mysql_query($sql);
 
         if(mysql_error()) {
             echo "SQL Error: " . mysql_error();
@@ -44,21 +46,16 @@
         return $insUser;
     }
     
-    function updateProject($projectId, $Name = "") {
+    function updateProject($projectId, $Name = "", $Description="", $Abstract ="", $Electrical=FALSE) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
 
-        $sql = "UPDATE project 
-                SET Name = '$Name'
-                WHERE Id = $projectID";
+        $sql = "UPDATE projects
+                SET Name = '$Name', Description = '$Description', Abstract = '$Abstract', Electrical = '$Electrical'
+                WHERE Id = $projectId";
 
         $updProject = mysql_query($sql);
-
-        if(mysql_error()) {
-            echo "Failed to update user " . mysql_error();
-            exit;
-        }
 
         mysql_close();
         return $updProject;
