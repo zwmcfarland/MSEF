@@ -8,11 +8,16 @@
 
         $sql = "SELECT u.Id AS UserId,
                        p.Id AS ProjectId,
+                       p.status_id AS ProjectStatusId,
+                       p.Name AS ProjectName,
+                       p.Electrical,
+                       p.Description,
+                       p.Abstract,
                        u.*,
-                       p.*,
                        s.Id AS SchoolId,
                        s.Name AS SchoolName,
                        st.Name AS SecurityTypeName
+                       
                 FROM users as u
                      LEFT OUTER JOIN studentProjects AS sp ON u.Id = sp.student_id
                      LEFT OUTER JOIN projects AS p ON sp.project_id = p.Id

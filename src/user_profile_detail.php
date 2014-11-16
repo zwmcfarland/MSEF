@@ -91,11 +91,6 @@
                     <tr>
                         <td><a href="student_project_detail.php">Volcano</a></td>
                         <td>Abstract</td>
-                        <td>
-                            <a href="#">Joe</a>
-                            <a href="#">Bob</a>
-                            <a href="#">Tim</a>
-                        </td>
                         <td align="center">Submitted</td>
                     </tr>
                 </tbody>

@@ -1,5 +1,4 @@
 <?php
-    include_once($_SERVER['DOCUMENT_ROOT'] . str_replace(Explode('/', $_SERVER['SCRIPT_NAME'])[count(Explode('/', $_SERVER['SCRIPT_NAME'])) - 1], '', $_SERVER['SCRIPT_NAME']) . 'function/user.php');
     /**
      * Class login
      * handles the user's login and logout process
@@ -41,8 +40,8 @@
         /**
          * log in with post data
          */
-        private function dologinWithPostData()
-        {
+        private function dologinWithPostData() {
+            include_once($_SERVER['DOCUMENT_ROOT'] . str_replace(Explode('/', $_SERVER['SCRIPT_NAME'])[count(Explode('/', $_SERVER['SCRIPT_NAME'])) - 1], '', $_SERVER['SCRIPT_NAME']) . 'function/user.php');
             // check login form contents
             if (empty($_POST['user_name'])) {
                 $this->errors[] = "Username field was empty.";
