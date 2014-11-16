@@ -94,12 +94,15 @@ date_default_timezone_set('UTC');
 
                                                 <!-- Sponsor Links -->
                                                     <li class="divider sponsor"></li>
-                                                    <li class="sponsor"><a href="#">Separated link</a></li>
+                                                    <li class="sponsor"><a href="#">All Projects</a></li>
+                                                    <li class="sponsor"><a href="#">Projects Pending Your Approval</a></li>
                                                 <!-- END: Sponsor Links -->
 
                                                 <!-- Staff Links -->
                                                     <li class="divider staff"></li>
-                                                    <li class="staff"><a href="#">One more separated link</a></li>
+                                                    <li class="staff"><a href="#">List Projects</a></li>
+                                                    <li class="staff"><a href="#">Awards</a></li>
+                                                    <li class="staff"><a href="#">Categories</a></li>
                                                 <!-- END: Staff Links -->
                                             </ul>
                                         </li>
