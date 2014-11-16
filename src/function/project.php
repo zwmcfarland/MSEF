@@ -84,7 +84,7 @@
 		
 		$id = mysql_insert_id();
 		
-		$sql = "Insert into studentProjects values ('".$_SESSION['user_id']."','$id')";
+		$sql = "Insert into studentProjects (student_id,project_id) values ('".$_SESSION['user_id']."','$id')";
 		
 		$updProject = mysql_query($sql);
 
