@@ -1,10 +1,12 @@
 <?php
     include_once("function/headerfooter.php");
     include_once("function/user.php");
-    incHeader('MSEF | Home');
+    include_once("function/form.php");
+    incHeader('MSEF | Profile');
     
     /* --- Queries --- */
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
+    $forms = getStudentForms($_SESSION['user_id']);
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -51,9 +53,13 @@
                     <dt>School</dt>
                     <dd><?php echo $userInfo['SchoolName']; ?></dd>
                 </dl>
+                <dl class="dl-horizontal sponsor">
+                    <dt>Position</dt>
+                    <dd><?php echo $userInfo['Position']; ?></dd>
+                </dl>
                 <dl class="dl-horizontal student">
                     <dt>Grade</dt>
-                    <dd><?php $userInfo['Grade']; ?>th</dd>
+                    <dd><?php echo $userInfo['Grade']; ?>th</dd>
                 </dl>
                 <dl class="dl-horizontal student">
                     <dt>Address 1</dt>
@@ -88,11 +94,18 @@
             </div>
             <table class="table">
                 <tbody>
-                    <tr>
-                        <td><a href="student_project_detail.php">Volcano</a></td>
-                        <td>Abstract</td>
-                        <td align="center">Submitted</td>
-                    </tr>
+                    <?php if($userInfo['ProjectName'] != ''):?>
+                        <tr>
+                            <td><a href="student_project_detail.php"><?php echo $userInfo['ProjectName']; ?></a></td>
+                            <td><?php echo $userInfo['Description']; ?></td>
+                            <td align="center" title="<?php echo $userInfo['ProjectStatusDescription']; ?>><?php echo $userInfo['ProjectStatus']; ?></td>
+                        </tr>
+                    <?php else:?>
+                        <tr>
+                            <td>No Projects.</td>
+                            <td><a href="project_add.php">Create New Project</a></td>
+                        </tr>
+                    <?php endif;?>
                 </tbody>
             </table>
         </div>
@@ -107,24 +120,25 @@
             </div>
             <table class="table">
                 <tbody>
-                    <tr>
-                        <td><a href="#">Science Fair Entry Form</a></td>
-                        <td>Form required to participate in the science fair.</td>
-                        <td style="color: #d9534f;">Required</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">Live Animal Form</a></td>
-                        <td>Form required to use live animals in your project.</td>
-                        <td style="color: #5cb85c;">Complete</td>
-                    </tr>
+                    <?php while($row = mysql_fetch_assoc($forms)):?>
+                        <tr>
+                            <td><a href="form_detail.php?formId=<?php echo $row['form_id']; ?>"><?php echo $row['FormName']; ?></a></td>
+                            <td style="color: #d9534f;"><?php echo $row['FormName']; ?></td>
+                        </tr>
+                    <?php endwhile;?>
+                    <?php if(mysql_num_rows($forms) == 0):?>
+                        <tr>
+                            <td>You currently don't have any required forms.</td>
+                        </tr>
+                    <?php endif;?>
                 </tbody>
             </table>
         </div>
     </div>
-    <!-- END: Project Detials -->
+    <!-- END: Form Detials -->
 
     <!-- Parent Detials -->
-    <div class="col-md-6 studentonly">
+    <div class="col-md-6 student studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Parent Information</h3>

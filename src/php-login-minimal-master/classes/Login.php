@@ -87,7 +87,7 @@
                             
                             $userInfo = getUserInformation($user_email);
                             $_SESSION['user_id'] = mysql_fetch_assoc($userInfo)['UserId'];
-                            $_SESSION['user_id'] = mysql_fetch_assoc($userInfo)['SecurityTypeName'];
+                            $_SESSION['security_type'] = mysql_fetch_assoc($userInfo)['SecurityTypeName'];
     
                         } else {
                             $this->errors[] = "Wrong password. Try again.";

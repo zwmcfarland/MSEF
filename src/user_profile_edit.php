@@ -3,11 +3,13 @@
     include("function/user.php");
     include("function/school.php");
     include("function/states.php");
-    incHeader('MSEF | Home', '', 'form.js');
+    include_once("function/form.php");
+    incHeader('MSEF | Profile', '', 'form.js');
     
     /* --- Queries --- */
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
     $schools = getSchools();
+    $forms = getStudentForms($_SESSION['user_id']);
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -75,16 +77,22 @@
                         </dl>
                     </div>
                     <div class="form-group">
+                        <dl class="dl-horizontal sponsor">
+                            <dt>Position</dt>
+                            <dd><input type="text" name="Position" value="<?php echo $userInfo['Position']; ?>" placeholder="Position" class="form-control"></dd>
+                        </dl>
+                    </div>
+                    <div class="form-group">
                         <dl class="dl-horizontal student">
                             <dt>Grade</dt>
                             <dd>
                                 <select name="Grade" class="form-control">
                                     <option value="7" <?php if( 7 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>7th</option>
-                                    <option value="8" <?php if( 7 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>8th</option>
-                                    <option value="9" <?php if( 7 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>9th</option>
-                                    <option value="10" <?php if( 7 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>10th</option>
-                                    <option value="11" <?php if( 7 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>11th</option>
-                                    <option value="12" <?php if( 7 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>12th</option>
+                                    <option value="8" <?php if( 8 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>8th</option>
+                                    <option value="9" <?php if( 9 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>9th</option>
+                                    <option value="10" <?php if(10 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>10th</option>
+                                    <option value="11" <?php if(11 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>11th</option>
+                                    <option value="12" <?php if(12 == $userInfo['Grade']):?>selected="selected"<?php endif;?>>12th</option>
                                 </select>
                             </dd>
                         </dl>
@@ -144,16 +152,18 @@
             </div>
             <table class="table">
                 <tbody>
-                    <tr>
-                        <td><a href="#">Volcano</a></td>
-                        <td>Abstract</td>
-                        <td>
-                            <a href="#">Joe</a>
-                            <a href="#">Bob</a>
-                            <a href="#">Tim</a>
-                        </td>
-                        <td align="center">Submitted</td>
-                    </tr>
+                    <?php if($userInfo['ProjectName'] != ''):?>
+                        <tr>
+                            <td><a href="student_project_detail.php"><?php echo $userInfo['ProjectName']; ?></a></td>
+                            <td><?php echo $userInfo['Description']; ?></td>
+                            <td align="center" title="<?php echo $userInfo['ProjectStatusDescription']; ?>><?php echo $userInfo['ProjectStatus']; ?></td>
+                        </tr>
+                    <?php else:?>
+                        <tr>
+                            <td>No Projects.</td>
+                            <td><a href="project_add.php">Create New Project</a></td>
+                        </tr>
+                    <?php endif;?>
                 </tbody>
             </table>
         </div>
@@ -168,21 +178,22 @@
             </div>
             <table class="table">
                 <tbody>
-                    <tr>
-                        <td>Science Fair Entry Form</td>
-                        <td>Form required to participate in the science fair.</td>
-                        <td style="color: #d9534f;">Required</td>
-                    </tr>
-                    <tr>
-                        <td>Live Animal Form</td>
-                        <td>Form required to use live animals in your project.</td>
-                        <td style="color: #5cb85c;">Complete</td>
-                    </tr>
+                    <?php while($row = mysql_fetch_assoc($forms)):?>
+                        <tr>
+                            <td><a href="form_detail.php?formId=<?php echo $row['form_id']; ?>"><?php echo $row['FormName']; ?></a></td>
+                            <td style="color: #d9534f;"><?php echo $row['FormName']; ?></td>
+                        </tr>
+                    <?php endwhile;?>
+                    <?php if(mysql_num_rows($forms) == 0):?>
+                        <tr>
+                            <td>You currently don't have any required forms.</td>
+                        </tr>
+                    <?php endif;?>
                 </tbody>
             </table>
         </div>
     </div>
-    <!-- END: Project Detials -->
+    <!-- END: Form Detials -->
 
     <!-- Parent Detials -->
     <div class="col-md-6 studentonly">

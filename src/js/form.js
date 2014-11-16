@@ -9,7 +9,9 @@ function subComp() {
         {
             if(data[i].type == 'error') {
                 error += '<li>' + data[i].Message + '</li>';
-                $('input[name=' + data[i].Element + ']').parent('dd').parent('dl').parent('.form-group').addClass('has-error');
+                if(typeof data[i].Element !== 'undefined') {
+                    $('input[name=' + data[i].Element + ']').parent('dd').parent('dl').parent('.form-group').addClass('has-error');
+                }
             }
             if(data[i].type == 'success') {
             	window.onbeforeunload = null;

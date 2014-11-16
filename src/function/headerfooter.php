@@ -17,35 +17,45 @@ date_default_timezone_set('UTC');
                         <meta content="width=device-width, initial-scale=1.0" name="viewport">
                         <link href="css/font-awesome.css" rel="stylesheet">
                         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+                        <link rel="stylesheet" type="text/css" href="css/select2-bootstrap.css">
+                        <link rel="stylesheet" type="text/css" href="css/select2.css">
                         <link  href="img/uno.ico" rel="shortcut icon">
                         <script src="js/jQuery.js"></script>
                         <script src="js/bootstrap.js"></script>
+                        <script src="js/select2.js"></script>
 
                         <!-- END: CSS Includes -->
                         
                         <!-- Security -->
                         <!-- TODO: Need to add security view filters -->
-                        
-                        <?php
-                            global $login;
-                            if ($login->isUserLoggedIn() == true) {
-                                echo '
-                                <style>
+
+                        <style>
+                            <?php
+                                global $login;
+                                if ($login->isUserLoggedIn() == true): ?>
                                     .unauthinticated{
                                         display: none !important;
                                     }
-                                </style> ';
-                            }
-                            else {
-                                echo'
-                                <style>
+                                <?php else:?>
                                     .authinticated{
                                         display: none !important;
                                     }
-                                </style>';
-                            }
-                        ?>
-                        
+                                <?php endif; ?>
+                                <?php if(isset($_SESSION['security_type']) && $_SESSION['security_type'] == 'Student'): ?>
+                                    .sponsor,.staff {
+                                        display: none !important;
+                                    }
+                                <?php elseif($_SESSION['security_type'] == 'sponsor'):?>
+                                    .staff, .studentonly {
+                                        display: none !important;
+                                    }
+                                <?php else:?>
+                                    .sponsoronly, .studentonly {
+                                        display: none !important;
+                                    }
+                                <?php endif;?>
+                            ?>
+                        </style>
                         <!-- END: Security -->
                         
                         <?php 
@@ -85,22 +95,29 @@ date_default_timezone_set('UTC');
                                     <ul class="nav navbar-nav">
                                         <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
                                         <li class="dropdown authinticated">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Browse<span class="caret"></span></a>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Links<span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <!--  Student Links -->
                                                     <li><a href="user_profile_detail.php">My Profile</a></li>
                                                     <li><a href="student_project_detail.php">My Project</a></li>
-                                                    <li><a href="browse_forms.php">Forms</a></li>
+                                                    <li><a href="browse_forms.php">Forms (TODO)</a></li>
+                                                    <li><a href="browse_awards.php">Awards (TODO)</a></li>
+                                                    <li><a href="browse_events.php">Events (TODO)</a></li>
+                                                    <li><a href="browse_contacts.php">Contact Us (TODO)</a></li>
                                                 <!-- END: Student Links -->
 
                                                 <!-- Sponsor Links -->
                                                     <li class="divider sponsor"></li>
-                                                    <li class="sponsor"><a href="#">Separated link</a></li>
+                                                    <li class="sponsor"><a href="browse_students.php">Students (TODO)</a></li>
+                                                    <li class="sponsor"><a href="browse_students.php">Projects (TODO)</a></li>
+                                                    <li class="sponsor"><a href="browse_approvals.php">My Approvals (1) (TODO)</a></li>
                                                 <!-- END: Sponsor Links -->
 
                                                 <!-- Staff Links -->
                                                     <li class="divider staff"></li>
-                                                    <li class="staff"><a href="#">One more separated link</a></li>
+                                                    <li class="staff"><a href="form_create.php">Add Form (TODO)</a></li>
+                                                    <li class="staff"><a href="form_create.php">Add Event (TODO)</a></li>
+                                                    <li class="staff"><a href="award_create.php">Add Award</a></li>
                                                 <!-- END: Staff Links -->
                                             </ul>
                                         </li>

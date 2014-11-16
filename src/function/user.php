@@ -13,7 +13,10 @@
                        p.Electrical,
                        p.Description,
                        p.Abstract,
+                       sc.Name AS ProjectStatus,
+                       sc.Description AS ProjectStatusDescription,
                        u.*,
+                       u.Grade,
                        s.Id AS SchoolId,
                        s.Name AS SchoolName,
                        st.Name AS SecurityTypeName
@@ -24,6 +27,7 @@
                      LEFT OUTER JOIN login.users AS lu ON u.Email = lu.user_email
                      LEFT OUTER JOIN schools AS s ON u.school_id = s.id
                      LEFT OUTER JOIN security_types AS st ON u.security_type_id = st.id
+                     LEFT OUTER JOIN statuses AS sc ON p.status_id = sc.Id
                 WHERE 1 = 1";
 
         if(!empty($userEmail) && $userEmail != NULL) {
@@ -59,7 +63,7 @@
         mysql_close();
         return $insUser;
     }
-    
+
     function updateUser($userId, $firstName = "", $lastName = "", $email = "", $phoneNumber = "", $altPhoneNumber = "", $school = "", $grade = "", $address1 = "", $address2 = "", $city = "", $state = "", $zip = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -68,7 +72,7 @@
         $sql = "UPDATE users 
                 SET FirstName = '$firstName', LastName = '$lastName', Email = '$email', 
                     PhoneNumber = '$phoneNumber', AltPhoneNumber = '$altPhoneNumber', school_id =  $school, 
-                    Grade = $grade, Address1 = '$address1', Address2 = '$address2', City = '$city', State = '$state', Zip = '$zip'
+                    Grade = '$grade', Address1 = '$address1', Address2 = '$address2', City = '$city', State = '$state', Zip = '$zip'
                 WHERE Id = $userId";
 
         $updUser = mysql_query($sql);
@@ -81,7 +85,7 @@
         mysql_close();
         return $updUser;
     }
-    
+
     function updateUserParent($userId, $firstName = "", $lastName = "", $email = "", $phoneNumber = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
