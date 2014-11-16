@@ -60,7 +60,7 @@ date_default_timezone_set('UTC');
                     <!-- JS Includes -->
                     <?php
                     foreach(explode(',',$JS_Include) as $path) {
-                        echo '<script src="' . $path . '"></script>'; 
+                        echo '<script src="js/' . $path . '"></script>'; 
                     }
 
                     echo '<script type="text/javascript">' . $JS_String . '</script>';
@@ -112,11 +112,12 @@ date_default_timezone_set('UTC');
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
                         </nav>
+                        <div id="formSubmission" style="display:none; margin-bottom:20px;" class="col-md-3 col-md-offset-5"></div>
                     
     <?php } ?>
 
     <?php function incFooter() { ?>
-                <div class="footer" align="center">
+                <div class="col-md-12" align="center">
                 	<a href="http://www.facebook.com"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
                 	<a href="http://www.twitter.com"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
                     <p>
