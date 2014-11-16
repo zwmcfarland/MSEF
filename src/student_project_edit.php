@@ -19,21 +19,22 @@
             </div>
 
             <div class="panel-body">
+            	<form method="post" action="create_project.php">
                 <dl class="dl-horizontal">
                     <dt>Name</dt>
-                    <dd><?php echo $userInfo['Name']; ?></dd>
+                    <dd><input type="text" class="form-control" id="Name" placeholder="Enter Project Name"></dd>
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>Description</dt>
-                    <dd><?php echo $userInfo['Description']; ?></dd>
+                    <dd><textarea class="form-control" rows="3" id="Description" placeholder="Enter Project Description"></textarea></dd>
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>Need Electric</dt>
-                    <dd><?php echo $userInfo['Electrical']; ?></dd>
+                    <dd><input type="checkbox" id="Electric"></dd>
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>Abstract</dt>
-                    <dd><?php echo $userInfo['Abstract']; ?></dd>
+                    <dd><textarea class="form-control" rows="3" id="Absrtact" placeholder="Enter Project Abstract"></textarea></dd>
                 </dl>
             </div>
         </div>
