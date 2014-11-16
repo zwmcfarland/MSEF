@@ -25,27 +25,34 @@ date_default_timezone_set('UTC');
                         
                         <!-- Security -->
                         <!-- TODO: Need to add security view filters -->
-                        
-                        <?php
-                            global $login;
-                            if ($login->isUserLoggedIn() == true) {
-                                echo '
-                                <style>
+
+                        <style>
+                            <?php
+                                global $login;
+                                if ($login->isUserLoggedIn() == true): ?>
                                     .unauthinticated{
                                         display: none !important;
                                     }
-                                </style> ';
-                            }
-                            else {
-                                echo'
-                                <style>
+                                <?php else:?>
                                     .authinticated{
                                         display: none !important;
                                     }
-                                </style>';
-                            }
-                        ?>
-                        
+                                <?php endif; ?>
+                                <?php if(isset($_SESSION['security_type']) && $_SESSION['security_type'] == 'Student'): ?>
+                                    .sponsor,.staff {
+                                        display: none !important;
+                                    }
+                                <?php elseif($_SESSION['security_type'] == 'sponsor'):?>
+                                    .staff, .studentonly {
+                                        display: none !important;
+                                    }
+                                <?php else:?>
+                                    .sponsoronly, .studentonly {
+                                        display: none !important;
+                                    }
+                                <?php endif;?>
+                            ?>
+                        </style>
                         <!-- END: Security -->
                         
                         <?php 
@@ -90,17 +97,22 @@ date_default_timezone_set('UTC');
                                                 <!--  Student Links -->
                                                     <li><a href="user_profile_detail.php">My Profile</a></li>
                                                     <li><a href="student_project_detail.php">My Project</a></li>
-                                                    <li><a href="browse_forms.php">Forms</a></li>
+                                                    <li><a href="browse_forms.php">Forms (TODO)</a></li>
+                                                    <li><a href="browse_events.php">Events (TODO)</a></li>
+                                                    <li><a href="browse_contacts.php">Contact Us (TODO)</a></li>
                                                 <!-- END: Student Links -->
 
                                                 <!-- Sponsor Links -->
                                                     <li class="divider sponsor"></li>
-                                                    <li class="sponsor"><a href="#">Separated link</a></li>
+                                                    <li class="sponsor"><a href="browse_students.php">Students (TODO)</a></li>
+                                                    <li class="sponsor"><a href="browse_students.php">Projects (TODO)</a></li>
+                                                    <li class="sponsor"><a href="browse_approvals.php">My Approvals (1) (TODO)</a></li>
                                                 <!-- END: Sponsor Links -->
 
                                                 <!-- Staff Links -->
                                                     <li class="divider staff"></li>
-                                                    <li class="staff"><a href="#">One more separated link</a></li>
+                                                    <li class="staff"><a href="form_create.php">Add Form (TODO)</a></li>
+                                                    <li class="staff"><a href="form_create.php">Add Event (TODO)</a></li>
                                                 <!-- END: Staff Links -->
                                             </ul>
                                         </li>

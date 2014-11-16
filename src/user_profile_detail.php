@@ -53,9 +53,13 @@
                     <dt>School</dt>
                     <dd><?php echo $userInfo['SchoolName']; ?></dd>
                 </dl>
+                <dl class="dl-horizontal sponsor">
+                    <dt>Position</dt>
+                    <dd><?php echo $userInfo['Position']; ?></dd>
+                </dl>
                 <dl class="dl-horizontal student">
                     <dt>Grade</dt>
-                    <dd><?php $userInfo['Grade']; ?>th</dd>
+                    <dd><?php echo $userInfo['Grade']; ?>th</dd>
                 </dl>
                 <dl class="dl-horizontal student">
                     <dt>Address 1</dt>
@@ -122,14 +126,19 @@
                             <td style="color: #d9534f;"><?php echo $row['FormName']; ?></td>
                         </tr>
                     <?php endwhile;?>
+                    <?php if(mysql_num_rows($forms) == 0):?>
+                        <tr>
+                            <td>You currently don't have any required forms.</td>
+                        </tr>
+                    <?php endif;?>
                 </tbody>
             </table>
         </div>
     </div>
-    <!-- END: Project Detials -->
+    <!-- END: Form Detials -->
 
     <!-- Parent Detials -->
-    <div class="col-md-6 studentonly">
+    <div class="col-md-6 student studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Parent Information</h3>

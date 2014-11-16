@@ -16,6 +16,7 @@
                        sc.Name AS ProjectStatus,
                        sc.Description AS ProjectStatusDescription,
                        u.*,
+                       u.Grade,
                        s.Id AS SchoolId,
                        s.Name AS SchoolName,
                        st.Name AS SecurityTypeName
@@ -71,7 +72,7 @@
         $sql = "UPDATE users 
                 SET FirstName = '$firstName', LastName = '$lastName', Email = '$email', 
                     PhoneNumber = '$phoneNumber', AltPhoneNumber = '$altPhoneNumber', school_id =  $school, 
-                    Grade = $grade, Address1 = '$address1', Address2 = '$address2', City = '$city', State = '$state', Zip = '$zip'
+                    Grade = '$grade', Address1 = '$address1', Address2 = '$address2', City = '$city', State = '$state', Zip = '$zip'
                 WHERE Id = $userId";
 
         $updUser = mysql_query($sql);
