@@ -1,5 +1,5 @@
 <?php
-	// include the configs / constants for the database connection
+    // include the configs / constants for the database connection
 include("./php-login-minimal-master/config/db.php");
 
 // load the login class
@@ -9,7 +9,7 @@ $login = new Login();
 date_default_timezone_set('UTC');
     function incHeader($title = "", $JS_String = "", $JS_Include = "", $CSS_Include = "", $CSS_String = "", $MenuFlag = "true") {
         ?>
-            <!DOCTYPE html>
+            <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
                 <html> 
                     <head>
                         <meta charset="utf-8">
@@ -27,23 +27,24 @@ date_default_timezone_set('UTC');
                         <!-- TODO: Need to add security view filters -->
                         
                         <?php
-                        
-                        global $login;
-                        if ($login->isUserLoggedIn() == true) {
-						    echo '
-						    <style>
-						    	.unauthinticated{
-						    		display: none !important;
-						    	}
-						    </style> ';
-						} else {
-							echo'
-						    <style>
-						    	.authinticated{
-						    		display: none !important;
-						    	}
-						    </style>';
-						}?>
+                            global $login;
+                            if ($login->isUserLoggedIn() == true) {
+                                echo '
+                                <style>
+                                    .unauthinticated{
+                                        display: none !important;
+                                    }
+                                </style> ';
+                            }
+                            else {
+                                echo'
+                                <style>
+                                    .authinticated{
+                                        display: none !important;
+                                    }
+                                </style>';
+                            }
+                        ?>
                         
                         <!-- END: Security -->
                         
@@ -94,15 +95,12 @@ date_default_timezone_set('UTC');
 
                                                 <!-- Sponsor Links -->
                                                     <li class="divider sponsor"></li>
-                                                    <li class="sponsor"><a href="#">All Projects</a></li>
-                                                    <li class="sponsor"><a href="#">Projects Pending Your Approval</a></li>
+                                                    <li class="sponsor"><a href="#">Separated link</a></li>
                                                 <!-- END: Sponsor Links -->
 
                                                 <!-- Staff Links -->
                                                     <li class="divider staff"></li>
-                                                    <li class="staff"><a href="#">List Projects</a></li>
-                                                    <li class="staff"><a href="#">Awards</a></li>
-                                                    <li class="staff"><a href="#">Categories</a></li>
+                                                    <li class="staff"><a href="#">One more separated link</a></li>
                                                 <!-- END: Staff Links -->
                                             </ul>
                                         </li>
@@ -121,8 +119,8 @@ date_default_timezone_set('UTC');
 
     <?php function incFooter() { ?>
                 <div class="col-md-12" align="center">
-                	<a href="http://www.facebook.com"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
-                	<a href="http://www.twitter.com"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
+                    <a href="http://www.facebook.com"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
+                    <a href="http://www.twitter.com"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
                     <p>
                         <small>Created as an University of Nebraska at Omaha Capstone Project</small>
                     </p>
