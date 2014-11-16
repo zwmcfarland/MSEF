@@ -63,7 +63,7 @@
         mysql_close();
         return $insUser;
     }
-    
+
     function updateUser($userId, $firstName = "", $lastName = "", $email = "", $phoneNumber = "", $altPhoneNumber = "", $school = "", $grade = "", $address1 = "", $address2 = "", $city = "", $state = "", $zip = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -85,7 +85,7 @@
         mysql_close();
         return $updUser;
     }
-    
+
     function updateUserParent($userId, $firstName = "", $lastName = "", $email = "", $phoneNumber = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

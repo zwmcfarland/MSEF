@@ -17,9 +17,12 @@ date_default_timezone_set('UTC');
                         <meta content="width=device-width, initial-scale=1.0" name="viewport">
                         <link href="css/font-awesome.css" rel="stylesheet">
                         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+                        <link rel="stylesheet" type="text/css" href="css/select2-bootstrap.css">
+                        <link rel="stylesheet" type="text/css" href="css/select2.css">
                         <link  href="img/uno.ico" rel="shortcut icon">
                         <script src="js/jQuery.js"></script>
                         <script src="js/bootstrap.js"></script>
+                        <script src="js/select2.js"></script>
 
                         <!-- END: CSS Includes -->
                         
@@ -92,12 +95,13 @@ date_default_timezone_set('UTC');
                                     <ul class="nav navbar-nav">
                                         <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
                                         <li class="dropdown authinticated">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Browse<span class="caret"></span></a>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Links<span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <!--  Student Links -->
                                                     <li><a href="user_profile_detail.php">My Profile</a></li>
                                                     <li><a href="student_project_detail.php">My Project</a></li>
                                                     <li><a href="browse_forms.php">Forms (TODO)</a></li>
+                                                    <li><a href="browse_awards.php">Awards (TODO)</a></li>
                                                     <li><a href="browse_events.php">Events (TODO)</a></li>
                                                     <li><a href="browse_contacts.php">Contact Us (TODO)</a></li>
                                                 <!-- END: Student Links -->
@@ -113,6 +117,7 @@ date_default_timezone_set('UTC');
                                                     <li class="divider staff"></li>
                                                     <li class="staff"><a href="form_create.php">Add Form (TODO)</a></li>
                                                     <li class="staff"><a href="form_create.php">Add Event (TODO)</a></li>
+                                                    <li class="staff"><a href="award_create.php">Add Award</a></li>
                                                 <!-- END: Staff Links -->
                                             </ul>
                                         </li>
