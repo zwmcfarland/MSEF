@@ -4,11 +4,11 @@
     incHeader('MSEF | Project', '', 'form.js');
     
     /* --- Queries --- */
-    $projectInfo = mysql_fetch_assoc(getProjectInformationByEmail($_SESSION['user_email']));
     /* --- END: Queries ---*/
     
     /* --- Security --- */
     /* --- END: Security --- */
+    echo $_SESSION['user_id'];
 ?>
 
 <!-- Script -->
@@ -19,6 +19,7 @@
     </script>
 <!-- END: Script -->
 
+
 <div class="col-lg-12">
     <!-- Users Detials -->
     <div class="col-md-6 col-md-offset-3">
@@ -28,30 +29,29 @@
             </div>
 
             <div class="panel-body">
-            	<form style="padding-top: 10px;" action="student_project_edit_action.php" method="post" enctype="multipart/form-data" id="newBrdForm" target="formSubFrame" onsubmit="formSubmit()">
-                <input type="hidden" name="ProjectId"  value="<?php echo $projectInfo['Id']; ?>"/> 
+            	<form style="padding-top: 10px;" action="student_project_create_action.php" method="post" enctype="multipart/form-data" id="newBrdForm" target="formSubFrame" onsubmit="formSubmit()">
                 <div class="form-group">
 	                <dl class="dl-horizontal">
 	                    <dt>Name</dt>
-	                    <dd><input type="text" class="form-control" name="ProjectName" value="<?php echo $projectInfo['Name']; ?>" placeholder="Enter Project Name"></dd>
+	                    <dd><input type="text" class="form-control" name="ProjectName" placeholder="Enter Project Name"></dd>
 	                </dl>
                 </div>
                 <div class="form-group">
 	                <dl class="dl-horizontal">
 	                    <dt>Description</dt>
-	                    <dd><textarea class="form-control" name="Description" placeholder="Enter Project Description"><?php echo $projectInfo['Description']; ?></textarea></dd>
+	                    <dd><textarea class="form-control" name="Description" placeholder="Enter Project Description"></textarea></dd>
 	                </dl>
                 </div>
                 <div class="form-group">
 	                <dl class="dl-horizontal">
 	                    <dt>Abstract</dt>
-	                    <dd><textarea class="form-control" name="Abstract" placeholder="Enter Project Abstract"><?php echo $projectInfo['Abstract']; ?></textarea></dd>
+	                    <dd><textarea class="form-control" name="Abstract" placeholder="Enter Project Abstract"></textarea></dd>
 	                </dl>
                 </div>
                 <div class="form-group">
 	                <dl class="dl-horizontal">
 	                    <dt>Electrical</dt>
-	                    <dd><input type="checkbox" name="Electrical" <?php echo $projectInfo['Electrical'] ? "checked=checked":""; ?>></dd>
+	                    <dd><input type="checkbox" name="Electrical"></dd>
 	                </dl>
                 </div>
                 <div class="form-group" align="center">

@@ -4,7 +4,8 @@
     incHeader('MSEF | Home');
     
     /* --- Queries --- */
-    $projectInfo = mysql_fetch_assoc(getProjectInformation($_GET['projectId']));
+    //note - we should only be doing this call if user is an admin, otherwise we should do a query based on user ID to find their associated project
+    $projectInfo = mysql_fetch_assoc(getProjectInformationByEmail($_SESSION['user_email']));
     /* --- END: Queries ---*/
     
     /* --- Security --- */
