@@ -1,6 +1,6 @@
 <?php
     include("function/headerfooter.php");
-    include("function/user.php");
+    include_once("function/user.php");
     incHeader('MSEF | Home');
     
     /* --- Queries --- */
