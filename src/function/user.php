@@ -13,6 +13,8 @@
                        p.Electrical,
                        p.Description,
                        p.Abstract,
+                       sc.Name AS ProjectStatus,
+                       sc.Description AS ProjectStatusDescription,
                        u.*,
                        s.Id AS SchoolId,
                        s.Name AS SchoolName,
@@ -24,6 +26,7 @@
                      LEFT OUTER JOIN login.users AS lu ON u.Email = lu.user_email
                      LEFT OUTER JOIN schools AS s ON u.school_id = s.id
                      LEFT OUTER JOIN security_types AS st ON u.security_type_id = st.id
+                     LEFT OUTER JOIN statuses AS sc ON p.status_id = sc.Id
                 WHERE 1 = 1";
 
         if(!empty($userEmail) && $userEmail != NULL) {

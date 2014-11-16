@@ -1,10 +1,12 @@
 <?php
     include_once("function/headerfooter.php");
     include_once("function/user.php");
-    incHeader('MSEF | Home');
+    include_once("function/form.php");
+    incHeader('MSEF | Profile');
     
     /* --- Queries --- */
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
+    $forms = getStudentForms($_SESSION['user_id']);
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -88,11 +90,18 @@
             </div>
             <table class="table">
                 <tbody>
-                    <tr>
-                        <td><a href="student_project_detail.php">Volcano</a></td>
-                        <td>Abstract</td>
-                        <td align="center">Submitted</td>
-                    </tr>
+                    <?php if($userInfo['ProjectName'] != ''):?>
+                        <tr>
+                            <td><a href="student_project_detail.php"><?php echo $userInfo['ProjectName']; ?></a></td>
+                            <td><?php echo $userInfo['Description']; ?></td>
+                            <td align="center" title="<?php echo $userInfo['ProjectStatusDescription']; ?>><?php echo $userInfo['ProjectStatus']; ?></td>
+                        </tr>
+                    <?php else:?>
+                        <tr>
+                            <td>No Projects.</td>
+                            <td><a href="project_add.php">Create New Project</a></td>
+                        </tr>
+                    <?php endif;?>
                 </tbody>
             </table>
         </div>
@@ -107,16 +116,12 @@
             </div>
             <table class="table">
                 <tbody>
-                    <tr>
-                        <td><a href="#">Science Fair Entry Form</a></td>
-                        <td>Form required to participate in the science fair.</td>
-                        <td style="color: #d9534f;">Required</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">Live Animal Form</a></td>
-                        <td>Form required to use live animals in your project.</td>
-                        <td style="color: #5cb85c;">Complete</td>
-                    </tr>
+                    <?php while($row = mysql_fetch_assoc($forms)):?>
+                        <tr>
+                            <td><a href="form_detail.php?formId=<?php echo $row['form_id']; ?>"><?php echo $row['FormName']; ?></a></td>
+                            <td style="color: #d9534f;"><?php echo $row['FormName']; ?></td>
+                        </tr>
+                    <?php endwhile;?>
                 </tbody>
             </table>
         </div>
