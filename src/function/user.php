@@ -11,12 +11,14 @@
                        u.*,
                        p.*,
                        s.Id AS SchoolId,
-                       s.Name AS SchoolName
+                       s.Name AS SchoolName,
+                       st.Name AS SecurityTypeName
                 FROM users as u
                      LEFT OUTER JOIN studentProjects AS sp ON u.Id = sp.student_id
                      LEFT OUTER JOIN projects AS p ON sp.project_id = p.Id
                      LEFT OUTER JOIN login.users AS lu ON u.Email = lu.user_email
                      LEFT OUTER JOIN schools AS s ON u.school_id = s.id
+                     LEFT OUTER JOIN security_types AS st ON u.security_type_id = st.id
                 WHERE 1 = 1";
 
         if(!empty($userEmail) && $userEmail != NULL) {
