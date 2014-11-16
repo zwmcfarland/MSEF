@@ -74,4 +74,24 @@
         mysql_close();
         return $updUser;
     }
+    
+    function updateUserParent($userId, $firstName = "", $lastName = "", $email = "", $phoneNumber = "") {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+        
+        $sql = "UPDATE users
+                SET ParentFirstName  = '$firstName', ParentLastName  = '$lastName', ParentEmail  = '$email',ParentPhoneNumber  = '$phoneNumber'
+                WHERE Id = $userId";
+        
+        $updUser = mysql_query($sql);
+        
+        if(mysql_error()) {
+            echo "Failed to update user " . mysql_error();
+            exit;
+        }
+        
+        mysql_close();
+        return $updUser;
+    }
 ?>
