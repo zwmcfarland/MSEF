@@ -103,7 +103,7 @@
                     <?php else:?>
                         <tr>
                             <td>No Projects.</td>
-                            <td><a href="project_add.php">Create New Project</a></td>
+                            <td><a href="student_project_create.php">Create New Project</a></td>
                         </tr>
                     <?php endif;?>
                 </tbody>

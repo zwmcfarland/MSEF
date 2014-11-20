@@ -85,9 +85,10 @@
                             $_SESSION['user_email'] = $result_row->user_email;
                             $_SESSION['user_login_status'] = 1;
                             
-                            $userInfo = getUserInformation($user_email);
-                            $_SESSION['user_id'] = mysql_fetch_assoc($userInfo)['UserId'];
-                            $_SESSION['security_type'] = mysql_fetch_assoc($userInfo)['SecurityTypeName'];
+                            $userInfo = getUserInformation($_SESSION['user_email']);
+							$fetch = mysql_fetch_assoc($userInfo);
+                            $_SESSION['user_id'] = $fetch['UserId'];
+                            $_SESSION['security_type'] = $fetch['SecurityTypeName'];
     
                         } else {
                             $this->errors[] = "Wrong password. Try again.";

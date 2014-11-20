@@ -8,7 +8,7 @@
     
     /* --- Security --- */
     /* --- END: Security --- */
-    echo $_SESSION['user_id'];
+    echo $_SESSION['user_id']
 ?>
 
 <!-- Script -->
@@ -30,6 +30,7 @@
 
             <div class="panel-body">
             	<form style="padding-top: 10px;" action="student_project_create_action.php" method="post" enctype="multipart/form-data" id="newBrdForm" target="formSubFrame" onsubmit="formSubmit()">
+                <input type="hidden" name="User_Id"  value="<?php echo $_SESSION['user_id']; ?>"/> 
                 <div class="form-group">
 	                <dl class="dl-horizontal">
 	                    <dt>Name</dt>

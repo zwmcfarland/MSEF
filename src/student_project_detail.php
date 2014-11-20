@@ -10,6 +10,8 @@
     
     /* --- Security --- */
     /* --- END: Security --- */
+    echo $_SESSION['user_email'];
+    echo $_SESSION['user_id'];
 ?>
 <?php if(isset($_GET['message'])):?>
     <div style="margin-bottom:20px;min-height:40px;text-align:center;" class="bg-success col-md-3 col-md-offset-5">

@@ -39,13 +39,13 @@
                     <div class="form-group">
     	                <dl class="dl-horizontal">
     	                    <dt>Description</dt>
-    	                    <dd><input type="text" class="form-control" name="Description" value="<?php echo $projectInfo['Description']; ?>" placeholder="Enter Project Name"></dd>
+    	                    <dd><textarea class="form-control" name="Description" placehoder="Enter Project Description"><?php echo $projectInfo['Description']; ?></textarea></dd>
     	                </dl>
                     </div>
                     <div class="form-group">
     	                <dl class="dl-horizontal">
     	                    <dt>Abstract</dt>
-    	                    <dd><input type="text" class="form-control" name="Abstract" value="<?php echo $projectInfo['Abstract']; ?>" placeholder="Enter Project Name"></dd>
+    	                    <dd><textarea class="form-control" name="Abstract" placeholder="Enter Project Abstract"><?php echo $projectInfo['Abstract']; ?>"</textarea></dd>
     	                </dl>
                     </div>
                     <div class="form-group">
