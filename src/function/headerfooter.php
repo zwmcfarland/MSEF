@@ -139,6 +139,9 @@ date_default_timezone_set('UTC');
                     <a href="http://www.facebook.com"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
                     <a href="http://www.twitter.com"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
                     <p>
+                        <small><a>Contact Us</a></small>
+                    </p>
+                    <p>
                         <small>Created as an University of Nebraska at Omaha Capstone Project</small>
                     </p>
                 </div>
