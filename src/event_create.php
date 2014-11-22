@@ -14,7 +14,6 @@
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
-
         $("#keywordTg").select2({tags:["red", "green", "blue"]});
     </script>
 <!-- END: Script -->
@@ -35,30 +34,38 @@
                             <dd><input type="text" class="form-control" name="eventName" placeholder="Event Name"></dd>
                         </dl>
                     </div>
-                    <div class="form-group">
-                        <dl class="dl-horizontal">
-                            <dt>Start Date</dt>
-                               <dd><input type="date" class="form-control" name="startDate"></dd>
-                               <dd><input type="time" class="form-control" name="startTime"></dd>
-                        </dl>
-                    </div>
-                    <div class="form-group">
-                        <dl class="dl-horizontal">
-                            <dt>End Date</dt>
-                            <dd><input type="date" class="form-control" name="endDate"></dd>
-                            <dd><input type="time" class="form-control" name="endTime"></dd>
-                        </dl>
-                    </div>
-                    <div class="form-group">
+                     <div class="form-group">
                         <dl class="dl-horizontal">
                             <dt>Description</dt>
-                            <dd><input type="text" class="form-control" name="description" placeholder="Event Name"></dd>
+                            <dd><textarea class="form-control" name="location" placeholder="Event Description"></textarea></dd>
                         </dl>
                     </div>
                     <div class="form-group">
                         <dl class="dl-horizontal">
                             <dt>Location</dt>
-                            <dd><input type="text" class="form-control" name="location" placeholder="Event Name"></dd>
+                            <dd><textarea class="form-control" name="location" placeholder="Event Location"></textarea></dd>
+                        </dl>
+                    </div>
+                    <div class="form-group">
+                        <dl class="dl-horizontal">
+                            <dt>Start Date</dt>
+                               <dd>
+                                   <div class="form-inline">
+                                       <input type="date" class="form-control" name="startDate">
+                                       <input type="time" class="form-control" name="startTime">
+                                   </div>
+                               </dd>
+                        </dl>
+                    </div>
+                    <div class="form-group">
+                        <dl class="dl-horizontal">
+                            <dt>End Date</dt>
+                            <dd>
+                                <div class="form-inline">
+                                    <input type="date" class="form-control" name="endDate">
+                                    <input type="time" class="form-control" name="endTime">
+                                </div>
+                            </dd>
                         </dl>
                     </div>
                     <div class="form-group" align="center">

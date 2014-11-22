@@ -1,14 +1,14 @@
 <?php
     include("function/headerfooter.php");
-    include("function/awards.php");
-    incHeader('MSEF | Award');
+    include("function/event.php");
+    incHeader('MSEF | Event');
 
     /* --- Params --- */
-    $awardId = $_GET['awardId'];
+    $eventId = $_GET['eventId'];
     /* --- END: Params --- */
 
     /* --- Queries --- */
-    $qryAward = mysql_fetch_assoc(getAward($awardId));
+    $qryEvent = mysql_fetch_assoc(getEvents($eventId));
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -23,21 +23,29 @@
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title" style="display:inline-block">Award Information</h3><a href="award_edit.php?awardId=<?php echo $awardId;?>" class="staff"><i style="float:right" class="fa fa-pencil-square-o fa-2x"></i></a>
+                <h3 class="panel-title" style="display:inline-block">Event Information</h3><a href="event_edit.php?eventId=<?php echo $eventId;?>" class="staff"><i style="float:right" class="fa fa-pencil-square-o fa-2x"></i></a>
             </div>
 
             <div class="panel-body">
                 <dl class="dl-horizontal">
                     <dt>Name</dt>
-                    <dd><?php echo $qryAward['Name']; ?></dd>
+                    <dd><?php echo $qryEvent['Name']; ?></dd>
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>Description</dt>
-                    <dd><?php echo $qryAward['Description']; ?></dd>
+                    <dd><?php echo $qryEvent['Description']; ?></dd>
                 </dl>
                 <dl class="dl-horizontal">
-                    <dt>Reward</dt>
-                    <dd><?php echo $qryAward['Reward']; ?></dd>
+                    <dt>Location</dt>
+                    <dd><?php echo $qryEvent['Location']; ?></dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>Start Date</dt>
+                    <dd><?php echo $qryEvent['StartDate']; ?></dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>End Date</dt>
+                    <dd><?php echo $qryEvent['EndDate']; ?></dd>
                 </dl>
             </div>
         </div>
