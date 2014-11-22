@@ -101,7 +101,7 @@ date_default_timezone_set('UTC');
                                                     <li><a href="user_profile_detail.php">My Profile</a></li>
                                                     <li><a href="student_project_detail.php">My Project</a></li>
                                                     <li><a href="browse_forms.php">Forms (TODO)</a></li>
-                                                    <li><a href="browse_awards.php">Awards (TODO)</a></li>
+                                                    <li><a href="browse_awards.php">Awards</a></li>
                                                     <li><a href="browse_events.php">Events (TODO)</a></li>
                                                     <li><a href="browse_contacts.php">Contact Us (TODO)</a></li>
                                                 <!-- END: Student Links -->
@@ -116,7 +116,7 @@ date_default_timezone_set('UTC');
                                                 <!-- Staff Links -->
                                                     <li class="divider staff"></li>
                                                     <li class="staff"><a href="form_create.php">Add Form (TODO)</a></li>
-                                                    <li class="staff"><a href="form_create.php">Add Event (TODO)</a></li>
+                                                    <li class="staff"><a href="event_create.php">Add Event</a></li>
                                                     <li class="staff"><a href="award_create.php">Add Award</a></li>
                                                 <!-- END: Staff Links -->
                                             </ul>

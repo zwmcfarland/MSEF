@@ -1,6 +1,6 @@
 <?php
     include("function/headerfooter.php");
-    incHeader('MSEF | Awards', '', 'form.js');
+    incHeader('MSEF | Events', '', 'form.js');
     
     /* --- Queries --- */
     /* --- END: Queries ---*/
@@ -24,37 +24,39 @@
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title" style="display:inline-block">Award Information</h3>
+                <h3 class="panel-title" style="display:inline-block">Event Information</h3>
             </div>
 
             <div class="panel-body">
-                <form style="padding-top: 10px;" action="form_create_action" method="post" enctype="multipart/form-data" id="newFormfrm" target="formSubFrame" onsubmit="formSubmit()">
+                <form style="padding-top: 10px;" action="event_create_action.php" method="post" enctype="multipart/form-data" id="newFormfrm" target="formSubFrame" onsubmit="formSubmit()">
                     <div class="form-group">
                         <dl class="dl-horizontal">
                             <dt>Name</dt>
-                            <dd><input type="text" class="form-control" name="FormName" placeholder="Award Name"></dd>
+                            <dd><input type="text" class="form-control" name="eventName" placeholder="Event Name"></dd>
+                        </dl>
+                    </div>
+                    <div class="form-group">
+                        <dl class="dl-horizontal">
+                            <dt>Start Date</dt>
+                               <dd><input type="datetime" class="form-control" name="startDate" placeholder="Event Name"></dd>
+                        </dl>
+                    </div>
+                    <div class="form-group">
+                        <dl class="dl-horizontal">
+                            <dt>End Date</dt>
+                            <dd><input type="datetime" class="form-control" name="endDate" placeholder="Event Name"></dd>
                         </dl>
                     </div>
                     <div class="form-group">
                         <dl class="dl-horizontal">
                             <dt>Description</dt>
-                            <dd>
-                               <textarea class="form-control" name="Description" placeholder="Award Description"></textarea>
-                            </dd>
+                            <dd><input type="text" class="form-control" name="description" placeholder="Event Name"></dd>
                         </dl>
                     </div>
                     <div class="form-group">
                         <dl class="dl-horizontal">
-                            <dt>Reward</dt>
-                            <dd><textarea class="form-control" name="Reward" placeholder="Reward"></textarea></dd>
-                        </dl>
-                    </div>
-                    <div class="form-group">
-                        <dl class="dl-horizontal">
-                            <dt title="Used to nominate projects for awards.">Keywords</dt>
-                            <dd>
-                                <input type="hidden" name="Keywords" id="keywordTg">
-                            </dd>
+                            <dt>Location</dt>
+                            <dd><input type="text" class="form-control" name="location" placeholder="Event Name"></dd>
                         </dl>
                     </div>
                     <div class="form-group" align="center">
