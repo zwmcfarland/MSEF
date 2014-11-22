@@ -9,7 +9,19 @@
     /* --- END: Security --- */
 ?>
 <div class="col-lg-12">
-    <div class="col-lg-5 col-md-offset-6">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Signing Up</h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                    To take part in the Metro area science fair, start by creating an account on this website, then create a project. From there you will be required to fill out a few forms.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">About</h3>
