@@ -14,7 +14,6 @@
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
-
         $("#keywordTg").select2({tags:["red", "green", "blue"]});
     </script>
 <!-- END: Script -->
@@ -38,13 +37,15 @@
                     <div class="form-group">
                         <dl class="dl-horizontal">
                             <dt>Start Date</dt>
-                               <dd><input type="datetime" class="form-control" name="startDate" placeholder="Event Name"></dd>
+                               <dd><input type="date" class="form-control" name="startDate"></dd>
+                               <dd><input type="time" class="form-control" name="startTime"></dd>
                         </dl>
                     </div>
                     <div class="form-group">
                         <dl class="dl-horizontal">
                             <dt>End Date</dt>
-                            <dd><input type="datetime" class="form-control" name="endDate" placeholder="Event Name"></dd>
+                            <dd><input type="date" class="form-control" name="endDate"></dd>
+                            <dd><input type="time" class="form-control" name="endTime"></dd>
                         </dl>
                     </div>
                     <div class="form-group">
