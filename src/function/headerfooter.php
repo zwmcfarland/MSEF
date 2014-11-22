@@ -104,7 +104,7 @@ date_default_timezone_set('UTC');
                                                     <li><a href="browse_forms.php">Forms</a></li>
                                                     <li><a href="browse_awards.php">Awards</a></li>
                                                     <li><a href="browse_events.php">Events</a></li>
-                                                    <li><a href="browse_contacts.php">Contact Us (TODO)</a></li>
+                                                    <li><a href="browse_contacts.php">Contact Us</a></li>
                                                 <!-- END: Student Links -->
 
                                                 <!-- Sponsor Links -->
@@ -136,14 +136,12 @@ date_default_timezone_set('UTC');
     <?php } ?>
 
     <?php function incFooter() { ?>
+                <hr>
                 <div class="col-md-12" align="center">
                     <a href="http://www.facebook.com"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
                     <a href="http://www.twitter.com"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
-                    <p>
+                    <p style="margin-top:10px;">
                         <small><a>Contact Us</a></small>
-                    </p>
-                    <p>
-                        <small>Created as an University of Nebraska at Omaha Capstone Project</small>
                     </p>
                 </div>
             </body>
