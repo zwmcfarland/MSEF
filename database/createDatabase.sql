@@ -42,7 +42,7 @@ CREATE TABLE projectCatagories (
    category_id INT NOT NULL,
    FOREIGN KEY (project_id) REFERENCES projects(Id),
    FOREIGN KEY (project_id) REFERENCES categories(Id)
-);
+)ENGINE=MyISAM;
 
 CREATE TABLE awards (
   Id INT NOT NULL AUTO_INCREMENT, 
