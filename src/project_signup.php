@@ -1,13 +1,13 @@
 <?php
     include("function/headerfooter.php");
-    include("function/form.php");
+    include("function/project.php");
     incHeader('MSEF | Award');
 
     /* --- Params --- */
     /* --- END: Params --- */
 
     /* --- Queries --- */
-    $qryAward = getForms();
+    $qryProjects = getschoolProjects($_SESSION['user_id']);
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -18,11 +18,12 @@
         <?php echo $_GET['message']; ?>
     </div>
 <?php endif;?>
+<?php echo $_SESSION['user_id'];?>
 <div class="col-lg-12">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title" style="display:inline-block">Foms</h3>
+                <h3 class="panel-title" style="display:inline-block">Awards</h3>
             </div>
 
             <div class="panel-body">
@@ -30,21 +31,25 @@
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Description</th>
+                            <th>Members</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while($row = mysql_fetch_assoc($qryAward)):?>
+                        <?php while($row = mysql_fetch_assoc($qryProjects)):?>
                             <tr>
-                                <td><?php echo $row['Name']; ?></td>
+                                <td><?php echo $row['projectname']; ?></td>
+                                <td><?php echo $row['projectDescription']; ?></td>
+                                <td><?php echo $row['numMembers']; ?></td>
                                 <td>
-                                    <a href="form_detail.php?formId=<?php echo $row['Id']; ?>">View</a>
+                                    <a href="project_signup_action.php?projectId=<?php echo $row['projectId']; ?>">Sign Up</a>
                                 </td>
                             </tr>
                         <?php endwhile;?>
-                        <?php if(mysql_num_rows($qryAward) == 0):?>
+                        <?php if(mysql_num_rows($qryProjects) == 0):?>
                             <tr>
-                                <td colspan="2">There aren't currently any forms</td>
+                                <td colspan="4">There aren't currently any projects at your school.</td>
                             </tr>
                         <?php endif;?>
                     </tbody>

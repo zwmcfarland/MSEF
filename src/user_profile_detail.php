@@ -19,7 +19,7 @@
 <?php endif;?>
 <div class="col-lg-12">
     <!-- Users Detials -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Profile Information</h3>
@@ -87,33 +87,35 @@
     <!-- END: Users Detials -->
 
     <!-- Project Detials -->
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Projects</h3>
             </div>
-            <table class="table">
-                <tbody>
-                    <?php if($userInfo['ProjectName'] != ''):?>
-                        <tr>
-                            <td><a href="student_project_detail.php"><?php echo $userInfo['ProjectName']; ?></a></td>
-                            <td><?php echo $userInfo['Description']; ?></td>
-                            <td align="center" title="<?php echo $userInfo['ProjectStatusDescription']; ?>><?php echo $userInfo['ProjectStatus']; ?></td>
-                        </tr>
-                    <?php else:?>
-                        <tr>
-                            <td>No Projects.</td>
-                            <td><a href="student_project_create.php">Create New Project</a></td>
-                        </tr>
-                    <?php endif;?>
-                </tbody>
-            </table>
+            <div class="panel-body">
+                <?php if($userInfo['ProjectName'] != ''):?>
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd><a href="student_project_detail.php"><?php echo $userInfo['ProjectName']; ?></a></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Description</dt>
+                        <dd><?php echo $userInfo['Description']; ?></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Status</dt>
+                        <dd title="<?php echo $userInfo['ProjectStatusDescription']; ?>"><?php echo $userInfo['ProjectStatus']; ?></dd>
+                    </dl>
+                <?php else:?>
+                    <p>Looks like you aren't a part of any projects yet, you can either join an existing project <a href="project_signup.php">here</a>, or you can create your own project <a href="student_project_create.php">here</a>.</p>
+                <?php endif;?>
+            </div>
         </div>
     </div>
     <!-- END: Project Detials -->
 
     <!-- Form Detials -->
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Forms</h3>
@@ -138,7 +140,7 @@
     <!-- END: Form Detials -->
 
     <!-- Parent Detials -->
-    <div class="col-md-6 student studentonly">
+    <div class="col-md-8 student studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Parent Information</h3>

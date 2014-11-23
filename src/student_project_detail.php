@@ -5,13 +5,12 @@
     
     /* --- Queries --- */
     //note - we should only be doing this call if user is an admin, otherwise we should do a query based on user ID to find their associated project
-    $projectInfo = mysql_fetch_assoc(getProjectInformationByEmail($_SESSION['user_email']));
+    $qryProject = getProjectInformationByEmail($_SESSION['user_email']);
+    $projectInfo = mysql_fetch_assoc($qryProject);
     /* --- END: Queries ---*/
     
     /* --- Security --- */
     /* --- END: Security --- */
-    echo $_SESSION['user_email'];
-    echo $_SESSION['user_id'];
 ?>
 <?php if(isset($_GET['message'])):?>
     <div style="margin-bottom:20px;min-height:40px;text-align:center;" class="bg-success col-md-3 col-md-offset-5">
@@ -24,36 +23,40 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Project Information</h3>
-                <a href="student_project_edit.php?projectId=<?php echo $projectInfo['Id']?>" title="Edit Project">
-                    <i class="fa fa-edit fa-2x" style="float:right;display:inline-block;"></i>
-                </a>
+                <?php if(mysql_num_rows($qryProject) != 0): ?>
+                    <a href="student_project_edit.php?projectId=<?php echo $projectInfo['Id']?>" title="Edit Project">
+                        <i class="fa fa-edit fa-2x" style="float:right;display:inline-block;"></i>
+                    </a>
+                <?php endif;?>
             </div>
 
             <div class="panel-body">
-                <dl class="dl-horizontal student">
-                    <dt>Name</dt>
-                    <dd><?php echo $projectInfo['Name']; ?></dd>
-                </dl>
-            
-                <dl class="dl-horizontal student">
-                    <dt>Status</dt>
-                    <dd><?php echo $projectInfo['statusName']; ?></dd>
-                </dl>
-                
-                <dl class="dl-horizontal student">
-                    <dt>Description</dt>
-                    <dd><?php echo $projectInfo['Description']; ?></dd>
-                </dl>
-                
-                <dl class="dl-horizontal student">
-                    <dt>Abstract</dt>
-                    <dd><?php echo $projectInfo['Abstract']; ?></dd>
-                </dl>
-                
-                <dl class="dl-horizontal student">
-                    <dt>Electrical</dt>
-                    <dd><?php echo $projectInfo['Electrical'] ? "Yes" : "No" ;?></dd>
-                </dl>
+                <?php if(mysql_num_rows($qryProject) != 0): ?>
+                    <dl class="dl-horizontal student">
+                        <dt>Name</dt>
+                        <dd><?php echo $projectInfo['Name']; ?></dd>
+                    </dl>
+                    <dl class="dl-horizontal student">
+                        <dt>Status</dt>
+                        <dd><?php echo $projectInfo['statusName']; ?></dd>
+                    </dl>
+                    <dl class="dl-horizontal student">
+                        <dt>Description</dt>
+                        <dd><?php echo $projectInfo['Description']; ?></dd>
+                    </dl>
+                    
+                    <dl class="dl-horizontal student">
+                        <dt>Abstract</dt>
+                        <dd><?php echo $projectInfo['Abstract']; ?></dd>
+                    </dl>
+                    
+                    <dl class="dl-horizontal student">
+                        <dt>Electrical</dt>
+                        <dd><?php echo $projectInfo['Electrical'] ? "Yes" : "No" ;?></dd>
+                    </dl>
+                <?php else:?>
+                    <p>Looks like you aren't a part of any projects yet, you can either join an existing project <a href="project_signup.php">here</a>, or you can create your own project <a href="student_project_create.php">here</a>.</p>
+                <?php endif;?>
             </div>
         </div>
     </div>
