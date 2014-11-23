@@ -24,8 +24,9 @@ CREATE TABLE projects (
   Description VARCHAR(1000) NOT NULL, 
   Abstract VARCHAR(1000) NOT NULL, 
   PRIMARY KEY(Id), 
-  FOREIGN KEY (status_id) REFERENCES statuses(Id)
-);
+  FOREIGN KEY (status_id) REFERENCES statuses(Id),
+  FULLTEXT INDEX (Name, Description, Abstract)
+) ENGINE=MyISAM;
 
 CREATE TABLE categories (
   Id INT NOT NULL AUTO_INCREMENT, 
@@ -41,7 +42,7 @@ CREATE TABLE projectCatagories (
    category_id INT NOT NULL,
    FOREIGN KEY (project_id) REFERENCES projects(Id),
    FOREIGN KEY (project_id) REFERENCES categories(Id)
-);
+)ENGINE=MyISAM;
 
 CREATE TABLE awards (
   Id INT NOT NULL AUTO_INCREMENT, 
@@ -111,13 +112,13 @@ CREATE TABLE users (
     FirstName VARCHAR(255) NOT NULL,
     LastName VARCHAR(255) NOT NULL,
     PhoneNumber VARCHAR(11) NOT NULL,
-    school_id INT NOT NULL,
+    school_id INT NULL,
     Grade VARCHAR(200) NULL,
     ParentFirstName VARCHAR(255) NULL,
     ParentLastName VARCHAR(255) NULL,
     ParentPhoneNumber VARCHAR(255) NULL,
     ParentEmail VARCHAR(500) NULL,
-    security_type_id INT NOT NULL,
+    security_type_id INT NULL,
     Email VARCHAR(500) NOT NULL,
     Password VARCHAR(100) NOT NULL,
     AltPhoneNumber VARCHAR(11) NULL,
