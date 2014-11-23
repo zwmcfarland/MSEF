@@ -24,8 +24,9 @@ CREATE TABLE projects (
   Description VARCHAR(1000) NOT NULL, 
   Abstract VARCHAR(1000) NOT NULL, 
   PRIMARY KEY(Id), 
-  FOREIGN KEY (status_id) REFERENCES statuses(Id)
-);
+  FOREIGN KEY (status_id) REFERENCES statuses(Id),
+  FULLTEXT INDEX (Name, Description, Abstract)
+) ENGINE=MyISAM;
 
 CREATE TABLE categories (
   Id INT NOT NULL AUTO_INCREMENT, 
