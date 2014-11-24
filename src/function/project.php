@@ -61,16 +61,18 @@
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
 
+        $Name = mysql_escape_string($Name);
+        $Description = mysql_escape_string($Description);
+        $Abstract = mysql_escape_string($Abstract);
+
         $sql = "UPDATE projects
                 SET Name = '$Name', Description = '$Description', Abstract = '$Abstract', Electrical = '$Electrical'
                 WHERE Id = $projectId";
 
         $updProject = mysql_query($sql);
 
-        mysql_close();
         return $updProject;
     }
-    
     function createProject($Name, $Description, $Abstract,$User_id, $Electrical=FALSE) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

@@ -45,7 +45,7 @@
                     <div class="form-group">
     	                <dl class="dl-horizontal">
     	                    <dt>Abstract</dt>
-    	                    <dd><textarea class="form-control" name="Abstract" placeholder="Enter Project Abstract"><?php echo $projectInfo['Abstract']; ?>"</textarea></dd>
+    	                    <dd><textarea class="form-control" name="Abstract" placeholder="Enter Project Abstract"><?php echo $projectInfo['Abstract']; ?></textarea></dd>
     	                </dl>
                     </div>
                     <div class="form-group">

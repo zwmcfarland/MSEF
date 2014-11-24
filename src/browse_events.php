@@ -62,18 +62,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php mysql_data_seek($qryEvents, 0);
-                              while($row = mysql_fetch_assoc($qryEvents)):?>
-                            <tr>
-                                <td><?php echo $row['Name']; ?></td>
-                                <td><?php echo $row['Description']; ?></td>
-                                <td><?php echo $row['Location']; ?></td>
-                            </tr>
-                        <?php endwhile;?>
                         <?php if(mysql_num_rows($qryEvents) == 0):?>
                             <tr>
-                                <td colspan="2">There aren't currently any Events</td>
+                                <td colspan="3">There aren't currently any events.</td>
                             </tr>
+                        <?php else:?>
+                            <?php mysql_data_seek($qryEvents, 0);
+                              while($row = mysql_fetch_assoc($qryEvents)):?>
+                                <tr>
+                                    <td><?php echo $row['Name']; ?></td>
+                                    <td><?php echo $row['Description']; ?></td>
+                                    <td><?php echo $row['Location']; ?></td>
+                                </tr>
+                            <?php endwhile;?>
                         <?php endif;?>
                     </tbody>
                 </table>

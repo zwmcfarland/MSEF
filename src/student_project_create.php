@@ -19,7 +19,6 @@
     </script>
 <!-- END: Script -->
 
-
 <div class="col-lg-12">
     <!-- Users Detials -->
     <div class="col-md-6 col-md-offset-3">
