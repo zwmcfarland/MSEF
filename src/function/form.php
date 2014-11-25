@@ -63,9 +63,41 @@
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
         
         $sql = "INSERT INTO forms (Name, FormPath)
-        VALUES ('$formName','$formPath')";
+                VALUES ('$formName','$formPath')";
         
         mysql_query($sql);
         return mysql_insert_id();
+    }
+    
+    function getSuggestedForms($projectId) {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+
+        $sql = "SELECT * FROM forms";
+        $qryForms = mysql_query($sql);
+        $suggestedForms = array();
+
+        while($row = mysql_fetch_assoc($qryForms)){
+            $sql = "SELECT k.keyword
+                    FROM formKeywords AS fk
+                         LEFT OUTER JOIN keywords AS k ON fk.keyword_id = k.Id
+                    WHERE fk.form_id = " . $row['Id'];
+
+            $qryKeywords = mysql_query($sql);
+            
+            $sql = "SELECT p.Id 
+                    FROM projects as p
+                    WHERE MATCH(Name, Description, Abstract) AGAINST ('";
+            while($keys = mysql_fetch_assoc($qryKeywords)) {
+                $sql .= $keys['keyword'] . ' ';
+            }
+            $sql .= "' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION) AND p.Id = $projectId";
+            
+            if(mysql_num_rows(mysql_query($sql)) == 1) {
+                array_push($suggestedForms, array('Id' => $row['Id'], 'Name' => $row['Name']));
+            }
+        }
+        return $suggestedForms;
     }
 ?>

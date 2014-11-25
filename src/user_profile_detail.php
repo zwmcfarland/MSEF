@@ -7,6 +7,7 @@
     /* --- Queries --- */
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
     $forms = getStudentForms($_SESSION['user_id']);
+    $suggestedForms = getSuggestedForms($userInfo['ProjectId']);
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -128,7 +129,13 @@
                             <td style="color: #d9534f;"><?php echo $row['FormName']; ?></td>
                         </tr>
                     <?php endwhile;?>
-                    <?php if(mysql_num_rows($forms) == 0):?>
+                    <?php foreach($suggestedForms as $form):?>
+                        <tr>
+                            <td><a href="form_detail.php?formId=<?php echo $form['Id']; ?>"><?php echo $form['Name']; ?></a></td>
+                            <td>Suggested</td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <?php if(mysql_num_rows($forms) == 0 && count($suggestedForms) == 0):?>
                         <tr>
                             <td>You currently don't have any required forms.</td>
                         </tr>
