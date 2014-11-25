@@ -8,7 +8,6 @@
     
     /* --- Security --- */
     /* --- END: Security --- */
-    echo $_SESSION['user_id']
 ?>
 
 <!-- Script -->
