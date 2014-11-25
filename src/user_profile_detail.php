@@ -7,7 +7,12 @@
     /* --- Queries --- */
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
     $forms = getStudentForms($_SESSION['user_id']);
-    $suggestedForms = getSuggestedForms($userInfo['ProjectId']);
+    if($userInfo['ProjectId'] != ""){
+        $suggestedForms = getSuggestedForms($userInfo['ProjectId']);
+    }
+    else {
+        $suggestedForms = array();
+    }
     /* --- END: Queries ---*/
     
     /* --- Security --- */
