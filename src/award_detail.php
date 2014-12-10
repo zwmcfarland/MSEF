@@ -9,6 +9,7 @@
 
     /* --- Queries --- */
     $qryAward = mysql_fetch_assoc(getAward($awardId));
+    $suggested = getSuggestedProjects($awardId);
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -39,6 +40,39 @@
                     <dt>Reward</dt>
                     <dd><?php echo $qryAward['Reward']; ?></dd>
                 </dl>
+            </div>
+        </div>
+        <div class="panel panel-default staff">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="display:inline-block">Possible Project Canadites</h3>
+            </div>
+
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Project Description</th>
+                            <th>Project Abstract</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while($row = mysql_fetch_assoc($suggested)): ?>
+                            <tr>
+                                <td><?php echo $row['Name']; ?></td>
+                                <td><?php echo $row['Description']; ?></td>
+                                <td><?php echo $row['Abstract']; ?></td>
+                                <td><?php echo $row['MatchRating']; ?></td>
+                            </tr>
+                        <?php endwhile;?>
+                        <?php if(mysql_num_rows($suggested) == 0):?>
+                            <tr>
+                                <td colspan="3">No projects found</td>
+                            </tr>
+                       <?php endif;?>
+                    </tbody>
+                            
+                </table>
             </div>
         </div>
     </div>

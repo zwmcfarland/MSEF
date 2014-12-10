@@ -1,7 +1,7 @@
 <?php
     include_once("function/headerfooter.php");
     include_once("function/project.php");
-    incHeader('MSEF | Home');
+    incHeader('MSEF | Project');
     
     /* --- Queries --- */
     //note - we should only be doing this call if user is an admin, otherwise we should do a query based on user ID to find their associated project

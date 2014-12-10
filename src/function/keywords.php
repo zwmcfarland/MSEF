@@ -43,4 +43,22 @@
         $qryKeywords = mysql_query($sql);
         return $qryKeywords;
     }
+
+    function getCategoryKeywords($categoryId = "") {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+    
+        $sql = "SELECT k.Id,k.keyword
+                FROM categoryKeywords AS ak
+                     LEFT OUTER JOIN keywords AS k on ak.keyword_id = k.Id
+                WHERE 1 = 1";
+    
+        if($categoryId != "") {
+            $sql .= " AND ak.category_id = $categoryId";
+        }
+    
+        $qryKeywords = mysql_query($sql);
+        return $qryKeywords;
+    }
 ?>

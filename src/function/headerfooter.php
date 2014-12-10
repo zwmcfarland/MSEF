@@ -104,13 +104,14 @@ date_default_timezone_set('UTC');
                                                     <li><a href="browse_forms.php">Forms</a></li>
                                                     <li><a href="browse_awards.php">Awards</a></li>
                                                     <li><a href="browse_events.php">Events</a></li>
+                                                    <li><a href="browse_categories.php">Categories</a></li>
                                                     <li><a href="browse_contacts.php">Contact Us</a></li>
                                                 <!-- END: Student Links -->
 
                                                 <!-- Sponsor Links -->
                                                     <li class="divider sponsor"></li>
-                                                    <li class="sponsor"><a href="browse_students.php">Students (TODO)</a></li>
-                                                    <li class="sponsor"><a href="browse_students.php">Projects (TODO)</a></li>
+                                                    <li class="sponsor"><a href="browse_students.php">Students</a></li>
+                                                    <li class="sponsor"><a href="browse_projects.php">Projects</a></li>
                                                     <li class="sponsor"><a href="browse_approvals.php">My Approvals (1) (TODO)</a></li>
                                                 <!-- END: Sponsor Links -->
 
@@ -119,6 +120,7 @@ date_default_timezone_set('UTC');
                                                     <li class="staff"><a href="form_create.php">Add Form</a></li>
                                                     <li class="staff"><a href="event_create.php">Add Event</a></li>
                                                     <li class="staff"><a href="award_create.php">Add Award</a></li>
+                                                    <li class="staff"><a href="category_create.php">Add Category</a></li>
                                                 <!-- END: Staff Links -->
                                             </ul>
                                         </li>

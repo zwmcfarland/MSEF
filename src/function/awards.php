@@ -68,25 +68,24 @@
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
         
         $sql = "SELECT k.keyword
-                FROM awardkeywords as ak
-                     LEFT OTUER JOIN keywords AS k ON ak.keyword_id = k.Id
+                FROM awardKeywords as ak
+                     LEFT OUTER JOIN keywords AS k ON ak.keyword_id = k.Id
                 WHERE ak.award_id = $awardId";
         
         $qryKeywords = mysql_query($sql);
         
-        $sql = "SELECT p.projectId,
+        $sql = "SELECT p.*,
                        MATCH(Name, Description, Abstract) AGAINST ('";
                        while($row = mysql_fetch_assoc($qryKeywords)) {
                            $sql .= $row['keyword'] . ' ';
                        }
-                       $sql .= "' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION) ";
+                       $sql .= "' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION) AS MatchRating ";
         $sql .= "FROM projects as p
                 WHERE MATCH(Name, Description, Abstract) AGAINST ('";
                 while($row = mysql_fetch_assoc($qryKeywords)) {
                     $sql .= $row['keyword'] . ' ';
                 }
         $sql .= "' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION)";
-        
         return mysql_query($sql);
     }
 ?>

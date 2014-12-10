@@ -1,6 +1,6 @@
 <?php
     include("function/headerfooter.php");
-    incHeader('MSEF | Home');
+    incHeader('MSEF | Contact Us');
     
     /* --- Queries --- */
     /* --- END: Queries ---*/

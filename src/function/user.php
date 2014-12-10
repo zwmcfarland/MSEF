@@ -1,7 +1,7 @@
 <?php
     include("function/Data_Source.php");
 
-    function getUserInformation($userEmail = "") {
+    function getUserInformation($userEmail = "",$securityType = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
@@ -32,6 +32,9 @@
 
         if(!empty($userEmail) && $userEmail != NULL) {
             $sql .= " AND lu.user_email = '$userEmail'";
+        }
+        if(!empty($securityType)) {
+            $sql .= " AND st.Name = '$securityType'";
         }
 
         $qryUsers = mysql_query($sql);

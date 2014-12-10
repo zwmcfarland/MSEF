@@ -1,10 +1,18 @@
 <?php
     include("function/headerfooter.php");
     include("function/user.php");
+    include_once("function/form.php");
     incHeader('MSEF | Home', '', 'form.js');
     
     /* --- Queries --- */
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
+    $forms = getStudentForms($_SESSION['user_id']);
+    if($userInfo['ProjectId'] != ""){
+        $suggestedForms = getSuggestedForms($userInfo['ProjectId']);
+    }
+    else {
+        $suggestedForms = array();
+    }
     /* --- END: Queries ---*/
     
     /* --- Security --- */
@@ -19,7 +27,7 @@
 <!-- END: Script -->
 <div class="col-lg-12">
     <!-- Users Detials -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Profile Information</h3>
@@ -83,55 +91,66 @@
     <!-- END: Users Detials -->
 
     <!-- Project Detials -->
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Projects</h3>
             </div>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td><a href="student_project_detail.php">Volcano</a></td>
-                        <td>Abstract</td>
-                        <td>
-                            <a href="#">Joe</a>
-                            <a href="#">Bob</a>
-                            <a href="#">Tim</a>
-                        </td>
-                        <td align="center">Submitted</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="panel-body">
+                <?php if($userInfo['ProjectName'] != ''):?>
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd><a href="student_project_detail.php"><?php echo $userInfo['ProjectName']; ?></a></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Description</dt>
+                        <dd><?php echo $userInfo['Description']; ?></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Status</dt>
+                        <dd title="<?php echo $userInfo['ProjectStatusDescription']; ?>"><?php echo $userInfo['ProjectStatus']; ?></dd>
+                    </dl>
+                <?php else:?>
+                    <p>Looks like you aren't a part of any projects yet, you can either join an existing project <a href="project_signup.php">here</a>, or you can create your own project <a href="student_project_create.php">here</a>.</p>
+                <?php endif;?>
+            </div>
         </div>
     </div>
     <!-- END: Project Detials -->
 
     <!-- Form Detials -->
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Forms</h3>
             </div>
             <table class="table">
                 <tbody>
-                    <tr>
-                        <td><a href="#">Science Fair Entry Form</a></td>
-                        <td>Form required to participate in the science fair.</td>
-                        <td style="color: #d9534f;">Required</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">Live Animal Form</a></td>
-                        <td>Form required to use live animals in your project.</td>
-                        <td style="color: #5cb85c;">Complete</td>
-                    </tr>
+                    <?php while($row = mysql_fetch_assoc($forms)):?>
+                        <tr>
+                            <td><a href="form_detail.php?formId=<?php echo $row['form_id']; ?>"><?php echo $row['FormName']; ?></a></td>
+                            <td style="color: #d9534f;"><?php echo $row['FormName']; ?></td>
+                        </tr>
+                    <?php endwhile;?>
+                    <?php foreach($suggestedForms as $form):?>
+                        <tr>
+                            <td><a href="form_detail.php?formId=<?php echo $form['Id']; ?>"><?php echo $form['Name']; ?></a></td>
+                            <td>Suggested</td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <?php if(mysql_num_rows($forms) == 0 && count($suggestedForms) == 0):?>
+                        <tr>
+                            <td>You currently don't have any required forms.</td>
+                        </tr>
+                    <?php endif;?>
                 </tbody>
             </table>
         </div>
     </div>
-    <!-- END: Project Detials -->
+    <!-- END: Form Detials -->
 
     <!-- Parent Detials -->
-    <div class="col-md-6 studentonly">
+    <div class="col-md-8 studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Parent Information</h3>
