@@ -108,4 +108,19 @@
         mysql_close();
         return $updUser;
     }
+    
+    function getPotentialProjectSponsors($project_id) {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+        
+        $sql = "SELECT Id, FirstName, LastName
+                FROM users
+                WHERE security_type_id = 2 
+                      AND school_id IN (SELECT u.school_id 
+                                        FROM studentProjects as sp
+                                             INNER JOIN users as u ON sp.student_id = u.id
+                                        WHERE sp.project_id = $project_id)";
+        return mysql_query($sql);
+    }
 ?>

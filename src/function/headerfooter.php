@@ -8,6 +8,7 @@ include("./php-login-minimal-master/classes/Login.php");
 $login = new Login();
 date_default_timezone_set('UTC');
     function incHeader($title = "", $JS_String = "", $JS_Include = "", $CSS_Include = "", $CSS_String = "", $MenuFlag = "true") {
+        include_once("project.php");
         ?>
             <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
                 <html> 
@@ -42,7 +43,7 @@ date_default_timezone_set('UTC');
                                         display: none !important;
                                     }
                                 <?php endif; ?>
-                                <?php if(isset($_SESSION['security_type']) && $_SESSION['security_type'] == 'Student'): ?>
+                                <?php if(isset($_SESSION['security_type']) && $_SESSION['security_type'] == 'student'): ?>
                                     .sponsor,.staff {
                                         display: none !important;
                                     }
@@ -112,7 +113,10 @@ date_default_timezone_set('UTC');
                                                     <li class="divider sponsor"></li>
                                                     <li class="sponsor"><a href="browse_students.php">Students</a></li>
                                                     <li class="sponsor"><a href="browse_projects.php">Projects</a></li>
-                                                    <li class="sponsor"><a href="browse_approvals.php">My Approvals (1) (TODO)</a></li>
+                                                    <?php if(isset($_SESSION['security_type']) && $_SESSION['security_type'] == 'sponsor'): ?>
+                                                        <?php $approvals = getMyApprovals($_SESSION['user_email']);?>
+                                                        <li class="sponsor"><a href="browse_approvals.php">My Approvals (<?php echo mysql_num_rows($approvals);?>)</a></li>
+                                                    <?php endif;?>
                                                 <!-- END: Sponsor Links -->
 
                                                 <!-- Staff Links -->

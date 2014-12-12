@@ -28,8 +28,8 @@
           deleteCategoryKeywords($categoryId);
           foreach($keywords as $keyword) {
               //Insert keyword
-              if(property_exists($keyword, 'Id')) {
-                  $newKeywordId = $keyword.Id;
+              if(is_numeric($keyword)) {
+                  $newKeywordId = $keyword;
               }
               else {
                   $newKeywordId = insertKeyword($keyword);

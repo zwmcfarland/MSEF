@@ -76,13 +76,13 @@
                             </dd>
                         </dl>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group sponsor">
                         <dl class="dl-horizontal sponsor">
                             <dt>Position</dt>
                             <dd><input type="text" name="Position" value="<?php echo $userInfo['Position']; ?>" placeholder="Position" class="form-control"></dd>
                         </dl>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group studentonly">
                         <dl class="dl-horizontal student">
                             <dt>Grade</dt>
                             <dd>

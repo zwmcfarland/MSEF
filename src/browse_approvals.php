@@ -7,17 +7,17 @@
     /* --- END: Params --- */
 
     /* --- Queries --- */
-    $qryProjects = getProjectInformationByProjectId();
+    $qryProjects = getMyApprovals($_SESSION['user_email']);
     /* --- END: Queries ---*/
     
     /* --- Security --- */
     /* --- END: Security --- */
 ?>
 <div class="col-lg-12">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title" style="display:inline-block">Projects</h3>
+                <h3 class="panel-title" style="display:inline-block">Awards</h3>
             </div>
 
             <div class="panel-body">
@@ -27,7 +27,7 @@
                             <th>Name</th>
                             <th>Description</th>
                             <th>Abstract</th>
-                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,12 +36,12 @@
                                 <td><?php echo $row['Name']; ?></td>
                                 <td><?php echo $row['Description']; ?></td>
                                 <td><?php echo $row['Abstract']; ?></td>
-                                <td><?php echo $row['statusName']; ?></td>
+                                <td><a href="project_approval.php?project_id=<?php echo $row['Id']; ?>">View</a></td>
                             </tr>
                         <?php endwhile;?>
                         <?php if(mysql_num_rows($qryProjects) == 0): ?>
                             <tr>
-                                <td colspan="4">Currently no projects.</td>
+                                <td colspan="4">No pending approvals.</td>
                             </tr>
                         <?php endif;?>
                     </tbody>

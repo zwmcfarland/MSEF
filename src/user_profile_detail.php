@@ -93,7 +93,7 @@
     <!-- END: Users Detials -->
 
     <!-- Project Detials -->
-    <div class="col-md-8">
+    <div class="col-md-8 studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Projects</h3>
@@ -112,6 +112,11 @@
                         <dt>Status</dt>
                         <dd title="<?php echo $userInfo['ProjectStatusDescription']; ?>"><?php echo $userInfo['ProjectStatus']; ?></dd>
                     </dl>
+                    <?php if($userInfo['ProjectStatus'] == "Not Submitted" || $userInfo['ProjectStatus'] == "Returned"):?>
+                        <div align="center">
+                            <button type="button" class="btn" onclick="window.location='submit_project.php';">Submit for approval</button>
+                        </div>
+                    <?php endif;?>
                 <?php else:?>
                     <p>Looks like you aren't a part of any projects yet, you can either join an existing project <a href="project_signup.php">here</a>, or you can create your own project <a href="student_project_create.php">here</a>.</p>
                 <?php endif;?>
@@ -121,7 +126,7 @@
     <!-- END: Project Detials -->
 
     <!-- Form Detials -->
-    <div class="col-md-8">
+    <div class="col-md-8 studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Forms</h3>

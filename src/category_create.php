@@ -11,7 +11,7 @@
     /* --- END: Security --- */ 
 ?>
 
-<!-- Script --> 
+<!-- Script -->
     <script>
         var keywords = [
             <?php $count = 0;?>

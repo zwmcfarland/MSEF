@@ -21,7 +21,7 @@
         var keywords = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryKeywords)): ?>
-                {text: '<?php echo $row['Keyword'];?>'}
+                {id: '<?php echo $row['Id']; ?>', text: '<?php echo $row['Keyword'];?>'}
                 <?php $count = $count + 1?>
                 <?php if($count != mysql_num_rows($qryKeywords)):?>
                     ,
@@ -31,7 +31,7 @@
         var preload_data = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryCategoryKeywords)): ?>
-                { text: '<?php echo $row['keyword'];?>'}
+                {id: '<?php echo $row['Id']; ?>', text: '<?php echo $row['keyword'];?>'}
                 <?php $count = $count + 1?>
                 <?php if($count != mysql_num_rows($qryCategoryKeywords)):?>
                     ,

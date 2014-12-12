@@ -138,4 +138,53 @@
         
         $updProject = mysql_query($sql);
     }
+    
+    function submitProject($ProjectId,$sponsorId) {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+        
+        $sql = "INSERT INTO sponsorProjects (project_id,sponosr_id)
+                VALUES($ProjectId, $sponsorId)";
+        mysql_query($sql);
+        if(mysql_error()) {
+            return;
+        }
+        $sql = "UPDATE projects set status_id = 2 WHERE Id = $ProjectId";
+        mysql_query($sql);
+    }
+    
+    function getMyApprovals($email) {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+        
+        $sql = "SELECT *
+                FROM projects
+                WHERE status_id = 2 AND Id IN (SELECT sp.project_id
+                                               FROM sponsorProjects as sp
+                                                    INNER JOIN users as u on sp.sponosr_id = u.id
+                                                WHERE u.Email = '$email')";
+        return mysql_query($sql);
+    }
+    function getProjectMembers($projectId) {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+        
+        $sql = "SELECT *
+                FROM users
+                WHERE Id IN (SELECT student_id
+                            FROM studentProjects
+                            WHERE project_id = $projectId)";
+        return mysql_query($sql);
+    }
+    function approveProject($project_id, $status) {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+
+        $sql = "UPDATE projects SET status_id = $status WHERE Id = $project_id";
+        mysql_query($sql);
+    }
 ?>

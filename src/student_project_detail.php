@@ -24,7 +24,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Project Information</h3>
                 <?php if(mysql_num_rows($qryProject) != 0): ?>
-                    <a href="student_project_edit.php?projectId=<?php echo $projectInfo['Id']?>" title="Edit Project">
+                    <a <?php if($projectInfo['statusName'] != 'Not Submitted'):?>class="staff"<?php endif;?>href="student_project_edit.php?projectId=<?php echo $projectInfo['Id']?>" title="Edit Project">
                         <i class="fa fa-edit fa-2x" style="float:right;display:inline-block;"></i>
                     </a>
                 <?php endif;?>
