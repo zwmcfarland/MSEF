@@ -70,7 +70,7 @@
     //Gets a list of suggested projects to give the award too.
     function getSuggestedProjects($awardId = "") {
         include("Data_Source.php");
-        include("project.php");
+        include_once("project.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
 

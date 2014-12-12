@@ -28,10 +28,10 @@
     /* --- END: Security --- */
 ?>
 <div class="col-lg-12">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title" style="display:inline-block">Awards</h3>
+                <h3 class="panel-title" style="display:inline-block">Students</h3>
             </div>
             <div class="panel-body">
                 <table class="table table-striped">

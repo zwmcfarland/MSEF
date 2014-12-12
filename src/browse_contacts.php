@@ -23,7 +23,7 @@
     /* --- END: Security --- */
 ?>
 <div class="col-lg-12">
-    <div class="col-lg-6 col-md-offset-3">
+    <div class="col-lg-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Contact</h3>

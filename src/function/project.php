@@ -1,5 +1,5 @@
 <?php
-	//Gets project record information from the database
+	/*Gets project record information from the database*/
     function getProjectInformationByProjectId($projectID = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -26,7 +26,7 @@
         return $qryProjects;
     }
 
-    //Gets project record information from the database
+    /*Gets project record information from the database */
     function getProjectInformationByEmail($userEmail = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
