@@ -149,10 +149,10 @@ CREATE TABLE studentProjects (
     FOREIGN KEY (project_id) REFERENCES projects(Id)
 );
 
-CREATE TABLE sponsorStudents (
-    student_id INT NOT NULL,
+CREATE TABLE sponsorProjects (
+    project_id INT NOT NULL,
     teacher_id INT NOT NULL,
-    FOREIGN KEY (student_id) REFERENCES users(Id),
+    FOREIGN KEY (project_id) REFERENCES projects(Id),
     FOREIGN KEY (teacher_id) REFERENCES users(Id) 
 );
 
