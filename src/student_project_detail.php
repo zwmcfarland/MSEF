@@ -1,10 +1,23 @@
 <?php
+    /*
+     * Name: Student project detail
+     * Description:
+     *     This page allows students to view detailed information about their project.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files
     include_once("function/headerfooter.php");
     include_once("function/project.php");
+
+    //Create default header
     incHeader('MSEF | Project');
     
     /* --- Queries --- */
-    //note - we should only be doing this call if user is an admin, otherwise we should do a query based on user ID to find their associated project
     $qryProject = getProjectInformationByEmail($_SESSION['user_email']);
     $projectInfo = mysql_fetch_assoc($qryProject);
     /* --- END: Queries ---*/
@@ -12,6 +25,7 @@
     /* --- Security --- */
     /* --- END: Security --- */
 ?>
+<!-- Used to display messages -->
 <?php if(isset($_GET['message'])):?>
     <div style="margin-bottom:20px;min-height:40px;text-align:center;" class="bg-success col-md-3 col-md-offset-5">
         <?php echo $_GET['message']; ?>
@@ -63,5 +77,6 @@
     <!-- END: Project Detials -->
 </div>
 <?php
+    //create default footer
     incFooter();
 ?>

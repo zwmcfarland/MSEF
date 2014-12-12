@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Browse awards
+     * Description:
+     *     This page allows all users to view a list of the avalible awards.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/11/2014 - Created Comments.
+     */
+
+    //Include necessary files
     include("function/headerfooter.php");
     include("function/awards.php");
+
+    //Create standard header
     incHeader('MSEF | Award');
 
     /* --- Params --- */
@@ -44,5 +58,6 @@
     </div>
 </div>
 <?php
+    //Include standard footer.
     incFooter();
 ?>

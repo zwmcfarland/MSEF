@@ -1,7 +1,21 @@
 <?php
+    /*
+     * Name: Parent Profile Edit
+     * Description:
+     *     This allows students to edit information about their parents.
+     * Arguments:
+     *    None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files
     include("function/headerfooter.php");
     include("function/user.php");
     include_once("function/form.php");
+
+    //Create default header, and import form handler component
     incHeader('MSEF | Home', '', 'form.js');
     
     /* --- Queries --- */
@@ -20,6 +34,7 @@
 ?>
 <!-- Script -->
     <script>
+        //Display a warning if user trys to leave without saving.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
@@ -195,5 +210,6 @@
     <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
+    //Create default footer.
     incFooter();
 ?>

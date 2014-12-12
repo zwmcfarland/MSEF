@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Award Detail
+    * Description:
+    *     This page allows users to view detailed information about an award.
+    * Arguments:
+    *     $_GET['awardId']   - The id of the award you are viewing.
+    * Modifications:
+    *     11/09/2014 - Created file.
+    *     12/11/2014 - Created Comments.
+    */
+    /*--- Include neccessary files ---*/
     include("function/headerfooter.php");
     include("function/awards.php");
+    /*--- END: Include neccessary files ---*/
+    
+    //Generate standard header.
     incHeader('MSEF | Award');
 
     /* --- Params --- */
@@ -15,11 +29,13 @@
     /* --- Security --- */
     /* --- END: Security --- */
 ?>
+<!-- Used to display messages after editing an award. -->
 <?php if(isset($_GET['message'])):?>
     <div style="margin-bottom:20px;min-height:40px;text-align:center;" class="bg-success col-md-3 col-md-offset-5">
         <?php echo $_GET['message']; ?>
     </div>
 <?php endif;?>
+
 <div class="col-lg-12">
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
@@ -78,5 +94,6 @@
     </div>
 </div>
 <?php
+    //Get standard footer.
     incFooter();
 ?>

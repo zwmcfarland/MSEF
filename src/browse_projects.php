@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Browse projects
+     * Description:
+     *     This page is used by sponsors and staff to view a list of student projects.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necssary files.
     include("function/headerfooter.php");
     include("function/project.php");
+
+    //Create deault header
     incHeader('MSEF | Projects');
 
     /* --- Params --- */
@@ -19,7 +33,6 @@
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block">Projects</h3>
             </div>
-
             <div class="panel-body">
                 <table class="table table-striped">
                     <thead>
@@ -51,5 +64,6 @@
     </div>
 </div>
 <?php
+    //Create default footer
     incFooter();
 ?>

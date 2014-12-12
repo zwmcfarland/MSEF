@@ -1,7 +1,21 @@
 <?php
+    /*
+     * Name: User login
+     * Description:
+     *     This page is used by users to view their profile information
+     * Arguments:
+     *    None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files.
     include_once("function/headerfooter.php");
     include_once("function/user.php");
     include_once("function/form.php");
+
+    //Create default header
     incHeader('MSEF | Profile');
     
     /* --- Queries --- */
@@ -18,6 +32,7 @@
     /* --- Security --- */
     /* --- END: Security --- */
 ?>
+<!-- Used to display messages. -->
 <?php if(isset($_GET['message'])):?>
     <div style="margin-bottom:20px;min-height:40px;text-align:center;" class="bg-success col-md-3 col-md-offset-5">
         <?php echo $_GET['message']; ?>
@@ -188,5 +203,6 @@
     <!-- END: Parent Detials -->
 </div>
 <?php
+    //Created default footer
     incFooter();
 ?>

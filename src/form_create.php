@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Form Create
+     * Description:
+     *     This page allows staff to create forms.
+     * Arguments:
+     *    None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files.
     include("function/headerfooter.php");
     include_once("function/keywords.php");
+
+    //Create default header, and import form handler component
     incHeader('MSEF | Forms', '', 'form.js');
     
     /* --- Queries --- */
@@ -13,6 +27,7 @@
 
 <!-- Script --> 
     <script>
+        //Create list of pre-existing keywords.
         var keywords = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryKeywords)): ?>
@@ -27,10 +42,11 @@
             return "All unsaved data will be lost:";
         });
 
+        //Instantiate keyword lookup.
         $(document).on('ready', function() {
             $("#keywordTg").select2({
-            	multiple: true,
-            	tags: keywords
+                multiple: true,
+                tags: keywords
             });
         });
     </script>
@@ -78,5 +94,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
+    //Create default footer.
     incFooter(); 
 ?>

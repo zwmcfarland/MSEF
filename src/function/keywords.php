@@ -1,4 +1,5 @@
 <?php
+	//Gets keyword records from the database.
     function getKeywords() {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -13,6 +14,7 @@
         return $qryKeywords;
     }
     
+    //Inserts a new keyword into the database.
     function insertKeyword($keyword) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -26,6 +28,7 @@
         return mysql_insert_id();
     }
 
+    //Gets keywords associated to a particular award
     function getAwardKeywords($awardId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -44,6 +47,7 @@
         return $qryKeywords;
     }
 
+    //Gets keywords associated to a particular category
     function getCategoryKeywords($categoryId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

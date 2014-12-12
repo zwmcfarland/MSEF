@@ -1,5 +1,19 @@
 <?php
+    /*
+     * Name: Event Create
+     * Description:
+     *     This page allows staff members to create events.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files.
     include("function/headerfooter.php");
+
+    //Create default header, and include form handler compoent
     incHeader('MSEF | Events', '', 'form.js');
     
     /* --- Queries --- */
@@ -11,10 +25,10 @@
 
 <!-- Script -->
     <script>
+        //Shows warning if user trys to leave without saving.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
-        $("#keywordTg").select2({tags:["red", "green", "blue"]});
     </script>
 <!-- END: Script -->
 
@@ -80,5 +94,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
+    //Create default footer.
     incFooter(); 
 ?>

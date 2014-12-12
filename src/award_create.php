@@ -1,4 +1,14 @@
 <?php
+    /*
+    * Name: Award Create
+    * Description:
+    *     This page provides an interface for staff members to create award records.
+    * Arguments:
+    *     None.
+    * Modifications:
+    *     11/11/2014 - Created file.
+    *     12/11/2014 - Created Comments.
+    */
     include_once("function/headerfooter.php");
     include_once("function/keywords.php");
     incHeader('MSEF | Awards', '', 'form.js');

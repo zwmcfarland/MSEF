@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Browse Students
+     * Description:
+     *     This page is used by sponsors and staff to view a list of students.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files.
     include("function/headerfooter.php");
     include("function/user.php");
+
+    //Create default header
     incHeader('MSEF | Students');
 
     /* --- Params --- */
@@ -19,7 +33,6 @@
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block">Awards</h3>
             </div>
-
             <div class="panel-body">
                 <table class="table table-striped">
                     <thead>
@@ -48,5 +61,6 @@
     </div>
 </div>
 <?php
+    //Create default footer
     incFooter();
 ?>

@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Project signup
+     * Description:
+     *     This page is by students to sign up for existing projects.
+     * Arguments:
+     *    None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files
     include("function/headerfooter.php");
     include("function/project.php");
+
+    //Create default header
     incHeader('MSEF | Award');
 
     /* --- Params --- */
@@ -13,12 +27,14 @@
     /* --- Security --- */
     /* --- END: Security --- */
 ?>
+
+<!-- Used to display messages -->
 <?php if(isset($_GET['message'])):?>
     <div style="margin-bottom:20px;min-height:40px;text-align:center;" class="bg-success col-md-3 col-md-offset-5">
         <?php echo $_GET['message']; ?>
     </div>
 <?php endif;?>
-<?php echo $_SESSION['user_id'];?>
+
 <div class="col-lg-12">
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
@@ -59,5 +75,6 @@
     </div>
 </div>
 <?php
+    //Create default footer.
     incFooter();
 ?>

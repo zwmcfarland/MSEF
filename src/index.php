@@ -1,5 +1,19 @@
 <?php
+    /*
+     * Name: Index
+     * Description:
+     *     This is the home page of the entire application.
+     * Arguments:
+     *    None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files
     include("function/headerfooter.php");
+
+    //Create default header
     incHeader('MSEF | Home');
     
     /* --- Queries --- */
@@ -41,5 +55,6 @@
    </div>
 </div>
 <?php
+    //Create default footer.
     incFooter();
 ?>

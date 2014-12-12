@@ -1,6 +1,5 @@
 <?php
-    include("function/Data_Source.php");
-
+	//Gets project record information from the database
     function getProjectInformationByProjectId($projectID = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -26,7 +25,8 @@
         mysql_close();
         return $qryProjects;
     }
-    
+
+    //Gets project record information from the database
     function getProjectInformationByEmail($userEmail = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -55,7 +55,8 @@
         mysql_close();
         return $qryProjects;
     }
-    
+
+    //Upates project record details in the database.
     function updateProject($projectId, $Name = "", $Description="", $Abstract ="", $Electrical=FALSE) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -73,6 +74,8 @@
 
         return $updProject;
     }
+
+    //creates a project record in the database.
     function createProject($Name, $Description, $Abstract,$User_id, $Electrical=FALSE) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -92,6 +95,7 @@
         return mysql_insert_id();
     }
 
+    //Validates a project.
     function validate($Name, $Description, $Abstract, $Electrical, $user_id){
         $result = array();
         if(empty($Name) || $Name == NULL) {
@@ -106,6 +110,7 @@
         return $result;
     }
 
+    //Get all of the projects that a user is elegible to sign up for.
     function getschoolProjects($userId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -129,6 +134,7 @@
         return $qryProjects;
     }
 
+    //Assign a user to a particular project
     function signUp($studentId, $projectId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -138,7 +144,8 @@
         
         $updProject = mysql_query($sql);
     }
-    
+
+    //Submit a project to be approved.
     function submitProject($ProjectId,$sponsorId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -153,7 +160,8 @@
         $sql = "UPDATE projects set status_id = 2 WHERE Id = $ProjectId";
         mysql_query($sql);
     }
-    
+
+    //Get a list of approvals pending a users signoff
     function getMyApprovals($email) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -167,6 +175,8 @@
                                                 WHERE u.Email = '$email')";
         return mysql_query($sql);
     }
+
+    //Get a list of users assigned to a project
     function getProjectMembers($projectId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -179,6 +189,8 @@
                             WHERE project_id = $projectId)";
         return mysql_query($sql);
     }
+
+    //Approve a project
     function approveProject($project_id, $status) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

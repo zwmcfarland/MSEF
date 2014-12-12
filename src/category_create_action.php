@@ -1,12 +1,28 @@
 <?php
+    /*
+     * Name: Category Create Action
+     * Description:
+     *     This page is a system page used as the action for the category_create form.
+     * Arguments:
+     *     $_POST['CategoryName'] - Name of the new category.
+     *     $_POST['Description']  - Description of the new category
+     *     $_POST['Keywords']     - Keywords that describe this category.
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files.
     include("function/categories.php");
     include("function/keywords.php");
     date_default_timezone_set('UTC');
+
     /*---- Variables ----*/
     $result            = array();
     $categoryName      = $_POST['CategoryName'];
     $description       = $_POST['Description'];
     $keywords    = explode(',', $_POST['Keywords']);
+    /*--- END: Variables -- */
 
     /* Validation */
     if(empty($categoryName) && $categoryName != NULL) {
@@ -17,9 +33,10 @@
     }
     /* END: Validation */
 
+    //If validation passed.
     if(empty($result))
     {
-        /* Do insert */
+        //Insert new category into database.
        $categoryId = createCategory($categoryName, $description);
        if(mysql_error()){
            array_push($result, array('Message' => mysql_error(), 'type' => 'error'));
@@ -27,8 +44,8 @@
        else {
             foreach($keywords as $keyword) {
                 //Insert keyword
-                if(property_exists($keyword, 'Id')) {
-                    $newKeywordId = $keyword.Id;
+                if(is_numeric($keyword)) {
+                    $newKeywordId = $keyword;
                 }
                 else {
                     $newKeywordId = insertKeyword($keyword);
@@ -39,5 +56,6 @@
         }
     }
 
+    //Return results array, in json format.
     echo json_encode($result);
 ?>

@@ -1,6 +1,18 @@
 <?php
+    /*
+     * Name: User Profile Edit Action
+     * Description:
+     *     This page allows users to register to the MSEF system
+     * Arguments:
+     *    None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary pages
     include("function/headerfooter.php");
-    
+
     // load the registration class
     include("./php-login-minimal-master/classes/Registration.php");
     
@@ -66,5 +78,6 @@
    </div>
 </div>
 <?php
+    //Create default footer
     incFooter();
 ?>

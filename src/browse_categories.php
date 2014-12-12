@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Browse categories
+     * Description:
+     *     This page allows all users to view a list of the categories.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/11/2014 - Created Comments.
+     */
+
+    //Include necessary files
     include("function/headerfooter.php");
     include("function/categories.php");
+
+    //Create default header
     incHeader('MSEF | Categories');
     
     /* --- Params --- */
@@ -13,11 +27,14 @@
     /* --- Security --- */
     /* --- END: Security --- */
 ?>
+
+<!-- This is used to display success messages after creating a new category. -->
 <?php if(isset($_GET['message'])):?>
     <div style="margin-bottom:20px;min-height:40px;text-align:center;" class="bg-success col-md-3 col-md-offset-5">
         <?php echo $_GET['message']; ?>
     </div>
 <?php endif;?>
+
     <div class="col-lg-12">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
@@ -55,5 +72,6 @@
         </div>
     </div>
 <?php
+    //Include standard footer.
     incFooter();
 ?>

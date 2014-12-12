@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Event Edit
+     * Description:
+     *     This page allows staff members to edit existing events.
+     * Arguments:
+     *     $_GET['eventId'] - Id of the event staff is editing.
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+	//Include necessary files.
     include("function/headerfooter.php");
     include("function/event.php");
+
+    //Create default header, and include form handler component.
     incHeader('MSEF | Event', '', 'form.js');
 
     /* --- Params --- */
@@ -10,12 +24,13 @@
     /* --- Queries --- */
     $qryEvent = mysql_fetch_assoc(getEvents($eventId));
     /* --- END: Queries ---*/
-    
+
     /* --- Security --- */
     /* --- END: Security --- */
 ?>
 <!-- Script --> 
     <script>
+        //Display a warning if user trys to leave page before saving changes.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
@@ -27,7 +42,6 @@
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block">Event Information</h3>
             </div>
-
             <div class="panel-body">
                 <form style="padding-top: 10px;" action="event_edit_action.php" method="post" enctype="multipart/form-data" target="formSubFrame" onsubmit="formSubmit()">
                     <input type="hidden" name="EventId" value="<?php echo $eventId; ?>">
@@ -73,5 +87,6 @@
     <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
+    //Create default footer.
     incFooter();
 ?>

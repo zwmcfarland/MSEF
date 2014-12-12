@@ -1,5 +1,19 @@
 <?php
+    /*
+     * Name: Contacts
+     * Description:
+     *     This page gives contact information for the MSEF staff.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files.
     include("function/headerfooter.php");
+
+    //Create default header
     incHeader('MSEF | Contact Us');
     
     /* --- Queries --- */
@@ -33,5 +47,6 @@
    </div>
 </div>
 <?php
+    //Create default header.
     incFooter();
 ?>

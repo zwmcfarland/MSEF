@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Browse forms
+     * Description:
+     *     This page gives a way for all users to access a list of all of the forms that they may need to fill out.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files
     include("function/headerfooter.php");
     include("function/form.php");
+
+    //Create default header
     incHeader('MSEF | Forms');
 
     /* --- Params --- */
@@ -13,6 +27,8 @@
     /* --- Security --- */
     /* --- END: Security --- */
 ?>
+
+<!-- This is used for displaying messages from the create_form page. -->
 <?php if(isset($_GET['message'])):?>
     <div style="margin-bottom:20px;min-height:40px;text-align:center;" class="bg-success col-md-3 col-md-offset-5">
         <?php echo $_GET['message']; ?>
@@ -24,7 +40,6 @@
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block">Foms</h3>
             </div>
-
             <div class="panel-body">
                 <table class="table table-striped">
                     <thead>
@@ -54,5 +69,6 @@
     </div>
 </div>
 <?php
+    //Create default footer.
     incFooter();
 ?>

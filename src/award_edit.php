@@ -1,7 +1,21 @@
 <?php
+    /*
+    * Name: Award Edit
+    * Description:
+    *     This page allows staff members to edit award records.
+    * Arguments:
+    *     $_GET['awardId']   - The id of the award you are viewing.
+    * Modifications:
+    *     10/09/2014 - Created file.
+    *     12/11/2014 - Created Comments.
+    */
+    /*--- Include Necessary Files ---*/
     include("function/headerfooter.php");
     include("function/awards.php");
     include("function/keywords.php");
+    /*--- END: Include Necessary Files ---*/
+    
+    //Include standard header, also get form.js
     incHeader('MSEF | Award', '', 'form.js');
 
     /* --- Params --- */
@@ -19,6 +33,7 @@
 ?>
 <!-- Script --> 
     <script>
+       //List of pre-existing keywords.
         var keywords = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryKeywords)): ?>
@@ -29,6 +44,7 @@
                 <?php endif;?>
             <?php endwhile; ?>
         ]; 
+        //List of keywords currently associated to this award.
         var preload_data = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryAwardKeywords)): ?>
@@ -44,10 +60,12 @@
         });
 
         $(document).on('ready', function() {
+            //Initialize keyword component.
             $("#keywordTg").select2({
                 multiple: true,
                 tags: keywords
             });
+            //Load pre-existing keywords.
             $('#keywordTg').select2('data', preload_data);
         });
     </script>
@@ -90,5 +108,6 @@
     <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
+    //Include default footer.
     incFooter();
 ?>

@@ -1,7 +1,21 @@
 <?php
+    /*
+     * Name: Browse approvals
+     * Description:
+     *     This page allows sponsors to view a list of projects awaiting their approval.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/11/2014 - Created Comments.
+     */
+    /*--- Include Necessary files ---*/
     include("function/headerfooter.php");
     include("function/project.php");
-    incHeader('MSEF | Projects');
+    /*--- END: Include Necessary files ---*/
+
+    //Create default header.
+    incHeader('MSEF | Approvals');
 
     /* --- Params --- */
     /* --- END: Params --- */
@@ -51,5 +65,6 @@
     </div>
 </div>
 <?php
+    //Include standard footer
     incFooter();
 ?>

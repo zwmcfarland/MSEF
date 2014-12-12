@@ -1,10 +1,26 @@
 <?php
+    /*
+     * Name: Category edit
+     * Description:
+     *     This page allows staff members to edit existing categories.
+     * Arguments:
+     *     $_GET['category_id'] - Id of the category you wish to edit.
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+	//Include necessary files.
     include("function/headerfooter.php");
     include_once("function/categories.php");
     include_once("function/keywords.php");
+    
+    //Create default header, and include form handler component.
     incHeader('MSEF | Categories', '', 'form.js');
     
+    /*--- Parameters ---*/
     $categoryId = $_GET['category_id'];
+    /*--- END: Parameters ---*/
     
     /* --- Queries --- */
     $qryCategory = mysql_fetch_assoc(getCategories($categoryId));
@@ -18,6 +34,7 @@
 
 <!-- Script --> 
     <script>
+        //List pre-existing keywords.
         var keywords = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryKeywords)): ?>
@@ -28,6 +45,7 @@
                 <?php endif;?>
             <?php endwhile; ?>
         ];
+        //Create list of keywords already associated with the category.
         var preload_data = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryCategoryKeywords)): ?>
@@ -41,12 +59,13 @@
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
-
+		//Initialize keyword lookup.
         $(document).on('ready', function() {
             $("#keywordTg").select2({
             	multiple: true,
             	tags: keywords
             });
+            //Load associatied keys.
             $('#keywordTg').select2('data', preload_data);
         });
     </script>
@@ -59,7 +78,6 @@
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block">Category Information</h3>
             </div>
-
             <div class="panel-body">
                 <form style="padding-top: 10px;" action="category_edit_action.php" method="post" enctype="multipart/form-data" id="newFormfrm" target="formSubFrame" onsubmit="formSubmit()">
                     <input type="hidden" name="CategoryId" value="<?php echo $categoryId; ?>">
@@ -95,5 +113,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
+    //Create default footer.
     incFooter(); 
 ?>

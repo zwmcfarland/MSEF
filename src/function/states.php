@@ -1,4 +1,5 @@
 <?php
+	//List of all states.
     $states = array(
             'AL'=>'Alabama',
             'AK'=>'Alaska',

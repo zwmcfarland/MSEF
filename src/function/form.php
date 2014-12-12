@@ -1,4 +1,5 @@
 <?php
+	//Gets forms that are required to be filled out by students.
     function getStudentForms($userId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -29,6 +30,7 @@
         return $qryForms;
     }
 
+    //Gets form records from the database.
     function getForms($formId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -46,6 +48,7 @@
         return $qryForms;
     }
 
+    //Associates keywords to a form.
     function associateKeyword($formId, $keywordId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -57,6 +60,7 @@
         mysql_query($sql);
     }
     
+    //Creates a form record in the database.
     function createForm($formName, $formPath) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -68,7 +72,8 @@
         mysql_query($sql);
         return mysql_insert_id();
     }
-    
+
+    //Gets a list of suggested forms for a paticular project.
     function getSuggestedForms($projectId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

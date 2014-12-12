@@ -1,6 +1,5 @@
 <?php
-    include("function/Data_Source.php");
-
+	//Get user information from the database.
     function getUserInformation($userEmail = "",$securityType = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -48,6 +47,7 @@
         return $qryUsers;
     }
 
+    //Create a user record. Fires during regristration.
     function createUser($userEmail) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -67,6 +67,7 @@
         return $insUser;
     }
 
+    //Updates a user record in the database.
     function updateUser($userId, $firstName = "", $lastName = "", $email = "", $phoneNumber = "", $altPhoneNumber = "", $school = "", $grade = "", $address1 = "", $address2 = "", $city = "", $state = "", $zip = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -89,6 +90,7 @@
         return $updUser;
     }
 
+    //Updates a users parent information.
     function updateUserParent($userId, $firstName = "", $lastName = "", $email = "", $phoneNumber = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -108,7 +110,8 @@
         mysql_close();
         return $updUser;
     }
-    
+
+    //Gets a list of sponsors for a project
     function getPotentialProjectSponsors($project_id) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

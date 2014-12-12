@@ -1,10 +1,27 @@
 <?php
+    /*
+     * Name: User login
+     * Description:
+     *     This page is used to login to the MSEF system.
+     * Arguments:
+     *    None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+	//Include necessary files
     include("function/headerfooter.php");
+    
+    /*--- Params ---*/
     global $login;
     if ($login->isUserLoggedIn() == true) {
             header( 'Location: ..\src\index.php') ; 
     }
-    incHeader('MSEF | Home');
+    /*--- END: Params ---*/
+
+    //Create default header
+    incHeader('MSEF | Login');
 
     /* --- Queries --- */
     /* --- END: Queries ---*/
@@ -51,5 +68,6 @@
    </div>
 </div>
 <?php
+	//Create default footer
     incFooter();
 ?>

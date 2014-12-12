@@ -1,6 +1,5 @@
 <?php
-    include("function/Data_Source.php");
-
+	//Get school records from the datbase
     function getSchools($schoolId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -22,10 +21,4 @@
         mysql_close();
         return $qrySchools;
     }
-    
-    function insertSchool() {
-        /* INSERT INTO schools (Name, Address1, Address2, City, State, Zip) VALUES (
-        'Louisville Public Schools', '123 Cedar St.', '', 'Omaha', 'NE', '68106'); */
-    }
-    
 ?>

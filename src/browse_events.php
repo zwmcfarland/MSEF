@@ -1,6 +1,20 @@
 <?php
+    /*
+     * Name: Browse events
+     * Description:
+     *     This page gives a way for all users to view a calender of events.
+     * Arguments:
+     *     None
+     * Modifications:
+     *     11/09/2014 - Created file.
+     *     12/12/2014 - Created Comments.
+     */
+
+    //Include necessary files
     include("function/headerfooter.php");
     include("function/event.php");
+    
+    //Create default header, and include the calender component files.
     incHeader('MSEF | Events','', 'moment.min.js,fullcalendar.js');
 
     /* --- Params --- */
@@ -16,13 +30,14 @@
 <!-- Script -->
 <script type="text/javascript">
     $(document).ready(function() {
+        //Creates the calender for viewing events.
         $('#calendar').fullCalendar({
-        	header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,basicWeek,basicDay'
-			},
-			height: 600,
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'
+            },
+            height: 600,
             defaultDate:  '<?php echo date("Y-m-d");?>',
             editable: false,
             eventLimit: true, // allow "more" link when too many events
@@ -95,5 +110,6 @@
     </div>
 </div>
 <?php
+    //Create default footer.
     incFooter();
 ?>

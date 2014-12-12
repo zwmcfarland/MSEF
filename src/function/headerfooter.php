@@ -7,6 +7,7 @@ include("./php-login-minimal-master/classes/Login.php");
 
 $login = new Login();
 date_default_timezone_set('UTC');
+	//Creates the menu bar, default header
     function incHeader($title = "", $JS_String = "", $JS_Include = "", $CSS_Include = "", $CSS_String = "", $MenuFlag = "true") {
         include_once("project.php");
         ?>
@@ -141,7 +142,8 @@ date_default_timezone_set('UTC');
                     
     <?php } ?>
 
-    <?php function incFooter() { ?>
+    <?php //Creates the default footer.
+          function incFooter() { ?>
                 <hr>
                 <div class="col-md-12" align="center">
                     <a href="http://www.facebook.com"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
