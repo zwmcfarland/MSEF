@@ -199,4 +199,51 @@
         $sql = "UPDATE projects SET status_id = $status WHERE Id = $project_id";
         mysql_query($sql);
     }
+    
+    //Smart algorithim to get suggested projects for each category.
+    function getSuggestedProjectCategories() {
+        include("Data_Source.php");
+        mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
+        mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
+
+        //Get Keywords for each category
+        $sql = "SELECT ck.category_id, k.keyword
+        		FROM keywords as k
+        			 INNER JOIN categoryKeywords AS ck ON k.Id = ck.keyword_id";
+
+        $fancyKeywordStruct = "";
+        $fancyProjectStruct = "";
+        $qryKeywords = mysql_query($sql);
+        while($row = mysql_fetch_assoc($qryKeywords)) {
+            if(!isset($fancyKeywordStruct[$row['category_id']])) {
+            	$fancyKeywordStruct[$row['category_id']] = array();
+            }
+            if(!isset($fancyProjectStruct[$row['category_id']])) {
+            	$fancyProjectStruct[$row['category_id']] = array();
+            }
+            array_push($fancyKeywordStruct[$row['category_id']],$row['keyword']);
+        }
+
+        //check for projects associated to those keywords
+		foreach($fancyKeywordStruct as $category => $keywordList) {
+			$sql = "SELECT p.*,
+                       MATCH(Name, Description, Abstract) AGAINST ('";
+						foreach($keywordList as $keyword) {
+							$sql .= $keyword . ' ';
+						}
+			$sql .= "' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION) AS MatchRating ";
+			$sql .= "FROM projects as p
+                	WHERE MATCH(Name, Description, Abstract) AGAINST ('";
+						foreach($keywordList as $keyword) {
+							$sql .= $keyword . ' ';
+						}
+			$sql .= "' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION)";
+
+			$qryProjects = mysql_query($sql);
+			while($row = mysql_fetch_assoc($qryProjects)) {
+				array_push($fancyProjectStruct[$category], ["project_id" => $row['Id'], "project_name" => $row['Name'], "MatchRating" => $row['MatchRating']]);
+			}
+		}
+		return $fancyProjectStruct;
+    }
 ?>

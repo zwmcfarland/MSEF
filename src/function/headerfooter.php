@@ -126,6 +126,7 @@ date_default_timezone_set('UTC');
                                                     <li class="staff"><a href="event_create.php">Add Event</a></li>
                                                     <li class="staff"><a href="award_create.php">Add Award</a></li>
                                                     <li class="staff"><a href="category_create.php">Add Category</a></li>
+                                                    <li class="staff"><a href="suggested_categorization.php">Project Categorization</a></li>
                                                 <!-- END: Staff Links -->
                                             </ul>
                                         </li>

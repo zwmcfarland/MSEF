@@ -24,6 +24,12 @@
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
     $schools = getSchools();
     $forms = getStudentForms($_SESSION['user_id']);
+    if($userInfo['ProjectId'] != ""){
+        $suggestedForms = getSuggestedForms($userInfo['ProjectId']);
+    }
+    else {
+        $suggestedForms = array();
+    }
     /* --- END: Queries ---*/
 
     /* --- Security --- */
@@ -40,7 +46,7 @@
 
 <div class="col-lg-12">
     <!-- Users Detials -->
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Profile Information</h3>
@@ -159,34 +165,41 @@
     </div>
     <!-- END: Users Detials -->
 
-    <!-- Project Detials -->
-    <div class="col-md-6">
+     <!-- Project Detials -->
+    <div class="col-md-8 studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Projects</h3>
             </div>
-            <table class="table">
-                <tbody>
-                    <?php if($userInfo['ProjectName'] != ''):?>
-                        <tr>
-                            <td><a href="student_project_detail.php"><?php echo $userInfo['ProjectName']; ?></a></td>
-                            <td><?php echo $userInfo['Description']; ?></td>
-                            <td align="center" title="<?php echo $userInfo['ProjectStatusDescription']; ?>><?php echo $userInfo['ProjectStatus']; ?></td>
-                        </tr>
-                    <?php else:?>
-                        <tr>
-                            <td>No Projects.</td>
-                            <td><a href="project_add.php">Create New Project</a></td>
-                        </tr>
+            <div class="panel-body">
+                <?php if($userInfo['ProjectName'] != ''):?>
+                    <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                        <dd><a href="student_project_detail.php"><?php echo $userInfo['ProjectName']; ?></a></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Description</dt>
+                        <dd><?php echo $userInfo['Description']; ?></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Status</dt>
+                        <dd title="<?php echo $userInfo['ProjectStatusDescription']; ?>"><?php echo $userInfo['ProjectStatus']; ?></dd>
+                    </dl>
+                    <?php if($userInfo['ProjectStatus'] == "Not Submitted" || $userInfo['ProjectStatus'] == "Returned"):?>
+                        <div align="center">
+                            <button type="button" class="btn" onclick="window.location='submit_project.php';">Submit for approval</button>
+                        </div>
                     <?php endif;?>
-                </tbody>
-            </table>
+                <?php else:?>
+                    <p>Looks like you aren't a part of any projects yet, you can either join an existing project <a href="project_signup.php">here</a>, or you can create your own project <a href="student_project_create.php">here</a>.</p>
+                <?php endif;?>
+            </div>
         </div>
     </div>
     <!-- END: Project Detials -->
 
     <!-- Form Detials -->
-    <div class="col-md-6">
+    <div class="col-md-8 studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Forms</h3>
@@ -199,7 +212,13 @@
                             <td style="color: #d9534f;"><?php echo $row['FormName']; ?></td>
                         </tr>
                     <?php endwhile;?>
-                    <?php if(mysql_num_rows($forms) == 0):?>
+                    <?php foreach($suggestedForms as $form):?>
+                        <tr>
+                            <td><a href="form_detail.php?formId=<?php echo $form['Id']; ?>"><?php echo $form['Name']; ?></a></td>
+                            <td>Suggested</td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <?php if(mysql_num_rows($forms) == 0 && count($suggestedForms) == 0):?>
                         <tr>
                             <td>You currently don't have any required forms.</td>
                         </tr>
@@ -211,7 +230,7 @@
     <!-- END: Form Detials -->
 
     <!-- Parent Detials -->
-    <div class="col-md-6 studentonly">
+    <div class="col-md-8 student studentonly">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display:inline-block;">Parent Information</h3>
