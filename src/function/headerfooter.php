@@ -149,9 +149,6 @@ date_default_timezone_set('UTC');
                 <div class="col-md-12" align="center">
                     <a href="http://www.facebook.com"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
                     <a href="http://www.twitter.com"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
-                    <p style="margin-top:10px;">
-                        <small><a>Contact Us</a></small>
-                    </p>
                 </div>
             </body>
         </html>
