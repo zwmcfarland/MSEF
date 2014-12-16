@@ -34,7 +34,7 @@
     /*--- END: Variables ---*/
 
     /* Validation */
-    $result = validate($eventName,$startDate,$endDate,$description, $location);
+    $result = validate_event($eventName,$startDate,$endDate,$description, $location);
     /* END: Validation */
 
     //If passed validation

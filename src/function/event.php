@@ -30,7 +30,7 @@
     }
 
     //Validates an event.
-    function validate($eventName = "",$startDate = "",$endDate = "",$desctiption = "", $location = ""){
+    function validate_event($eventName = "",$startDate = "",$endDate = "",$desctiption = "", $location = ""){
         $result = array();
         return $result;
     }
