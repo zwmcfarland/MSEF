@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['getaward',['getAward',['../awards_8php.html#a034c33eb34efcaa36350cb4affba7e0a',1,'awards.php']]],
+  ['getawardkeywords',['getAwardKeywords',['../keywords_8php.html#a1da3fe3ba87367fb6dfc70c3013e2844',1,'keywords.php']]],
+  ['getcategories',['getCategories',['../categories_8php.html#a19a11a06f98e749fff869efa4a1889ed',1,'categories.php']]],
+  ['getcategorykeywords',['getCategoryKeywords',['../keywords_8php.html#ad4b879e318468311d0d2225d61062d1f',1,'keywords.php']]],
+  ['getcursorinfo',['getCursorInfo',['../select2_8js.html#a9e0081c5f4892ec0185d881a22bab432',1,'select2.js']]],
+  ['getevents',['getEvents',['../event_8php.html#a620f33f1756bbd757badcd601a1f6df9',1,'event.php']]],
+  ['getforms',['getForms',['../form_8php.html#a14978304142edd1c6462948ad594b35a',1,'form.php']]],
+  ['getkeywords',['getKeywords',['../keywords_8php.html#a6f99615aae20ffeb2cc8c384a2ec353a',1,'keywords.php']]],
+  ['getmaximumselectionsize',['getMaximumSelectionSize',['../select2_8js.html#a6006cd1691eaeb4cb9aecfd5e14d952c',1,'select2.js']]],
+  ['getmyapprovals',['getMyApprovals',['../project_8php.html#a68ad8ea9596f083b4d4bf248766a612c',1,'project.php']]],
+  ['getpotentialprojectsponsors',['getPotentialProjectSponsors',['../user_8php.html#ac3eac015d0604bcef99b53f960532925',1,'user.php']]],
+  ['getprojectinformationbyemail',['getProjectInformationByEmail',['../project_8php.html#a3657ed72cbf47ca2c16db43d294d3163',1,'project.php']]],
+  ['getprojectinformationbyprojectid',['getProjectInformationByProjectId',['../project_8php.html#a09e1aaa62b7b98982cfab217fc0856cc',1,'project.php']]],
+  ['getprojectmembers',['getProjectMembers',['../project_8php.html#a124eb2ee7841b134937335bf15edf84e',1,'project.php']]],
+  ['getschoolprojects',['getschoolProjects',['../project_8php.html#ab3be63857d15b3bfe87a27ecd6194916',1,'project.php']]],
+  ['getschools',['getSchools',['../school_8php.html#aed06d8399b362b3e7d6ad9d3579acba1',1,'school.php']]],
+  ['getsideborderpadding',['getSideBorderPadding',['../select2_8js.html#af7def4858f71dae812c6565823e94e7d',1,'select2.js']]],
+  ['getstudentforms',['getStudentForms',['../form_8php.html#a6f6f2ad88a9d0f0beb9e301129210376',1,'form.php']]],
+  ['getsuggestedforms',['getSuggestedForms',['../form_8php.html#a90435042e824d1ea43b7ab6f007cc23f',1,'form.php']]],
+  ['getsuggestedprojectcategories',['getSuggestedProjectCategories',['../project_8php.html#ad315e5fa4bb4a9cce8cf450f32ada0fa',1,'project.php']]],
+  ['getsuggestedprojects',['getSuggestedProjects',['../awards_8php.html#a26d8d09856d304ef88a14127bc58efb7',1,'awards.php']]],
+  ['getuserinformation',['getUserInformation',['../user_8php.html#a4c2c00bd8d0190ddd53468b82b8edc6e',1,'user.php']]]
+];

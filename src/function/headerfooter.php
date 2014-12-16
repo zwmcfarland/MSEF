@@ -102,7 +102,7 @@ date_default_timezone_set('UTC');
                                             <ul class="dropdown-menu" role="menu">
                                                 <!--  Student Links -->
                                                     <li><a href="user_profile_detail.php">My Profile</a></li>
-                                                    <li><a href="student_project_detail.php">My Project</a></li>
+                                                    <li><a href="student_project_detail.php" class="studentonly">My Project</a></li>
                                                     <li><a href="browse_forms.php">Forms</a></li>
                                                     <li><a href="browse_awards.php">Awards</a></li>
                                                     <li><a href="browse_events.php">Events</a></li>

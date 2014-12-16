@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['data',['data',['../select2_8js.html#a606a87425a3a6c440c6fdcbfb72c9b68',1,'data():&#160;select2.js'],['../select2_8js.html#a0a048e2db50684f789929834e5430d99',1,'data(&quot;select2-change-triggered&quot;, true):&#160;select2.js'],['../select2_8js.html#a0562c10bf26f44d2f330d2bc5424e886',1,'data(this.container,&quot;select2-last-term&quot;, term):&#160;select2.js']]],
+  ['data_5fsource_2ephp',['Data_Source.php',['../_data___source_8php.html',1,'']]],
+  ['database_2emd',['Database.md',['../_database_8md.html',1,'']]],
+  ['db_2ephp',['db.php',['../db_8php.html',1,'']]],
+  ['db_5fhost',['DB_HOST',['../db_8php.html#a293363d7988627f671958e2d908c202a',1,'db.php']]],
+  ['db_5fname',['DB_NAME',['../db_8php.html#ab5db0d3504f917f268614c50b02c53e2',1,'db.php']]],
+  ['db_5fpass',['DB_PASS',['../db_8php.html#a8bb9c4546d91667cfa61879d83127a92',1,'db.php']]],
+  ['db_5fuser',['DB_USER',['../db_8php.html#a1d1d99f8e08f387d84fe9848f3357156',1,'db.php']]],
+  ['debounce',['debounce',['../select2_8js.html#ae24d5d2338f53c08f626e4f6c094ce3e',1,'select2.js']]],
+  ['defaultescapemarkup',['defaultEscapeMarkup',['../select2_8js.html#a7d0c95bba1d568dade95332a5376c530',1,'select2.js']]],
+  ['defaults',['defaults',['../select2_8js.html#a9785ef8e1c08c7602b315e8952be46a2',1,'select2.js']]],
+  ['deleteawardkeywords',['deleteAwardKeywords',['../awards_8php.html#a1c82ca3922ab4bb33c5e66123554ce95',1,'awards.php']]],
+  ['deletecategorykeywords',['deleteCategoryKeywords',['../categories_8php.html#a5bd5afd63a45152cfa0790467e3a9773',1,'categories.php']]],
+  ['details',['details',['../select2_8js.html#ace24e4da2dacc04a319964f1507ddb87',1,'select2.js']]],
+  ['diacritics',['DIACRITICS',['../select2_8js.html#a8d5d0805822761bd2e1af6cc86178b52',1,'select2.js']]],
+  ['disabled',['disabled',['../select2_8js.html#afa60714e7ea46da855b05e6e43afa672',1,'select2.js']]],
+  ['dn',['dn',['../j_query_8js.html#ab5e3f3e2b2507b73e2d8092caa5c8650',1,'jQuery.js']]],
+  ['dologout',['doLogout',['../class_login.html#a293fa112652b5448b15c0fb81eafc7cb',1,'Login']]],
+  ['dropheight',['dropHeight',['../select2_8js.html#a3490efd5d4352851be404107d04557da',1,'select2.js']]],
+  ['dropleft',['dropLeft',['../select2_8js.html#adb3c1bc3f32b5b706ed5dcc022f1f7b8',1,'select2.js']]],
+  ['droptop',['dropTop',['../select2_8js.html#ab130acbab82316357b9839210ff01136',1,'select2.js']]],
+  ['dropwidth',['dropWidth',['../select2_8js.html#aaa3e63af63c0e77ccdc604bf637eda95',1,'select2.js']]],
+  ['dt',['Dt',['../j_query_8js.html#aa5cee20f62fd8888f4ec6338e682401f',1,'jQuery.js']]],
+  ['database',['Database',['../md__m_s_e_f-master__design__database.html',1,'']]]
+];
