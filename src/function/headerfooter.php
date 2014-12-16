@@ -147,8 +147,8 @@ date_default_timezone_set('UTC');
           function incFooter() { ?>
                 <hr>
                 <div class="col-md-12" align="center">
-                    <a href="http://www.facebook.com"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
-                    <a href="http://www.twitter.com"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
+                    <a href="https://www.facebook.com/msefomaha"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
+                    <a href="https://twitter.com/MSEFOmaha"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
                 </div>
             </body>
         </html>
