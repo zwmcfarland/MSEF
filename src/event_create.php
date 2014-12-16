@@ -51,7 +51,7 @@
                      <div class="form-group">
                         <dl class="dl-horizontal">
                             <dt>Description</dt>
-                            <dd><textarea class="form-control" name="location" placeholder="Event Description"></textarea></dd>
+                            <dd><textarea class="form-control" name="description" placeholder="Event Description"></textarea></dd>
                         </dl>
                     </div>
                     <div class="form-group">

@@ -45,7 +45,7 @@
        if(mysql_error()){
            array_push($result, array('Message' => mysql_error(), 'type' => 'error'));
        } else {
-              array_push($result, array('SuccessURL' => "event_detail.php?eventId=<?php echo $eventId; ?>&message=Successfully+Created+Event", 'type' => 'success'));
+              array_push($result, array('SuccessURL' => 'event_detail.php?eventId=' . $eventId . '&message=Successfully+Created+Event', 'type' => 'success'));
        }
     }
 
