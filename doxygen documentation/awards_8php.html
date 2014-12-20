@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>My Project: MSEF-master/src/function/awards.php File Reference</title>
+<title>MSEF: C:/Users/Zac/Downloads/MSEF-master/src/function/awards.php File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,8 +29,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">MSEF
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
+   <div id="projectbrief">Web System for Science Fairs</div>
   </td>
  </tr>
  </tbody>
@@ -64,6 +73,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('awards_8php.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,11 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_7f09087e63138fded8f303999d460f61.html">MSEF-master</a></li><li class="navelem"><a class="el" href="dir_d62895ebb12f3008f12a96cd16b82fac.html">src</a></li><li class="navelem"><a class="el" href="dir_db332d49e83b38204cc4c3559a394880.html">function</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -90,20 +109,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">awards.php File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="awards_8php_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a034c33eb34efcaa36350cb4affba7e0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="awards_8php.html#a034c33eb34efcaa36350cb4affba7e0a">getAward</a> ($awardId=&quot;&quot;)</td></tr>
+<tr class="memdesc:a034c33eb34efcaa36350cb4affba7e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets information about MSEF awards from the database.  <a href="#a034c33eb34efcaa36350cb4affba7e0a">More...</a><br /></td></tr>
 <tr class="separator:a034c33eb34efcaa36350cb4affba7e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dc56b5b292215d538e66b435cd3a9cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="awards_8php.html#a6dc56b5b292215d538e66b435cd3a9cb">associateKeyword</a> ($awardId, $keywordId)</td></tr>
+<tr class="memdesc:a6dc56b5b292215d538e66b435cd3a9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associatesa a keyword to an award.  <a href="#a6dc56b5b292215d538e66b435cd3a9cb">More...</a><br /></td></tr>
 <tr class="separator:a6dc56b5b292215d538e66b435cd3a9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c82ca3922ab4bb33c5e66123554ce95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="awards_8php.html#a1c82ca3922ab4bb33c5e66123554ce95">deleteAwardKeywords</a> ($awardId)</td></tr>
+<tr class="memdesc:a1c82ca3922ab4bb33c5e66123554ce95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disassociates all keywords from an award.  <a href="#a1c82ca3922ab4bb33c5e66123554ce95">More...</a><br /></td></tr>
 <tr class="separator:a1c82ca3922ab4bb33c5e66123554ce95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9907ea6ed2f9c3953ced2eb213555825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="awards_8php.html#a9907ea6ed2f9c3953ced2eb213555825">createAward</a> ($awardName, $description, $reward)</td></tr>
+<tr class="memdesc:a9907ea6ed2f9c3953ced2eb213555825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts award record into database,.  <a href="#a9907ea6ed2f9c3953ced2eb213555825">More...</a><br /></td></tr>
 <tr class="separator:a9907ea6ed2f9c3953ced2eb213555825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28139c0dff06527fe869f66ac73e4a87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="awards_8php.html#a28139c0dff06527fe869f66ac73e4a87">updateAward</a> ($awardId, $awardName, $description, $reward)</td></tr>
+<tr class="memdesc:a28139c0dff06527fe869f66ac73e4a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates award record in the database.  <a href="#a28139c0dff06527fe869f66ac73e4a87">More...</a><br /></td></tr>
 <tr class="separator:a28139c0dff06527fe869f66ac73e4a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26d8d09856d304ef88a14127bc58efb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="awards_8php.html#a26d8d09856d304ef88a14127bc58efb7">getSuggestedProjects</a> ($awardId=&quot;&quot;)</td></tr>
+<tr class="memdesc:a26d8d09856d304ef88a14127bc58efb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of suggested projects to give the award too.  <a href="#a26d8d09856d304ef88a14127bc58efb7">More...</a><br /></td></tr>
 <tr class="separator:a26d8d09856d304ef88a14127bc58efb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -130,6 +157,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Associatesa a keyword to an award. </p>
+
+<p>Definition at line <a class="el" href="awards_8php_source.html#l00021">21</a> of file <a class="el" href="awards_8php_source.html">awards.php</a>.</p>
 
 </div>
 </div>
@@ -163,6 +194,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Inserts award record into database,. </p>
+
+<p>Definition at line <a class="el" href="awards_8php_source.html#l00044">44</a> of file <a class="el" href="awards_8php_source.html">awards.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1c82ca3922ab4bb33c5e66123554ce95"></a>
@@ -178,6 +213,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Disassociates all keywords from an award. </p>
+
+<p>Definition at line <a class="el" href="awards_8php_source.html#l00033">33</a> of file <a class="el" href="awards_8php_source.html">awards.php</a>.</p>
 
 </div>
 </div>
@@ -195,6 +234,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets information about MSEF awards from the database. </p>
+
+<p>Definition at line <a class="el" href="awards_8php_source.html#l00003">3</a> of file <a class="el" href="awards_8php_source.html">awards.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a26d8d09856d304ef88a14127bc58efb7"></a>
@@ -210,6 +253,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a list of suggested projects to give the award too. </p>
+<p>Get a list of keywords for the award.</p>
+<p>check for projects associated to those keywords </p>
+
+<p>Definition at line <a class="el" href="awards_8php_source.html#l00071">71</a> of file <a class="el" href="awards_8php_source.html">awards.php</a>.</p>
 
 </div>
 </div>
@@ -249,14 +298,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Updates award record in the database. </p>
+
+<p>Definition at line <a class="el" href="awards_8php_source.html#l00058">58</a> of file <a class="el" href="awards_8php_source.html">awards.php</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 16 2014 16:28:10 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d3ebcf50f8acb4e0db99838bcb9c654b.html">Downloads</a></li><li class="navelem"><a class="el" href="dir_d07b5dd7620ee6bdb71d31d62bddac9d.html">MSEF-master</a></li><li class="navelem"><a class="el" href="dir_18fa2e5e8ce958c14caaf5a1adfe7c20.html">src</a></li><li class="navelem"><a class="el" href="dir_f4f94d13dd920a6040cb953a1f18e317.html">function</a></li><li class="navelem"><a class="el" href="awards_8php.html">awards.php</a></li>
+    <li class="footer">Generated on Fri Dec 19 2014 22:45:53 for MSEF by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

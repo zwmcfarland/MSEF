@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>My Project: MSEF-master/src/function/event.php File Reference</title>
+<title>MSEF: C:/Users/Zac/Downloads/MSEF-master/src/function/event.php File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,8 +29,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">MSEF
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
+   <div id="projectbrief">Web System for Science Fairs</div>
   </td>
  </tr>
  </tbody>
@@ -64,6 +73,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('event_8php.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,11 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_7f09087e63138fded8f303999d460f61.html">MSEF-master</a></li><li class="navelem"><a class="el" href="dir_d62895ebb12f3008f12a96cd16b82fac.html">src</a></li><li class="navelem"><a class="el" href="dir_db332d49e83b38204cc4c3559a394880.html">function</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -90,16 +109,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">event.php File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="event_8php_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a76975632c28f44d35b4d33d32406912b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8php.html#a76975632c28f44d35b4d33d32406912b">updateEvent</a> ($eventId, $eventName, $startDate, $endDate, $description, $location)</td></tr>
+<tr class="memdesc:a76975632c28f44d35b4d33d32406912b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates an event record in the database.  <a href="#a76975632c28f44d35b4d33d32406912b">More...</a><br /></td></tr>
 <tr class="separator:a76975632c28f44d35b4d33d32406912b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a859e985dd79c3d1f4df016906a2bdc19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8php.html#a859e985dd79c3d1f4df016906a2bdc19">createEvent</a> ($eventName, $startDate, $endDate, $desctiption, $location)</td></tr>
+<tr class="memdesc:a859e985dd79c3d1f4df016906a2bdc19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an event record in the database.  <a href="#a859e985dd79c3d1f4df016906a2bdc19">More...</a><br /></td></tr>
 <tr class="separator:a859e985dd79c3d1f4df016906a2bdc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83375b376ac7488dd56d60df2c3a388b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8php.html#a83375b376ac7488dd56d60df2c3a388b">validate_event</a> ($eventName=&quot;&quot;, $startDate=&quot;&quot;, $endDate=&quot;&quot;, $desctiption=&quot;&quot;, $location=&quot;&quot;)</td></tr>
+<tr class="memdesc:a83375b376ac7488dd56d60df2c3a388b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates an event.  <a href="#a83375b376ac7488dd56d60df2c3a388b">More...</a><br /></td></tr>
 <tr class="separator:a83375b376ac7488dd56d60df2c3a388b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a620f33f1756bbd757badcd601a1f6df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8php.html#a620f33f1756bbd757badcd601a1f6df9">getEvents</a> ($eventId=&quot;&quot;)</td></tr>
+<tr class="memdesc:a620f33f1756bbd757badcd601a1f6df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets event records from the database.  <a href="#a620f33f1756bbd757badcd601a1f6df9">More...</a><br /></td></tr>
 <tr class="separator:a620f33f1756bbd757badcd601a1f6df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -145,6 +170,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates an event record in the database. </p>
+
+<p>Definition at line <a class="el" href="event_8php_source.html#l00020">20</a> of file <a class="el" href="event_8php_source.html">event.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a620f33f1756bbd757badcd601a1f6df9"></a>
@@ -160,6 +189,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets event records from the database. </p>
+
+<p>Definition at line <a class="el" href="event_8php_source.html#l00039">39</a> of file <a class="el" href="event_8php_source.html">event.php</a>.</p>
 
 </div>
 </div>
@@ -211,6 +244,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Updates an event record in the database. </p>
+
+<p>Definition at line <a class="el" href="event_8php_source.html#l00003">3</a> of file <a class="el" href="event_8php_source.html">event.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a83375b376ac7488dd56d60df2c3a388b"></a>
@@ -255,14 +292,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Validates an event. </p>
+
+<p>Definition at line <a class="el" href="event_8php_source.html#l00033">33</a> of file <a class="el" href="event_8php_source.html">event.php</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 16 2014 16:28:10 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d3ebcf50f8acb4e0db99838bcb9c654b.html">Downloads</a></li><li class="navelem"><a class="el" href="dir_d07b5dd7620ee6bdb71d31d62bddac9d.html">MSEF-master</a></li><li class="navelem"><a class="el" href="dir_18fa2e5e8ce958c14caaf5a1adfe7c20.html">src</a></li><li class="navelem"><a class="el" href="dir_f4f94d13dd920a6040cb953a1f18e317.html">function</a></li><li class="navelem"><a class="el" href="event_8php.html">event.php</a></li>
+    <li class="footer">Generated on Fri Dec 19 2014 22:45:53 for MSEF by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

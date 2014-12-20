@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>My Project: MSEF-master/src/function/project.php File Reference</title>
+<title>MSEF: C:/Users/Zac/Downloads/MSEF-master/src/function/project.php File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,8 +29,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">MSEF
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
+   <div id="projectbrief">Web System for Science Fairs</div>
   </td>
  </tr>
  </tbody>
@@ -64,6 +73,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('project_8php.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,11 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_7f09087e63138fded8f303999d460f61.html">MSEF-master</a></li><li class="navelem"><a class="el" href="dir_d62895ebb12f3008f12a96cd16b82fac.html">src</a></li><li class="navelem"><a class="el" href="dir_db332d49e83b38204cc4c3559a394880.html">function</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -90,6 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">project.php File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="project_8php_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -98,24 +119,34 @@ Functions</h2></td></tr>
 <tr class="memitem:a3657ed72cbf47ca2c16db43d294d3163"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#a3657ed72cbf47ca2c16db43d294d3163">getProjectInformationByEmail</a> ($userEmail=&quot;&quot;)</td></tr>
 <tr class="separator:a3657ed72cbf47ca2c16db43d294d3163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d29183dafeb69eb7d6c4bf5cab7965d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#a5d29183dafeb69eb7d6c4bf5cab7965d">updateProject</a> ($projectId, $Name=&quot;&quot;, $Description=&quot;&quot;, $Abstract=&quot;&quot;, $Electrical=FALSE)</td></tr>
+<tr class="memdesc:a5d29183dafeb69eb7d6c4bf5cab7965d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upates project record details in the database.  <a href="#a5d29183dafeb69eb7d6c4bf5cab7965d">More...</a><br /></td></tr>
 <tr class="separator:a5d29183dafeb69eb7d6c4bf5cab7965d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affa057947b4f40ec28061d9c2e84aed1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#affa057947b4f40ec28061d9c2e84aed1">createProject</a> ($Name, $Description, $Abstract, $User_id, $Electrical=FALSE)</td></tr>
+<tr class="memdesc:affa057947b4f40ec28061d9c2e84aed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a project record in the database.  <a href="#affa057947b4f40ec28061d9c2e84aed1">More...</a><br /></td></tr>
 <tr class="separator:affa057947b4f40ec28061d9c2e84aed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54da9044490f8040bfdc639a9af77e2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#a54da9044490f8040bfdc639a9af77e2e">validate</a> ($Name, $Description, $Abstract, $Electrical, $user_id)</td></tr>
+<tr class="memdesc:a54da9044490f8040bfdc639a9af77e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates a project.  <a href="#a54da9044490f8040bfdc639a9af77e2e">More...</a><br /></td></tr>
 <tr class="separator:a54da9044490f8040bfdc639a9af77e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3be63857d15b3bfe87a27ecd6194916"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#ab3be63857d15b3bfe87a27ecd6194916">getschoolProjects</a> ($userId)</td></tr>
+<tr class="memdesc:ab3be63857d15b3bfe87a27ecd6194916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all of the projects that a user is elegible to sign up for.  <a href="#ab3be63857d15b3bfe87a27ecd6194916">More...</a><br /></td></tr>
 <tr class="separator:ab3be63857d15b3bfe87a27ecd6194916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2a1278e2145499c6dfc878d16e2ccd5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#ab2a1278e2145499c6dfc878d16e2ccd5">signUp</a> ($studentId, $projectId)</td></tr>
+<tr class="memdesc:ab2a1278e2145499c6dfc878d16e2ccd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a user to a particular project.  <a href="#ab2a1278e2145499c6dfc878d16e2ccd5">More...</a><br /></td></tr>
 <tr class="separator:ab2a1278e2145499c6dfc878d16e2ccd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfdd81b0de76435f501f41509070e3d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#abfdd81b0de76435f501f41509070e3d3">submitProject</a> ($ProjectId, $sponsorId)</td></tr>
+<tr class="memdesc:abfdd81b0de76435f501f41509070e3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit a project to be approved.  <a href="#abfdd81b0de76435f501f41509070e3d3">More...</a><br /></td></tr>
 <tr class="separator:abfdd81b0de76435f501f41509070e3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68ad8ea9596f083b4d4bf248766a612c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#a68ad8ea9596f083b4d4bf248766a612c">getMyApprovals</a> ($email)</td></tr>
+<tr class="memdesc:a68ad8ea9596f083b4d4bf248766a612c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of approvals pending a users signoff.  <a href="#a68ad8ea9596f083b4d4bf248766a612c">More...</a><br /></td></tr>
 <tr class="separator:a68ad8ea9596f083b4d4bf248766a612c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a124eb2ee7841b134937335bf15edf84e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#a124eb2ee7841b134937335bf15edf84e">getProjectMembers</a> ($projectId)</td></tr>
+<tr class="memdesc:a124eb2ee7841b134937335bf15edf84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of users assigned to a project.  <a href="#a124eb2ee7841b134937335bf15edf84e">More...</a><br /></td></tr>
 <tr class="separator:a124eb2ee7841b134937335bf15edf84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9929a0522a5ef72b9b42ac4b14361f30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#a9929a0522a5ef72b9b42ac4b14361f30">approveProject</a> ($project_id, $status)</td></tr>
+<tr class="memdesc:a9929a0522a5ef72b9b42ac4b14361f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approve a project.  <a href="#a9929a0522a5ef72b9b42ac4b14361f30">More...</a><br /></td></tr>
 <tr class="separator:a9929a0522a5ef72b9b42ac4b14361f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad315e5fa4bb4a9cce8cf450f32ada0fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project_8php.html#ad315e5fa4bb4a9cce8cf450f32ada0fa">getSuggestedProjectCategories</a> ()</td></tr>
+<tr class="memdesc:ad315e5fa4bb4a9cce8cf450f32ada0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smart algorithim to get suggested projects for each category.  <a href="#ad315e5fa4bb4a9cce8cf450f32ada0fa">More...</a><br /></td></tr>
 <tr class="separator:ad315e5fa4bb4a9cce8cf450f32ada0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -142,6 +173,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Approve a project. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00194">194</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
 
 </div>
 </div>
@@ -187,6 +222,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>creates a project record in the database. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00079">79</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a68ad8ea9596f083b4d4bf248766a612c"></a>
@@ -202,6 +241,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get a list of approvals pending a users signoff. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00165">165</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
 
 </div>
 </div>
@@ -219,6 +262,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="project_8php_source.html#l00030">30</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a09e1aaa62b7b98982cfab217fc0856cc"></a>
@@ -234,6 +279,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00003">3</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
 
 </div>
 </div>
@@ -251,6 +298,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get a list of users assigned to a project. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00180">180</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab3be63857d15b3bfe87a27ecd6194916"></a>
@@ -267,6 +318,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get all of the projects that a user is elegible to sign up for. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00114">114</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad315e5fa4bb4a9cce8cf450f32ada0fa"></a>
@@ -281,6 +336,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Smart algorithim to get suggested projects for each category. </p>
+<p>Get Keywords for each category</p>
+<p>check for projects associated to those keywords </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00204">204</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
 
 </div>
 </div>
@@ -308,6 +369,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Assign a user to a particular project. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00138">138</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abfdd81b0de76435f501f41509070e3d3"></a>
@@ -333,6 +398,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Submit a project to be approved. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00149">149</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
 
 </div>
 </div>
@@ -378,6 +447,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Upates project record details in the database. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00060">60</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a54da9044490f8040bfdc639a9af77e2e"></a>
@@ -422,14 +495,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Validates a project. </p>
+
+<p>Definition at line <a class="el" href="project_8php_source.html#l00099">99</a> of file <a class="el" href="project_8php_source.html">project.php</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 16 2014 16:28:10 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d3ebcf50f8acb4e0db99838bcb9c654b.html">Downloads</a></li><li class="navelem"><a class="el" href="dir_d07b5dd7620ee6bdb71d31d62bddac9d.html">MSEF-master</a></li><li class="navelem"><a class="el" href="dir_18fa2e5e8ce958c14caaf5a1adfe7c20.html">src</a></li><li class="navelem"><a class="el" href="dir_f4f94d13dd920a6040cb953a1f18e317.html">function</a></li><li class="navelem"><a class="el" href="project_8php.html">project.php</a></li>
+    <li class="footer">Generated on Fri Dec 19 2014 22:45:53 for MSEF by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
 </body>
 </html>

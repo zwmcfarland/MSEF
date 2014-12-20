@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['readme',['README',['../md__m_s_e_f-master__r_e_a_d_m_e.html',1,'']]],
   ['rb',['rb',['../select2_8js.html#a8f610a49aea706583d0377479ad2e756',1,'select2.js']]],
   ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['readme_2emd',['README.md',['../src_2php-login-minimal-master_2_r_e_a_d_m_e_8md.html',1,'']]],
   ['register_2ephp',['register.php',['../register_8php.html',1,'']]],
   ['register_2ephp',['register.php',['../views_2register_8php.html',1,'']]],
   ['registration',['Registration',['../class_registration.html',1,'']]],

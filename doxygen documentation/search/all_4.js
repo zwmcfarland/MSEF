@@ -19,5 +19,5 @@ var searchData=
   ['award_5fedit_2ephp',['award_edit.php',['../award__edit_8php.html',1,'']]],
   ['award_5fedit_5faction_2ephp',['award_edit_action.php',['../award__edit__action_8php.html',1,'']]],
   ['awards_2ephp',['awards.php',['../awards_8php.html',1,'']]],
-  ['a_20php_20login_20script_20_28minimal_20version_29',['A PHP login script (MINIMAL VERSION)',['../md__m_s_e_f-master_src_php-login-minimal-master__r_e_a_d_m_e.html',1,'']]]
+  ['a_20php_20login_20script_20_28minimal_20version_29',['A PHP login script (MINIMAL VERSION)',['../md__c_1__users__zac__downloads__m_s_e_f-master_src_php-login-minimal-master__r_e_a_d_m_e.html',1,'']]]
 ];

@@ -2,7 +2,6 @@ var searchData=
 [
   ['data',['data',['../select2_8js.html#a606a87425a3a6c440c6fdcbfb72c9b68',1,'data():&#160;select2.js'],['../select2_8js.html#a0a048e2db50684f789929834e5430d99',1,'data(&quot;select2-change-triggered&quot;, true):&#160;select2.js'],['../select2_8js.html#a0562c10bf26f44d2f330d2bc5424e886',1,'data(this.container,&quot;select2-last-term&quot;, term):&#160;select2.js']]],
   ['data_5fsource_2ephp',['Data_Source.php',['../_data___source_8php.html',1,'']]],
-  ['database_2emd',['Database.md',['../_database_8md.html',1,'']]],
   ['db_2ephp',['db.php',['../db_8php.html',1,'']]],
   ['db_5fhost',['DB_HOST',['../db_8php.html#a293363d7988627f671958e2d908c202a',1,'db.php']]],
   ['db_5fname',['DB_NAME',['../db_8php.html#ab5db0d3504f917f268614c50b02c53e2',1,'db.php']]],
@@ -22,6 +21,5 @@ var searchData=
   ['dropleft',['dropLeft',['../select2_8js.html#adb3c1bc3f32b5b706ed5dcc022f1f7b8',1,'select2.js']]],
   ['droptop',['dropTop',['../select2_8js.html#ab130acbab82316357b9839210ff01136',1,'select2.js']]],
   ['dropwidth',['dropWidth',['../select2_8js.html#aaa3e63af63c0e77ccdc604bf637eda95',1,'select2.js']]],
-  ['dt',['Dt',['../j_query_8js.html#aa5cee20f62fd8888f4ec6338e682401f',1,'jQuery.js']]],
-  ['database',['Database',['../md__m_s_e_f-master__design__database.html',1,'']]]
+  ['dt',['Dt',['../j_query_8js.html#aa5cee20f62fd8888f4ec6338e682401f',1,'jQuery.js']]]
 ];
