@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Browse forms
      * Description:
      *     This page gives a way for all users to access a list of all of the forms that they may need to fill out.
@@ -10,22 +10,22 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/headerfooter.php");
     include("function/form.php");
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Forms');
 
-    /* --- Params --- */
-    /* --- END: Params --- */
+    /** --- Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryAward = getForms();
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 
 <!-- This is used for displaying messages from the create_form page. -->
@@ -69,6 +69,6 @@
     </div>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter();
 ?>

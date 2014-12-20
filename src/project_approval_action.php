@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Project Approval Action
      * Description:
      *     This page is used as the action page for the project approval page
@@ -12,13 +12,13 @@
      */
     include("function/project.php");
 
-    /*---- Variables ----*/
+    /**---- Variables ----*/
     $result = array();
     $ProjectId     = $_POST['ProjectId'];
     $status        = $_POST['stat'];
-    /*--- END: Variables ---*/
+    /**--- END: Variables ---*/
 
-    //Update project status
+    ///Update project status
     approveProject($ProjectId,$status);
     if(mysql_error()){
         array_push($result, array('Message' => mysql_error(), 'type' => 'error'));
@@ -26,6 +26,6 @@
         array_push($result, array('SuccessURL' => 'browse_approvals.php', 'type' => 'success'));
     }
 
-    //Return results array, in json format
+    ///Return results array, in json format
     echo json_encode($result);
 ?>

@@ -1,5 +1,5 @@
 <?php
-	//gets category infromation from the database.
+	///gets category infromation from the database.
     function getCategories($categoryId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -17,7 +17,7 @@
         return mysql_query($sql);
     }
 
-    //Creates a category record in the database.
+    ///Creates a category record in the database.
     function createCategory($categoryName, $description) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -30,7 +30,7 @@
         return mysql_insert_id();
     }
 
-    //Associaties a keyword to a category
+    ///Associaties a keyword to a category
     function associateKeyword($categoryId, $keywordId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -42,7 +42,7 @@
         mysql_query($sql);
     }
 
-    //Dis-associates all keywords from a category.
+    ///Dis-associates all keywords from a category.
     function deleteCategoryKeywords ($categoryId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -53,7 +53,7 @@
         mysql_query($sql);
     }
 
-    //Updates category records details.
+    ///Updates category records details.
     function updateCategory($categoryId, $categoryName, $description) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

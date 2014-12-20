@@ -1,5 +1,5 @@
 <?php
-	//Gets information about MSEF awards from the database.
+	///Gets information about MSEF awards from the database.
     function getAward($awardId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -17,7 +17,7 @@
          return $qryAward;
     }
 
-    //Associatesa a keyword to an award.
+    ///Associatesa a keyword to an award.
     function associateKeyword($awardId, $keywordId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -29,7 +29,7 @@
         mysql_query($sql);
     }
 
-    //Disassociates all keywords from an award.
+    ///Disassociates all keywords from an award.
     function deleteAwardKeywords ($awardId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -40,7 +40,7 @@
         mysql_query($sql);
     }
 
-    //Inserts award record into database,
+    ///Inserts award record into database,
     function createAward($awardName, $description, $reward) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -54,7 +54,7 @@
         return mysql_insert_id();
     }
 
-    //Updates award record in the database.
+    ///Updates award record in the database.
     function updateAward($awardId, $awardName, $description, $reward) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -67,14 +67,14 @@
         mysql_query($sql);
     }
 
-    //Gets a list of suggested projects to give the award too.
+    ///Gets a list of suggested projects to give the award too.
     function getSuggestedProjects($awardId = "") {
         include("Data_Source.php");
         include_once("project.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
 
-        //Get a list of keywords for the award.
+        ///Get a list of keywords for the award.
         $sql = "SELECT k.keyword
                 FROM awardKeywords as ak
                      LEFT OUTER JOIN keywords AS k ON ak.keyword_id = k.Id
@@ -82,7 +82,7 @@
         
         $qryKeywords = mysql_query($sql);
 
-        //check for projects associated to those keywords
+        ///check for projects associated to those keywords
         $sql = "SELECT p.*,
                        MATCH(Name, Description, Abstract) AGAINST ('";
                        while($row = mysql_fetch_assoc($qryKeywords)) {

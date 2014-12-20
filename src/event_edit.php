@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Event Edit
      * Description:
      *     This page allows staff members to edit existing events.
@@ -10,27 +10,27 @@
      *     12/12/2014 - Created Comments.
      */
 
-	//Include necessary files.
+	///Include necessary files.
     include("function/headerfooter.php");
     include("function/event.php");
 
-    //Create default header, and include form handler component.
+    ///Create default header, and include form handler component.
     incHeader('MSEF | Event', '', 'form.js');
 
-    /* --- Params --- */
+    /** --- Params --- */
     $eventId = $_GET['eventId'];
-    /* --- END: Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryEvent = mysql_fetch_assoc(getEvents($eventId));
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
 
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <!-- Script --> 
     <script>
-        //Display a warning if user trys to leave page before saving changes.
+        ///Display a warning if user trys to leave page before saving changes.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
@@ -87,6 +87,6 @@
     <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter();
 ?>

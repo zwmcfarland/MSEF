@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Submit project
      * Description:
      *     This page is used by students to submit their project and choose their sponsor
@@ -10,26 +10,26 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/headerfooter.php");
     include("function/project.php");
     include("function/user.php");
     
-    //Create default header, and import form handler component
+    ///Create default header, and import form handler component
     incHeader('MSEF | Project Submission', '', 'form.js');
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $projectInfo = mysql_fetch_assoc(getProjectInformationByEmail($_SESSION['user_email']));
     $sponsors = getPotentialProjectSponsors($projectInfo['Id']);
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
 
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 
 <!-- Script -->
     <script>
-        //Display warning if user leaves without saving.
+        ///Display warning if user leaves without saving.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
@@ -94,6 +94,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create default footer
+    ///Create default footer
     incFooter();
 ?>

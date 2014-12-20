@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Form Detail
      * Description:
      *     This page is to display pdf's of forms
@@ -10,27 +10,27 @@
      *     12/12/2014 - Created Comments.
      */
 
-	//Include necessary files
+	///Include necessary files
     include("function/headerfooter.php");
     include("function/form.php");
 
-    //Create default header, and import pdfobject component
+    ///Create default header, and import pdfobject component
     incHeader('MSEF | Form', '', 'pdfobject.js');
 
-    /* --- Params --- */
+    /** --- Params --- */
     $formId = $_GET['formId'];
-    /* --- END: Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryForm = mysql_fetch_assoc(getForms($formId));
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <!-- Script -->
 <script>
-	//Initialize the pdf viewer.
+	///Initialize the pdf viewer.
     window.onload = function (){
         var pdf = new PDFObject({
             url: "<?php echo $qryForm['FormPath']; ?>",
@@ -47,6 +47,6 @@
     </div>
 </div>
 <?php
-	//Create default footer
+	///Create default footer
     incFooter();
 ?>

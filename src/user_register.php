@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: User Profile Edit Action
      * Description:
      *     This page allows users to register to the MSEF system
@@ -10,22 +10,22 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary pages
+    ///Include necessary pages
     include("function/headerfooter.php");
 
-    // load the registration class
+    /// load the registration class
     include("./php-login-minimal-master/classes/Registration.php");
     
-    // create the registration object. when this object is created, it will do all registration stuff automatically
-    // so this single line handles the entire registration process.
+    /// create the registration object. when this object is created, it will do all registration stuff automatically
+    /// so this single line handles the entire registration process.
     $registration = new Registration();
     incHeader('MSEF | Home');
     
-    /* --- Queries --- */
-    /* --- END: Queries ---*/
+    /** --- Queries --- */
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <div class="col-lg-12">
     <div class="col-md-2 col-md-offset-5">
@@ -78,6 +78,6 @@
    </div>
 </div>
 <?php
-    //Create default footer
+    ///Create default footer
     incFooter();
 ?>

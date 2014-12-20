@@ -1,5 +1,5 @@
 <?php
-	//Updates an event record in the database.
+	///Updates an event record in the database.
     function updateEvent($eventId, $eventName, $startDate, $endDate, $description, $location) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -16,7 +16,7 @@
          mysql_query($sql);
     }
 
-    //Creates an event record in the database.
+    ///Creates an event record in the database.
     function createEvent($eventName,$startDate,$endDate,$desctiption, $location) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -29,13 +29,13 @@
         return mysql_insert_id();
     }
 
-    //Validates an event.
+    ///Validates an event.
     function validate_event($eventName = "",$startDate = "",$endDate = "",$desctiption = "", $location = ""){
         $result = array();
         return $result;
     }
 
-    //Gets event records from the database.
+    ///Gets event records from the database.
     function getEvents($eventId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

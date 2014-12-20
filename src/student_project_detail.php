@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Student project detail
      * Description:
      *     This page allows students to view detailed information about their project.
@@ -10,20 +10,20 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include_once("function/headerfooter.php");
     include_once("function/project.php");
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Project');
     
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryProject = getProjectInformationByEmail($_SESSION['user_email']);
     $projectInfo = mysql_fetch_assoc($qryProject);
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <!-- Used to display messages -->
 <?php if(isset($_GET['message'])):?>
@@ -77,6 +77,6 @@
     <!-- END: Project Detials -->
 </div>
 <?php
-    //create default footer
+    ///create default footer
     incFooter();
 ?>

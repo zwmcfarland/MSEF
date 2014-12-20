@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Student project create
      * Description:
      *     This page allows a student to create a new project.
@@ -10,23 +10,23 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/headerfooter.php");
     include("function/project.php");
     
-    //Create default header and include form handler component
+    ///Create default header and include form handler component
     incHeader('MSEF | Project', '', 'form.js');
     
-    /* --- Queries --- */
-    /* --- END: Queries ---*/
+    /** --- Queries --- */
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 
 <!-- Script -->
     <script>
-        //Display warning if users try to leave without saving.
+        ///Display warning if users try to leave without saving.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
@@ -78,6 +78,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create default footer
+    ///Create default footer
     incFooter();
 ?>

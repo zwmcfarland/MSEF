@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
     * Name: Award Create
     * Description:
     *     This page provides an interface for staff members to create award records.
@@ -13,12 +13,12 @@
     include_once("function/keywords.php");
     incHeader('MSEF | Awards', '', 'form.js');
     
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryKeywords = getKeywords();
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */ 
+    /** --- Security --- */
+    /** --- END: Security --- */ 
 ?>
 
 <!-- Script --> 

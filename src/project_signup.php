@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Project signup
      * Description:
      *     This page is by students to sign up for existing projects.
@@ -10,22 +10,22 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/headerfooter.php");
     include("function/project.php");
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Award');
 
-    /* --- Params --- */
-    /* --- END: Params --- */
+    /** --- Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryProjects = getschoolProjects($_SESSION['user_id']);
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 
 <!-- Used to display messages -->
@@ -75,6 +75,6 @@
     </div>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter();
 ?>

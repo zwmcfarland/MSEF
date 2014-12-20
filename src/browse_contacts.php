@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Contacts
      * Description:
      *     This page gives contact information for the MSEF staff.
@@ -10,17 +10,17 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/headerfooter.php");
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Contact Us');
     
-    /* --- Queries --- */
-    /* --- END: Queries ---*/
+    /** --- Queries --- */
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <div class="col-lg-12">
     <div class="col-lg-10 col-md-offset-1">
@@ -47,6 +47,6 @@
    </div>
 </div>
 <?php
-    //Create default header.
+    ///Create default header.
     incFooter();
 ?>

@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: User login
      * Description:
      *     This page is used by users to view their profile information
@@ -10,15 +10,15 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include_once("function/headerfooter.php");
     include_once("function/user.php");
     include_once("function/form.php");
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Profile');
     
-    /* --- Queries --- */
+    /** --- Queries --- */
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
     $forms = getStudentForms($_SESSION['user_id']);
     if($userInfo['ProjectId'] != ""){
@@ -27,10 +27,10 @@
     else {
         $suggestedForms = array();
     }
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
 
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <!-- Used to display messages. -->
 <?php if(isset($_GET['message'])):?>
@@ -203,6 +203,6 @@
     <!-- END: Parent Detials -->
 </div>
 <?php
-    //Created default footer
+    ///Created default footer
     incFooter();
 ?>

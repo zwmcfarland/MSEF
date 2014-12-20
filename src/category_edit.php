@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Category edit
      * Description:
      *     This page allows staff members to edit existing categories.
@@ -10,31 +10,31 @@
      *     12/12/2014 - Created Comments.
      */
 
-	//Include necessary files.
+	///Include necessary files.
     include("function/headerfooter.php");
     include_once("function/categories.php");
     include_once("function/keywords.php");
     
-    //Create default header, and include form handler component.
+    ///Create default header, and include form handler component.
     incHeader('MSEF | Categories', '', 'form.js');
     
-    /*--- Parameters ---*/
+    /**--- Parameters ---*/
     $categoryId = $_GET['category_id'];
-    /*--- END: Parameters ---*/
+    /**--- END: Parameters ---*/
     
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryCategory = mysql_fetch_assoc(getCategories($categoryId));
     $qryKeywords = getKeywords();
     $qryCategoryKeywords = getCategoryKeywords($categoryId);
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */ 
+    /** --- Security --- */
+    /** --- END: Security --- */ 
 ?>
 
 <!-- Script --> 
     <script>
-        //List pre-existing keywords.
+        ///List pre-existing keywords.
         var keywords = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryKeywords)): ?>
@@ -45,7 +45,7 @@
                 <?php endif;?>
             <?php endwhile; ?>
         ];
-        //Create list of keywords already associated with the category.
+        ///Create list of keywords already associated with the category.
         var preload_data = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryCategoryKeywords)): ?>
@@ -59,13 +59,13 @@
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
-		//Initialize keyword lookup.
+		///Initialize keyword lookup.
         $(document).on('ready', function() {
             $("#keywordTg").select2({
             	multiple: true,
             	tags: keywords
             });
-            //Load associatied keys.
+            ///Load associatied keys.
             $('#keywordTg').select2('data', preload_data);
         });
     </script>
@@ -113,6 +113,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter(); 
 ?>

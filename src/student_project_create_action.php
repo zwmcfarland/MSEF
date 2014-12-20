@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Student project create action
      * Description:
      *     This is the action page for student projcet create form page.
@@ -14,10 +14,10 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/project.php");
 
-    /*---- Variables ----*/
+    /**---- Variables ----*/
     $ProjectName        = $_POST['ProjectName'];
     $description        = $_POST['Description'];
     $abstract           = $_POST['Abstract'];
@@ -26,17 +26,17 @@
     if(isset($_POST['Electrical'])){
         $electrical = true;
     }
-    /*--- END: Variables ---*/
+    /**--- END: Variables ---*/
 
-    /* Validation */
-    //First Name
+    /** Validation */
+    ///First Name
     $result = validate($ProjectName,$description,$abstract,$electrical,$user_id);
-    /* END: Validation */
+    /** END: Validation */
 
-    //If validation passed.
+    ///If validation passed.
     if(empty($result))
     {
-        /* Create project record in database */
+        /** Create project record in database */
        $projectId = createProject($ProjectName,$description,$abstract,$user_id, $electrical);
        if(mysql_error()){
            array_push($result, array('Message' => mysql_error(), 'type' => 'error'));
@@ -47,6 +47,6 @@
        }
     }
 
-    //Return result array, in json format
+    ///Return result array, in json format
     echo json_encode($result);
 ?>

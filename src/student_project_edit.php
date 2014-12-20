@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Student project edit
      * Description:
      *     This page allows students to edit their projects details.
@@ -10,24 +10,24 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/headerfooter.php");
     include("function/project.php");
 
-    //Create default header.
+    ///Create default header.
     incHeader('MSEF | Project', '', 'form.js');
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $projectInfo = mysql_fetch_assoc(getProjectInformationByEmail($_SESSION['user_email']));
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 
 <!-- Script -->
     <script>
-        //Show warning if users try to leave without saving.
+        ///Show warning if users try to leave without saving.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
@@ -80,6 +80,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter();
 ?>

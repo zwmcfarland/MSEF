@@ -1,5 +1,5 @@
 <?php 
-    /*
+    /**
      * Name: Suggested categories
      * Description:
      *     This page allows staff to see algorithmically suggested projects for categories
@@ -10,18 +10,18 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/headerfooter.php");
     include("function/project.php");
     include("function/categories.php");
 
-    //Create default header
+    ///Create default header
     incHeader("MSEF | Categories");
     
-    /*--- Queries ---*/
+    /**--- Queries ---*/
     $sugProjStruct = getSuggestedProjectCategories();
     $qryCategories = getCategories();
-    /*--- END: Queries ---*/
+    /**--- END: Queries ---*/
 ?>
 
 <div class="col-lg-12">
@@ -57,6 +57,6 @@
 </div>
 
 <?php
-    //Create default footer
+    ///Create default footer
     incFooter(); 
 ?>

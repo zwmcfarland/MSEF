@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Form Create
      * Description:
      *     This page allows staff to create forms.
@@ -10,24 +10,24 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/headerfooter.php");
     include_once("function/keywords.php");
 
-    //Create default header, and import form handler component
+    ///Create default header, and import form handler component
     incHeader('MSEF | Forms', '', 'form.js');
     
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryKeywords = getKeywords();
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */ 
+    /** --- Security --- */
+    /** --- END: Security --- */ 
 ?>
 
 <!-- Script --> 
     <script>
-        //Create list of pre-existing keywords.
+        ///Create list of pre-existing keywords.
         var keywords = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryKeywords)): ?>
@@ -42,7 +42,7 @@
             return "All unsaved data will be lost:";
         });
 
-        //Instantiate keyword lookup.
+        ///Instantiate keyword lookup.
         $(document).on('ready', function() {
             $("#keywordTg").select2({
                 multiple: true,
@@ -94,6 +94,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter(); 
 ?>

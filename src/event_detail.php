@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Event detail
      * Description:
      *     This page allows users to see detailed information about an event.
@@ -10,23 +10,23 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/headerfooter.php");
     include("function/event.php");
     
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Event');
 
-    /* --- Params --- */
+    /** --- Params --- */
     $eventId = $_GET['eventId'];
-    /* --- END: Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryEvent = mysql_fetch_assoc(getEvents($eventId));
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 
 <!-- This is used to show messages from the form submission pages. -->
@@ -68,6 +68,6 @@
     </div>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter();
 ?>

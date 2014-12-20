@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Browse events
      * Description:
      *     This page gives a way for all users to view a calender of events.
@@ -10,27 +10,27 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/headerfooter.php");
     include("function/event.php");
     
-    //Create default header, and include the calender component files.
+    ///Create default header, and include the calender component files.
     incHeader('MSEF | Events','', 'moment.min.js,fullcalendar.js');
 
-    /* --- Params --- */
-    /* --- END: Params --- */
+    /** --- Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryEvents = getEvents();
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <!-- Script -->
 <script type="text/javascript">
     $(document).ready(function() {
-        //Creates the calender for viewing events.
+        ///Creates the calender for viewing events.
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
@@ -40,7 +40,7 @@
             height: 600,
             defaultDate:  '<?php echo date("Y-m-d");?>',
             editable: false,
-            eventLimit: true, // allow "more" link when too many events
+            eventLimit: true, /// allow "more" link when too many events
             events: [
                 <?php $count = 0;?>
                 <?php while($row = mysql_fetch_assoc($qryEvents)):?>
@@ -110,6 +110,6 @@
     </div>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter();
 ?>

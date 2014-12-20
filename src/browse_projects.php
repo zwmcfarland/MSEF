@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Browse projects
      * Description:
      *     This page is used by sponsors and staff to view a list of student projects.
@@ -17,15 +17,15 @@
     //Create deault header
     incHeader('MSEF | Projects');
 
-    /* --- Params --- */
-    /* --- END: Params --- */
+    /** --- Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryProjects = getProjectInformationByProjectId();
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <div class="col-lg-12">
     <div class="col-md-10 col-md-offset-1">

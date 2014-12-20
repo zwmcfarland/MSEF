@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: User login
      * Description:
      *     This page is used to login to the MSEF system.
@@ -10,24 +10,24 @@
      *     12/12/2014 - Created Comments.
      */
 
-	//Include necessary files
+	///Include necessary files
     include("function/headerfooter.php");
     
-    /*--- Params ---*/
+    /**--- Params ---*/
     global $login;
     if ($login->isUserLoggedIn() == true) {
             header( 'Location: ..\src\index.php') ; 
     }
-    /*--- END: Params ---*/
+    /**--- END: Params ---*/
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Login');
 
-    /* --- Queries --- */
-    /* --- END: Queries ---*/
+    /** --- Queries --- */
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <div class="col-lg-12">
     <div class="col-md-2 col-md-offset-5">
@@ -37,7 +37,7 @@
             </div>
             <div class="panel-body">
                 <?php
-                    // show potential errors / feedback (from login object)
+                    /// show potential errors / feedback (from login object)
                     if (isset($login)) {
                         if ($login->errors) {
                             foreach ($login->errors as $error) {
@@ -68,6 +68,6 @@
    </div>
 </div>
 <?php
-	//Create default footer
+	///Create default footer
     incFooter();
 ?>

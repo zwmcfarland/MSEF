@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Submit project Action
      * Description:
      *     This page is used as the action page for the form on submit_project page.
@@ -12,13 +12,13 @@
      */
     include("function/project.php");
 
-    /*---- Variables ----*/
+    /**---- Variables ----*/
     $result = array();
     $ProjectId        = $_POST['ProjectId'];
     $sponsorId        = $_POST['Sponsor'];
-    /*--- END: Variables ---*/
+    /**--- END: Variables ---*/
 
-    //Update project status
+    ///Update project status
     submitProject($ProjectId,$sponsorId);
     if(mysql_error()){
         array_push($result, array('Message' => mysql_error(), 'type' => 'error'));
@@ -26,6 +26,6 @@
         array_push($result, array('SuccessURL' => 'user_profile_detail.php?message=Successfully+Submitted+Project', 'type' => 'success'));
     }
 
-    //Return result array, in json format
+    ///Return result array, in json format
     echo json_encode($result);
 ?>

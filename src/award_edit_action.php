@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
     * Name: Award edit action
     * Description:
     *     This page is used as the submission page for the award edit page. The form on the award edit page is submitted to this page.
@@ -14,21 +14,21 @@
     *     12/11/2014 - Created Comments.
     */
 
-    /* --- Include neccesarry files ---*/
+    /** --- Include neccesarry files ---*/
     include("function/keywords.php");
     include("function/awards.php");
-    /* --- END: Include neccesarry files ---*/
+    /** --- END: Include neccesarry files ---*/
 
-    /*---- Variables ----*/
+    /**---- Variables ----*/
     $result = array();
     $awardId     = $_POST['AwardId'];
     $awardName   = $_POST['AwardName'];
     $description = $_POST['Description'];
     $reward      = $_POST['Reward'];
     $keywords    = explode(',', $_POST['Keywords']);
-    /*--- END: variables ---
+    /**--- END: variables ---
     
-    /* Validation */
+    /** Validation */
     if(empty($awardName) || $awardName == NULL) {
         array_push($result, array('Message' => 'An award name is required.', 'Element' => 'AwardName', 'type' => 'error'));
     }
@@ -38,22 +38,22 @@
     if(empty($reward) || $reward == NULL) {
         array_push($result, array('Message' => 'A award reward description is required.', 'Element' => 'AwardName', 'type' => 'error'));
     }
-    /* END: Validation */
+    /** END: Validation */
     
-    //If validation past.
+    ///If validation past.
     if(empty($result))
     {
-        /* Update award */
+        /** Update award */
        updateAward($awardId, $awardName, $description, $reward);
        
-       //If there where no errors, continue, else return error message.
+       ///If there where no errors, continue, else return error message.
        if(mysql_error()){
            array_push($result, array('Message' => mysql_error(), 'type' => 'error'));
        }
        else {
           deleteAwardKeywords($awardId);
           foreach($keywords as $keyword) {
-              //Insert keyword
+              ///Insert keyword
               if(is_numeric($keyword)) {
                   $newKeywordId = $keyword;
               }
@@ -66,6 +66,6 @@
        }
     }
 
-    //return results array.
+    ///return results array.
     echo json_encode($result);
 ?>

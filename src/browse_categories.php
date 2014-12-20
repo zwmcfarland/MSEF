@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Browse categories
      * Description:
      *     This page allows all users to view a list of the categories.
@@ -10,22 +10,22 @@
      *     12/11/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/headerfooter.php");
     include("function/categories.php");
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Categories');
     
-    /* --- Params --- */
-    /* --- END: Params --- */
+    /** --- Params --- */
+    /** --- END: Params --- */
     
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qrycategories = getCategories();
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 
 <!-- This is used to display success messages after creating a new category. -->
@@ -72,6 +72,6 @@
         </div>
     </div>
 <?php
-    //Include standard footer.
+    ///Include standard footer.
     incFooter();
 ?>

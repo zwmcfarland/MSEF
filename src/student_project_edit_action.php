@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Student project edit action
      * Description:
      *     This page is used as the action page for the form on student project edit page.
@@ -13,13 +13,13 @@
      *     11/09/2014 - Created file.
      *     12/12/2014 - Created Comments.
      */
-    //Ensure session variables are avalible.
+    ///Ensure session variables are avalible.
     session_start();
 
-    //Include necesssary files.
+    ///Include necesssary files.
     include("function/project.php");
 
-    /*---- Variables ----*/
+    /**---- Variables ----*/
     $result = array();
     $projectId          = $_POST['ProjectId'];
     $ProjectName        = $_POST['ProjectName'];
@@ -29,16 +29,16 @@
     if(isset($_POST['Electrical'])){
         $electrical = true;
     }
-    /*---- END: Variables ----*/
+    /**---- END: Variables ----*/
 
-    /* Validation */
+    /** Validation */
     $result = validate($ProjectName,$description,$abstract,$electrical, $_SESSION['user_id']);
-    /* END: Validation */
+    /** END: Validation */
 
-    //If passed validation
+    ///If passed validation
     if(empty($result))
     {
-       /* Update database record */
+       /** Update database record */
        updateProject($projectId, $ProjectName,$description,$abstract,$electrical);
        if(mysql_error()){
            array_push($result, array('Message' => mysql_error(), 'type' => 'error'));
@@ -48,6 +48,6 @@
        }
     }
 
-    //Return results array, in json format.
+    ///Return results array, in json format.
     echo json_encode($result);
 ?>

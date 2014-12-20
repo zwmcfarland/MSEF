@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Category Create
      * Description:
      *     This page is used by staff to create categories.
@@ -10,24 +10,24 @@
      *     12/12/2014 - Created Comments.
      */
 
-	//Include necessary files.
+	///Include necessary files.
     include("function/headerfooter.php");
     include_once("function/keywords.php");
 
-    //Create standard header, and include form handler
+    ///Create standard header, and include form handler
     incHeader('MSEF | Categories', '', 'form.js');
     
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryKeywords = getKeywords();
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */ 
+    /** --- Security --- */
+    /** --- END: Security --- */ 
 ?>
 
 <!-- Script -->
     <script>
-       //Populates a list of pre-existing keywords
+       ///Populates a list of pre-existing keywords
         var keywords = [
             <?php $count = 0;?>
             <?php while($row = mysql_fetch_assoc($qryKeywords)): ?>
@@ -93,6 +93,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create stadard footer.
+    ///Create stadard footer.
     incFooter(); 
 ?>

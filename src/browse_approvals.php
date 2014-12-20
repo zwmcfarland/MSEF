@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Browse approvals
      * Description:
      *     This page allows sponsors to view a list of projects awaiting their approval.
@@ -9,23 +9,23 @@
      *     11/09/2014 - Created file.
      *     12/11/2014 - Created Comments.
      */
-    /*--- Include Necessary files ---*/
+    /**--- Include Necessary files ---*/
     include("function/headerfooter.php");
     include("function/project.php");
-    /*--- END: Include Necessary files ---*/
+    /**--- END: Include Necessary files ---*/
 
-    //Create default header.
+    ///Create default header.
     incHeader('MSEF | Approvals');
 
-    /* --- Params --- */
-    /* --- END: Params --- */
+    /** --- Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryProjects = getMyApprovals($_SESSION['user_email']);
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <div class="col-lg-12">
     <div class="col-md-10 col-md-offset-1">
@@ -65,6 +65,6 @@
     </div>
 </div>
 <?php
-    //Include standard footer
+    ///Include standard footer
     incFooter();
 ?>

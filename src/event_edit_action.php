@@ -1,5 +1,5 @@
 <?php
-	/*
+	/**
 	 * Name: Event Edit Action
 	 * Description:
 	 *     This page is a system page used as the action page for event_edit form.
@@ -21,7 +21,7 @@
     include("function/event.php");
     date_default_timezone_set('UTC');
 
-    /*---- Variables ----*/
+    /**---- Variables ----*/
     $result            = array();
     $eventId           = $_POST['EventId'];
     $eventName         = $_POST['EventName'];
@@ -33,17 +33,17 @@
     $location          = $_POST['Location'];
     $startDate        .= " ".$startTime;
     $endDate          .= " ".$endTime;
-    /*--- END: Variables ---*/
+    /**--- END: Variables ---*/
 
-    /* Validation */
+    /** Validation */
     //First Name
     $result = validate_event($eventName,$startDate,$endDate,$description, $location);
-    /* END: Validation */
+    /** END: Validation */
 
     //Passed validation
     if(empty($result))
     {
-        /* Update event in database. */
+        /** Update event in database. */
        updateEvent($eventId, $eventName,$startDate,$endDate,$description, $location);
        if(mysql_error()){
            array_push($result, array('Message' => mysql_error(), 'type' => 'error'));

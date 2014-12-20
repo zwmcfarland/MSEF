@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Index
      * Description:
      *     This is the home page of the entire application.
@@ -10,17 +10,17 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/headerfooter.php");
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Home');
     
-    /* --- Queries --- */
-    /* --- END: Queries ---*/
+    /** --- Queries --- */
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <div class="col-lg-12">
     <div class="col-lg-6">
@@ -55,6 +55,6 @@
    </div>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter();
 ?>

@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Project Approval
      * Description:
      *     This page is used by sponsors to approve project submissions.
@@ -10,29 +10,29 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/headerfooter.php");
     include("function/project.php");
 
-    //Create default header.
+    ///Create default header.
     incHeader('MSEF | Project', '', 'form.js');
 
-    /*--- Parameters ---*/
+    /**--- Parameters ---*/
     $project_id = $_GET['project_id'];
-    /*--- END: Parameters ---*/
+    /**--- END: Parameters ---*/
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $projectInfo = mysql_fetch_assoc(getProjectInformationByProjectId($project_id));
     $students = getProjectMembers($project_id)
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 
 <!-- Script -->
     <script>
-        //Display warning if user trys to leave without saving.
+        ///Display warning if user trys to leave without saving.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
@@ -114,6 +114,6 @@
    <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create default footer.
+    ///Create default footer.
     incFooter();
 ?>

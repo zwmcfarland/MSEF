@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Award Detail
     * Description:
     *     This page allows users to view detailed information about an award.
@@ -9,25 +9,25 @@
     *     11/09/2014 - Created file.
     *     12/11/2014 - Created Comments.
     */
-    /*--- Include neccessary files ---*/
+    /**--- Include neccessary files ---*/
     include("function/headerfooter.php");
     include_once("function/awards.php");
-    /*--- END: Include neccessary files ---*/
+    /**--- END: Include neccessary files ---*/
     
-    //Generate standard header.
+    ///Generate standard header.
     incHeader('MSEF | Award');
 
-    /* --- Params --- */
+    /** --- Params --- */
     $awardId = $_GET['awardId'];
-    /* --- END: Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryAward = mysql_fetch_assoc(getAward($awardId));
     $suggested = getSuggestedProjects($awardId);
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <!-- Used to display messages after editing an award. -->
 <?php if(isset($_GET['message'])):?>
@@ -94,6 +94,6 @@
     </div>
 </div>
 <?php
-    //Get standard footer.
+    ///Get standard footer.
     incFooter();
 ?>

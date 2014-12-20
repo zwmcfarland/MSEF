@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: User login
      * Description:
      *     This page is used by users to edit their profile infromation.
@@ -10,17 +10,17 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/headerfooter.php");
     include("function/user.php");
     include("function/school.php");
     include("function/states.php");
     include_once("function/form.php");
     
-    //Create default header.
+    ///Create default header.
     incHeader('MSEF | Profile', '', 'form.js');
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $userInfo = mysql_fetch_assoc(getUserInformation($_SESSION['user_email']));
     $schools = getSchools();
     $forms = getStudentForms($_SESSION['user_id']);
@@ -30,14 +30,14 @@
     else {
         $suggestedForms = array();
     }
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
 
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <!-- Script -->
     <script>
-        //Display warning if user trys to leave without saving.
+        ///Display warning if user trys to leave without saving.
         $(window).bind('beforeunload', function(e){
             return "All unsaved data will be lost:";
         });
@@ -263,6 +263,6 @@
     <iframe name="formSubFrame" style="display:none;" id="iframSub" onload="subComp()"></iframe>
 </div>
 <?php
-    //Create default footer
+    ///Create default footer
     incFooter();
 ?>

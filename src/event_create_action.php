@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Event Create Action
      * Description:
      *     This page is a system page used as the action page for event_create form.
@@ -16,11 +16,11 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/event.php");
     date_default_timezone_set('UTC');
 
-    /*---- Variables ----*/
+    /**---- Variables ----*/
     $result            = array();
     $eventName         = $_POST['eventName'];
     $startDate         = $_POST['startDate'];
@@ -31,16 +31,16 @@
     $location          = $_POST['location'];
     $startDate        .= " ".$startTime;
     $endDate          .= " ".$endTime;
-    /*--- END: Variables ---*/
+    /**--- END: Variables ---*/
 
-    /* Validation */
+    /** Validation */
     $result = validate_event($eventName,$startDate,$endDate,$description, $location);
-    /* END: Validation */
+    /** END: Validation */
 
-    //If passed validation
+    ///If passed validation
     if(empty($result))
     {
-        /* Create event record in database. */
+        /** Create event record in database. */
        $eventId = createEvent($eventName,$startDate,$endDate,$description, $location);
        if(mysql_error()){
            array_push($result, array('Message' => mysql_error(), 'type' => 'error'));
@@ -49,6 +49,6 @@
        }
     }
 
-    //Return results array in json format
+    ///Return results array in json format
     echo json_encode($result);
 ?>

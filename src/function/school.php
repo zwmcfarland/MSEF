@@ -1,5 +1,5 @@
 <?php
-	//Get school records from the datbase
+	///Get school records from the datbase
     function getSchools($schoolId = "") {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());

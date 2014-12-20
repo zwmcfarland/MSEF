@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Browse Students
      * Description:
      *     This page is used by sponsors and staff to view a list of students.
@@ -10,22 +10,22 @@
      *     12/12/2014 - Created Comments.
      */
 
-    //Include necessary files.
+    ///Include necessary files.
     include("function/headerfooter.php");
     include("function/user.php");
 
-    //Create default header
+    ///Create default header
     incHeader('MSEF | Students');
 
-    /* --- Params --- */
-    /* --- END: Params --- */
+    /** --- Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryStudents = getUserInformation("", "Student");
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <div class="col-lg-12">
     <div class="col-md-10 col-md-offset-1">
@@ -61,6 +61,6 @@
     </div>
 </div>
 <?php
-    //Create default footer
+    ///Create default footer
     incFooter();
 ?>

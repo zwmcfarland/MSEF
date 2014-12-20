@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * Name: Browse awards
      * Description:
      *     This page allows all users to view a list of the avalible awards.
@@ -10,22 +10,22 @@
      *     12/11/2014 - Created Comments.
      */
 
-    //Include necessary files
+    ///Include necessary files
     include("function/headerfooter.php");
     include("function/awards.php");
 
-    //Create standard header
+    ///Create standard header
     incHeader('MSEF | Award');
 
-    /* --- Params --- */
-    /* --- END: Params --- */
+    /** --- Params --- */
+    /** --- END: Params --- */
 
-    /* --- Queries --- */
+    /** --- Queries --- */
     $qryAward = getAward();
-    /* --- END: Queries ---*/
+    /** --- END: Queries ---*/
     
-    /* --- Security --- */
-    /* --- END: Security --- */
+    /** --- Security --- */
+    /** --- END: Security --- */
 ?>
 <div class="col-lg-12">
     <div class="col-md-10 col-md-offset-1">
@@ -58,6 +58,6 @@
     </div>
 </div>
 <?php
-    //Include standard footer.
+    ///Include standard footer.
     incFooter();
 ?>

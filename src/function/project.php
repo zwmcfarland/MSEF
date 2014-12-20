@@ -56,7 +56,7 @@
         return $qryProjects;
     }
 
-    //Upates project record details in the database.
+    ///Upates project record details in the database.
     function updateProject($projectId, $Name = "", $Description="", $Abstract ="", $Electrical=FALSE) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -75,7 +75,7 @@
         return $updProject;
     }
 
-    //creates a project record in the database.
+    ///creates a project record in the database.
     function createProject($Name, $Description, $Abstract,$User_id, $Electrical=FALSE) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -95,7 +95,7 @@
         return mysql_insert_id();
     }
 
-    //Validates a project.
+    ///Validates a project.
     function validate($Name, $Description, $Abstract, $Electrical, $user_id){
         $result = array();
         if(empty($Name) || $Name == NULL) {
@@ -110,7 +110,7 @@
         return $result;
     }
 
-    //Get all of the projects that a user is elegible to sign up for.
+    ///Get all of the projects that a user is elegible to sign up for.
     function getschoolProjects($userId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -134,7 +134,7 @@
         return $qryProjects;
     }
 
-    //Assign a user to a particular project
+    ///Assign a user to a particular project
     function signUp($studentId, $projectId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -145,7 +145,7 @@
         $updProject = mysql_query($sql);
     }
 
-    //Submit a project to be approved.
+    ///Submit a project to be approved.
     function submitProject($ProjectId,$sponsorId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -161,7 +161,7 @@
         mysql_query($sql);
     }
 
-    //Get a list of approvals pending a users signoff
+    ///Get a list of approvals pending a users signoff
     function getMyApprovals($email) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -176,7 +176,7 @@
         return mysql_query($sql);
     }
 
-    //Get a list of users assigned to a project
+    ///Get a list of users assigned to a project
     function getProjectMembers($projectId) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -190,7 +190,7 @@
         return mysql_query($sql);
     }
 
-    //Approve a project
+    ///Approve a project
     function approveProject($project_id, $status) {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
@@ -200,13 +200,13 @@
         mysql_query($sql);
     }
     
-    //Smart algorithim to get suggested projects for each category.
+    ///Smart algorithim to get suggested projects for each category.
     function getSuggestedProjectCategories() {
         include("Data_Source.php");
         mysql_connect("$host", "$username", "$password")or die("Cannot connect to server " . mysql_error());
         mysql_select_db("$db_name")or die("Cannot select DB " . mysql_error());
 
-        //Get Keywords for each category
+        ///Get Keywords for each category
         $sql = "SELECT ck.category_id, k.keyword
         		FROM keywords as k
         			 INNER JOIN categoryKeywords AS ck ON k.Id = ck.keyword_id";
@@ -224,7 +224,7 @@
             array_push($fancyKeywordStruct[$row['category_id']],$row['keyword']);
         }
 
-        //check for projects associated to those keywords
+        ///check for projects associated to those keywords
 		foreach($fancyKeywordStruct as $category => $keywordList) {
 			$sql = "SELECT p.*,
                        MATCH(Name, Description, Abstract) AGAINST ('";

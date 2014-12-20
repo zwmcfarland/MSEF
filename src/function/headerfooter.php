@@ -1,17 +1,17 @@
 <?php
-    // include the configs / constants for the database connection
+    /// include the configs / constants for the database connection
 include("./php-login-minimal-master/config/db.php");
 
-// load the login class
+/// load the login class
 include("./php-login-minimal-master/classes/Login.php");
 
 $login = new Login();
 date_default_timezone_set('UTC');
-	//Creates the menu bar, default header
+	///Creates the menu bar, default header
     function incHeader($title = "", $JS_String = "", $JS_Include = "", $CSS_Include = "", $CSS_String = "", $MenuFlag = "true") {
         include_once("project.php");
         ?>
-            <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+            <!DOCTYPE HTML PUBLIC "-///W3C///DTD HTML 3.2 Final///EN">
                 <html> 
                     <head>
                         <meta charset="utf-8">
@@ -143,12 +143,12 @@ date_default_timezone_set('UTC');
                     
     <?php } ?>
 
-    <?php //Creates the default footer.
+    <?php ///Creates the default footer.
           function incFooter() { ?>
                 <hr>
                 <div class="col-md-12" align="center">
-                    <a href="https://www.facebook.com/msefomaha"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
-                    <a href="https://twitter.com/MSEFOmaha"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
+                    <a href="https:///www.facebook.com/msefomaha"><i style="margin-right:7px" class="fa fa-facebook-square fa-4x"></i></a>
+                    <a href="https:///twitter.com/MSEFOmaha"><i style="margin-left:7px" class="fa fa-twitter-square fa-4x"></i></a>
                 </div>
             </body>
         </html>
